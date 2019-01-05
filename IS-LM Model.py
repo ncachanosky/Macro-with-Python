@@ -1,6 +1,6 @@
 "|===========================================================================|"
 "|===========================================================================|"
-"|MACROECONOMICS WITH PYTHON: LIS-LM                                         |"
+"|MACROECONOMICS WITH PYTHON: IS-LM MODEL                                    |"
 "|Nicolas Cachanosky                                                         |"
 "|Metropolitan State University of Denver                                    |"
 "|ncachano@msudenver.edu                                                     |"
