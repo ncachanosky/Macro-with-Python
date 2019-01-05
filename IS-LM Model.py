@@ -58,7 +58,6 @@ plt.axis(v)                                     # Use 'v' as the axes range
 plt.show()
 
 
-
 #%%
 "|***************************************************************************|"
 "|CELL #2|*******************************************************************|"
@@ -98,7 +97,6 @@ ax.yaxis.set_major_locator(plt.NullLocator())   # Hide ticks
 ax.xaxis.set_major_locator(plt.NullLocator())   # Hide ticks
 plt.axis(v)                                     # Use 'v' as the axes range
 plt.show()
-
 
 
 #%%
