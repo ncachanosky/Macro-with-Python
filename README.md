@@ -7,7 +7,9 @@ The notes below are not intended to be a full explanation of macroeconomic model
 The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes are written in [Spyder](https://www.spyder-ide.org/) deployed through [Anaconda](https://anaconda.org/).
 
 Macroeconomics with Python is project in development. More material will be uploaded as it becomes available.
+
 ---
+
 ## Python Notebooks
 
 1. The Labor Market
