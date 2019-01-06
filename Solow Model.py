@@ -12,9 +12,7 @@
 "|***************************************************************************|"
 "|CELL #1|*******************************************************************|"
 "|***************************************************************************|"
-
 "1|IMPORT PACKAGES"
-import numpy as np
 from sympy import Symbol
 from sympy import latex
 
@@ -27,11 +25,11 @@ Yprime = Y.diff(K)   # Calculate the partial derivative with respect to K
 print(Yprime)        # Print dY/dK
 latex(Yprime)        # Print dY/dK in LaTeX format
 
+
 #%%
 "|***************************************************************************|"
 "|CELL #2|*******************************************************************|"
 "|***************************************************************************|"
-
 "1|IMPORT PACKAGES"
 import numpy as np               # Package for scientific computing with Python
 import matplotlib.pyplot as plt  # Matplotlib is a 2D plotting library
@@ -44,31 +42,23 @@ N = K_size/2                # Labor stock
 alpha = 0.50                # Output elasticity of capital
 # Arrays
 k = np.arange(K_size)       # Create array of K
-y = np.zeros(K_size)        # Create empty array of Y
 
-y2 = np.zeros(K_size)       # Create arrays to be filled with output values
-y3 = np.zeros(K_size)
-y4 = np.zeros(K_size)
-y5 = np.zeros(K_size)
-y6 = np.zeros(K_size)
-
+"3|CALCULATE OUTPUT VALUES"
 def output(k, A):           # User-defined Cobb-Douglas Production Function
     y = A * (k)**(alpha)
     return y
 
-for i in range(0, K_size):  # Calculate Y for each value of K in its domain
-    y[i]  = output(i, A)
-    y2[i] = output(i, A+1)
-    y3[i] = output(i, A+2)
-    y4[i] = output(i, A+3)
-    y5[i] = output(i, A+4)
-    y6[i] = output(i, A+5)
-    
-ymax = np.max(y6)
+y  = output(k, A)
+y2 = output(k, A+1)
+y3 = output(k, A+2)
+y4 = output(k, A+3)
+y5 = output(k, A+4)
+y6 = output(k, A+5)
 
-"3|PLOT THE PRODUCTION FUNCTION FOR DIFFERENT VALUES OF TECHNOLOGY"
-v = [0, K_size, 0, ymax]                       # Set the axes range
-fig, ax = plt.subplots(figsize=(8, 8))
+"4|PLOT THE PRODUCTION FUNCTION FOR DIFFERENT VALUES OF TECHNOLOGY"
+y_max = np.max(y6)
+v = [0, K_size, 0, y_max]                       # Set the axes range
+fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="output", xlabel="Capital", ylabel="Output")
 ax.grid()
 ax.plot(k, y,  "b-", alpha=1.00, label="A=1")
@@ -80,6 +70,7 @@ ax.plot(k, y6, "b-", alpha=0.25, label="A=6")
 ax.legend() 
 plt.axis(v)                                    # Use 'v' as the axes range
 plt.show()
+
 
 #%%
 "|***************************************************************************|"
@@ -99,10 +90,6 @@ s = 0.30                         # Savings rate
 d = 0.10                         # Depreciation rate
 #Arrays
 K = np.arange(K_size)            # Create empty array of K
-Y = np.zeros(K_size)             # Create empty array of Y
-D = np.zeros(K_size)             # Create empty array of D
-I = np.zeros(K_size)             # Create empty array of I
-C = np.zeros(K_size)             # Create empty array of C
 
 "3|DEFINE FUNCTIONS"
 def output(K):   # Cobb-Douglas Production Function
@@ -110,12 +97,9 @@ def output(K):   # Cobb-Douglas Production Function
     return Y
 
 "4|POPULATE ARRAYS"
-for i in range(0, K_size):
-    Y[i] = output(i)             # Production function
-    D[i] = d*K[i]                # Depreciation
-    I[i] = s*Y[i]                # Investment
-    
-Ymax = np.max(Y)
+Y = output(K)
+D = d*K
+I = s*Y
 
 "5|CALCULATE STEADY-STATE VALUES"
 Kstar = ((s*A*(N)**(1-alpha))/d)**(1/(1-alpha))
@@ -125,8 +109,10 @@ Cstar = Ystar - Istar
 Dstar = d*Kstar
 
 "6|PLOT THE SOLOW MODEL"
-v = [0, K_size, 0, Ymax]
-fig, ax = plt.subplots(figsize=(8, 8))
+y_max = np.max(Y)
+v = [0, K_size, 0, y_max]
+
+fig, ax = plt.subplots(figsize=(10, 8))
 ax.plot(K, Y, "k", ls = '-', label="Output")
 ax.plot(K, I, "b", ls = '-', label="Investment")
 ax.plot(K, D, "r", ls = '-', label="Depreciation")
@@ -140,6 +126,7 @@ plt.axhline(y = Istar, ls = ":", color = 'k')
 plt.axhline(y = Ystar, ls = ":", color = 'k')
 plt.axis(v)
 plt.show()
+
 
 #%%
 "|***************************************************************************|"
@@ -160,11 +147,6 @@ s = 0.35                         # Savings rate
 n = 0.02                         # Population growth rate
 # Arrays
 k = np.arange(K_size)            # Create array of k
-y = np.zeros(K_size)             # Create array of y
-d = np.zeros(K_size)             # Create array of d
-i = np.zeros(K_size)             # Create array of i
-c = np.zeros(K_size)             # Create array of c
-d_and_i = np.empty(K_size)       # Create array for break-even
 
 "3|DEFINE FUNCTIONS"
 def output(k):                   # Cobb-Douglas Function (per capita)
@@ -172,14 +154,10 @@ def output(k):                   # Cobb-Douglas Function (per capita)
     return y
 
 "4|POPULATE ARRAYS"
-for j in range(0, K_size):
-    y[j] = output(j)               # Production function
-    d[j] = delta*k[j]              # Depreciation
-    i[j] = s*y[j]                  # Investment
-    d_and_i[j] = (delta + n)*k[j]  # Break-even
-    
-
-y_max = np.max(y)
+y = output(k)
+d = delta*k
+i = s*y
+d_and_i = (delta + n)*k
 
 "5|CALCULATE STEADY-STATE VALUES"
 k_star = (s/(n+delta)*A)**(1/(1-alpha))
@@ -199,6 +177,7 @@ table = [["Capital"     , k_star],     # Table rows
 print(tabulate(table, headers))
 
 "6|PLOT THE SOLOW MODEL"
+y_max = np.max(y)
 v = [0, K_size, 0, y_max]              # Axis range
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="Solow Model", xlabel=r'$k$')
@@ -216,6 +195,7 @@ ax.yaxis.set_major_locator(plt.NullLocator())      # Hide ticks
 ax.xaxis.set_major_locator(plt.NullLocator())      # Hide ticks
 plt.axis(v)
 plt.show()
+
 
 #%%
 "|***************************************************************************|"
@@ -236,30 +216,19 @@ s2 = 0.45                        # Savings rate after the shock
 n  = 0.02                        # Population growth rate
 # Arrays
 k  = np.arange(K_size)           # Create array of k
-y  = np.zeros(K_size)            # Create array of y
-d  = np.zeros(K_size)            # Create array of d
-i1 = np.zeros(K_size)            # Create array of i before the shock
-i2 = np.zeros(K_size)            # Create array of i after the shock
-c  = np.zeros(K_size)            # Create array of c
-d_and_i = np.zeros(K_size)       # Create array for break-even
-
 
 "3|DEFINE FUNCTIONS"
 def output(k):                   # Cobb-Douglas per capita function
     y = A * (k)**(alpha)
     return y
 
-"4|POPULATE ARRAYS"
-for j in range(0, K_size):
-    y[j] = output(j)               # Production function
-    d[j] = delta*k[j]              # Depreciation
-    i1[j] = s1*y[j]                # Investment before the shock
-    i2[j] = s2*y[j]                # Investment after the shock
-    d_and_i[j] = (delta + n)*k[j]  # Break-even
-    
-y_max = np.max(y)
+y  = output(k)                   # Production function
+d  = delta*k                     # Depreciation
+i1 = s1*y                        # Investment before the shock
+i2 = s2*y                        # Investment after the shock
+d_and_i = (delta + n)*k          # Breack-even
 
-"5|CALCULATE STEADY-STATE VALUES"
+"4|CALCULATE STEADY-STATE VALUES"
 k_star1 = (s1/(n+delta)*A)**(1/(1-alpha))
 k_star2 = (s2/(n+delta)*A)**(1/(1-alpha))
 y_star1 = A*(k_star1**alpha)
@@ -271,7 +240,8 @@ c_star2 = y_star2 - i_star2
 d_star1 = delta*k_star1
 d_star2 = delta*k_star2
 
-"6|PLOT THE SOLOW MODEL"               
+"5|PLOT THE SOLOW MODEL"               
+y_max = np.max(y)
 v = [0, K_size, 0, y_max]              # Axis range
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="SOLOW MODEL: SAVINGS RATE SHOCK", xlabel=r'$k$')
@@ -295,7 +265,7 @@ ax.xaxis.set_major_locator(plt.NullLocator())      # Hide ticks
 plt.axis(v)
 plt.show()
 
-"7|SAVINGS RATE: ONE-PERIOD SHOCK"
+"6|SAVINGS RATE: ONE-PERIOD SHOCK"
 T = 200                 # Number of periods
 t_shock = 10            # Period when shock happens
 time = np.arange(T)     # Create array of time
@@ -310,10 +280,9 @@ k[0] = k_star1          # Set initial value of k
 i[0] = i_star1          # Set initial value of i
 c[0] = c_star1          # Set initial value of c
 
-s = np.empty(T)         # Create array of s including shock
-s[0:T] = s1
-s[t_shock] = s2
-
+s = np.zeros(T)
+s[0:T] = s1             # Array of savings rate
+s[t_shock] = s2         # Shock to savings rate
 
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n + delta)*k[j-1]
@@ -364,9 +333,9 @@ k[0] = k_star1          # Set initial value of k
 i[0] = i_star1          # Set initial value of i
 c[0] = c_star1          # Set initial value of c
 
-s = np.empty(T)         # Create array os s including shock
-s[0:t_shock] = s1
-s[t_shock:T] = s2
+s = np.zeros(T)
+s[0:t_shock] = s1       # Array of savings rate
+s[t_shock:T] = s2       # Shock to savings rate
 
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n + delta)*k[j-1]
@@ -421,30 +390,19 @@ n1 = 0.02                        # Population growth rate before the shock
 n2 = 0.05                        # Population growth rate after the shock
 # Arrays
 k  = np.arange(K_size)           # Create array of k
-y  = np.zeros(K_size)            # Create array of y
-d  = np.zeros(K_size)            # Create array of d
-i  = np.zeros(K_size)            # Create array of i
-c  = np.zeros(K_size)            # Create array of c
-d_and_i1 = np.zeros(K_size)      # Break even before the shock
-d_and_i2 = np.zeros(K_size)      # Break even after the shock
-
 
 "3|DEFINE FUNCTIONS"
 def output(k):   # Cobb-Douglas Production Function (per capita)
     y = A * (k)**(alpha)    
     return y
 
-"4|POPULATE ARRAYS"
-for j in range(0, K_size):
-    y[j] = output(j)                 # Production function
-    d[j] = delta*k[j]                # Depreciation
-    i[j] = s*y[j]                    # Investment before the shock
-    d_and_i1[j] = (delta + n1)*k[j]  # Break even before the shock
-    d_and_i2[j] = (delta + n2)*k[j]  # Break even after the shock
-    
-y_max = np.max(y)
+y = output(k)
+d = delta*k
+i = s*y
+d_and_i1 = (delta + n1)*k
+d_and_i2 = (delta + n2)*k
 
-"5|CALCULATE STEADY-STATE VALUES"
+"4|CALCULATE STEADY-STATE VALUES"
 k_star1 = (s/(n1+delta)*A)**(1/(1-alpha))
 k_star2 = (s/(n2+delta)*A)**(1/(1-alpha))
 y_star1 = A*(k_star1**alpha)
@@ -456,7 +414,8 @@ c_star2 = y_star2 - i_star2
 d_star1 = delta*k_star1
 d_star2 = delta*k_star2
 
-"6|PLOT THE SOLOW MODEL"
+"5|PLOT THE SOLOW MODEL"
+y_max = np.max(y)
 v = [0, K_size, 0, y_max]              # Axis range
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="SOLOW MODEL: POPULATOIN GROWTH RATE SHOCK", xlabel=r'$k$')
@@ -480,7 +439,7 @@ ax.xaxis.set_major_locator(plt.NullLocator())      # Hide ticks
 plt.axis(v)
 plt.show()
 
-"7|SPOPULATION GROWTH RATE: ONE-PERIOD SHOCK"
+"6|SPOPULATION GROWTH RATE: ONE-PERIOD SHOCK"
 T = 200                 # Number of periods
 t_shock = 10            # Period when shock happens
 time = np.arange(T)     # Create array of time
@@ -494,10 +453,9 @@ k[0] = k_star1          # Set initial value of k
 i[0] = i_star1          # Set initial value of i
 c[0] = c_star1          # Set initial value of c
 
-n = np.empty(T)         # Create array of s including shock
-n[0:T] = n1
-n[t_shock] = n2
-
+n = np.zeros(T)
+n[0:T] = n1             # Population
+n[t_shock] = n2         # Shock to population
 
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n[j] + delta)*k[j-1]
@@ -535,7 +493,7 @@ plt.tick_params(axis='both', which='both', bottom=False, top=False,
                 labelbottom=True, left=False, right=False, labelleft=True)
                                                 # Hide tick marks
 
-"8|POPULATION GROWTH RATE: PERMANENT SHOCK"
+"7|POPULATION GROWTH RATE: PERMANENT SHOCK"
 time = np.arange(T)     # Create array of time
 y = np.zeros(T)         # Create array of y
 k = np.zeros(T)         # Create array of k
@@ -547,10 +505,9 @@ k[0] = k_star1          # Set initial value of k
 i[0] = i_star1          # Set initial value of i
 c[0] = c_star1          # Set initial value of c
 
-n = np.empty(T)         # Create array of s including shock
-n[0:T] = n1
-n[t_shock:T] = n2
-
+n = np.zeros(T)
+n[0:T] = n1             # Population
+n[t_shock:T] = n2       # Population shock
 
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n[j] + delta)*k[j-1]
@@ -584,6 +541,7 @@ plt.xlabel('Time')
 plt.tick_params(axis='both', which='both', bottom=False, top=False,
                 labelbottom=True, left=False, right=False, labelleft=True)
                                                 # Hide tick marks
+
 
 #%%
 "|***************************************************************************|"
@@ -646,7 +604,6 @@ TFP = np.empty(T)       # Create array of TFP including shock
 TFP[0:T] = A
 TFP[t_shock] = A*(1+g)
 
-
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n + delta)*k[j-1]
     y[j] = TFP[j]*k[j]**alpha
@@ -696,9 +653,8 @@ k[0] = k_star1          # Set initial value of k
 i[0] = i_star1          # Set initial value of i
 c[0] = c_star1          # Set initial value of c
 
-TFP = np.empty(T)       # Create array of TFP including shock
+TFP = np.zeros(T)       # Create array of TFP including shock
 TFP[0:T] = A
-
 
 for j in range(1, T):
     TFP[j] = TFP[j-1]*(1+g)
@@ -795,7 +751,6 @@ c[0] = c_star1          # Set initial value of c
 TFP = np.empty(T)       # Create array of TFP including shock
 TFP[0:T] = A
 TFP[t_shock] = A*(1+g)
-
 
 for j in range(1, T):
     k[j] = k[j-1] + i[j-1] - (n + delta)*k[j-1]
@@ -910,13 +865,11 @@ c = np.zeros(K_size)             # Create array of c
 d_and_i = np.zeros(K_size)       # Break-even before the shock
 
 "3|DEFINE MOTION FUNCTION|"
-DeltaK = np.zeros(K_size)
 def motion(k):                   # Motion function of k
     DeltaK = s * A*(k)**(alpha) - (n + delta)*k    
     return DeltaK
 
-for j in range(0, K_size):
-    DeltaK[j] = motion(j)
+DeltaK = motion(k)               # Change in K
 
 "4|PLOT PHASE DIAGRAM"
 fig, ax1 = plt.subplots(figsize=(10, 7))
@@ -936,7 +889,6 @@ plt.show()
 "|***************************************************************************|"
 "|CELL #9|*******************************************************************|"
 "|***************************************************************************|"
-
 "1|IMPORT PACKAGES"
 import numpy as np               # Package for scientific computing with Python
 import matplotlib.pyplot as plt  # Matplotlib is a 2D plotting library
@@ -951,7 +903,6 @@ s = 0.35                         # Savings rate
 n = 0.02                         # Population growth rate
 # Arrays
 k = np.arange(K_size)            # Create array of k
-y = np.zeros(K_size)             # Create array of y
 
 "3|PLOT CHANGE IN CAPITAL FOR DIFFERENT STARTING POINTS"
 T = 200
@@ -960,23 +911,20 @@ k1 = np.zeros(T)
 k2 = np.zeros(T)
 k3 = np.zeros(T)
 
+k_star = (s/(n+delta)*A)**(1/(1-alpha))
 k1[0] = k_star * 0.9
 k2[0] = k_star * 0.5
 k3[0] = k_star * 0.1
-
-k_star = (s/(n+delta)*A)**(1/(1-alpha))
 
 def output(k):   # Cobb-Douglas Production Function (per capita)
     y = A * (k)**(alpha)    
     return y
 
-DeltaK = np.zeros(K_size)
 def motion(k):                   # Motion function of k
     DeltaK = s * A*(k)**(alpha) - (n + delta)*k    
     return DeltaK
 
-for j in range(0, K_size):
-    DeltaK[j] = motion(j)
+DeltaK = motion(k)
 
 Kdelta1 = motion(k1[0]) 
 Kdelta2 = motion(k2[0])
@@ -1000,13 +948,11 @@ plt.text(k1[0]  , Kdelta1+0.05, r'$K_{H}$', color = 'k')
 plt.text(k2[0]  , Kdelta2+0.05, r'$K_{M}$', color = 'b')
 plt.text(k3[0]-2, Kdelta3+0.05, r'$K_{L}$', color = 'r')
 
-
-### Plot chang of capital in time for each starting value (high, medium, low)
+### Plot change of capital in time for each starting value (high, medium, low)
 for j in range(1, T):
     k1[j] = k1[j-1] + s*output(k1[j-1]) - (delta + n)*k1[j-1]
     k2[j] = k2[j-1] + s*output(k2[j-1]) - (delta + n)*k2[j-1]
     k3[j] = k3[j-1] + s*output(k3[j-1]) - (delta + n)*k3[j-1]
-
 
 v = [0, T, 0, k_star*1.1]              # Axis range
 fig, ax = plt.subplots(figsize=(10, 8))
@@ -1022,6 +968,7 @@ plt.ylabel('k', rotation = 0)
 plt.show()
 
 
+#%%
 "|***************************************************************************|"
 "|CELL #9|*******************************************************************|"
 "|***************************************************************************|"
@@ -1039,11 +986,6 @@ s = 0.35                         # Savings rate
 n = 0.02                         # Population growth rate
 # Arrays
 k = np.arange(K_size)            # Create array of k
-y = np.zeros(K_size)             # Create array of y
-d = np.zeros(K_size)             # Create array of d
-i = np.zeros(K_size)             # Create array of i
-c = np.zeros(K_size)             # Create array of c
-d_and_i = np.zeros(K_size)       # Break-even before the shock
 
 "3|CALCULATE GOLDEN-RULE VALUES"
 def output(k):   # Cobb-Douglas Production Function (per capita)
@@ -1061,17 +1003,11 @@ d_gold = delta*k_gold
 #Plot consumption as function of savings
 step = 0.05
 size = int(1/step)+1
-k_s = np.zeros(size)
-y_s = np.zeros(size)
-c_s = np.zeros(size)
 savings = np.arange(0, 1.01, step)
 
-
-for j in range(0, size):
-    k_s[j] = (savings[j]/(n+delta)*A)**(1/(1-alpha))
-    y_s[j] = output(k_s[j])
-    c_s[j] = (1 - savings[j])*y_s[j]
-
+k_s = (savings / (n+delta)*A)**(1/(1-alpha))
+y_s = output(k_s)
+c_s = (1-savings)*y_s
 
 v = [0, 1, 0, c_gold]
 fig, ax = plt.subplots(figsize=(10, 8))
@@ -1082,14 +1018,11 @@ plt.xlabel('k')
 plt.axis(v)
 plt.show()
 
-
 # Plot Solow Model with golden-rule capital
-for j in range(0, K_size):
-    y[j] = output(j)              # Production function
-    i[j] = s_gold*y[j]            # Investment
-    d_and_i[j] = (delta+n)*k[j]   # Break-even line
-    c[j] = (1-s_gold)*y[j]
-
+y = output(k)              # Production function
+i = s_gold * y             # Investment
+c = (1 - s_gold)*y         # Consumption
+d_and_i = (delta + n)*k    # Break-even
 
 v = [0, K_size, 0, y[K_size-1]]
 fig, ax = plt.subplots(figsize=(10, 8))

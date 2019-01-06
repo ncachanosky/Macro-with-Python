@@ -30,7 +30,6 @@ X_bar = 2              # Exports (given)
 d = 5                  # Investment slope wrt to i
 # Arrays
 Y = np.arange(Y_size)  # Array values of Y
-i = np.zeros(Y_size)   # Empty array of i
 
 "3|DEFINE AND POPULATE THE IS-SCHEDULE"
 def i_IS(a, alpha, b, beta, T, I_bar, G_bar, X_bar, d, Y):
@@ -41,9 +40,8 @@ def Y_IS(a, alpha, b, beta, T, I_bar, G_bar, X_bar, d, i):
     Y_IS = ((a-alpha)-(b-beta)*T + I_bar + G_bar + X_bar - d*i)/(1-b+beta)
     return Y_IS
 
-for j in range(0, Y_size):
-    i[j] = i_IS(a, alpha, b, beta, T, I_bar, G_bar, X_bar, d, j)
-    
+i = i_IS(a, alpha, b, beta, T, I_bar, G_bar, X_bar, d, Y)
+
 "4|PLOT THE IS-SCHEDULE"
 y_max = np.max(i)
 x_max = Y_IS(a, alpha, b, beta, T, I_bar, G_bar, X_bar, d, 0)
@@ -76,15 +74,13 @@ Ms = 20000             # Nominal money supply
 P  = 20                # Price level
 # Arrays
 Y = np.arange(Y_size)  # Array values of Y
-i = np.zeros(Y_size)   # Empty array of i
 
 "3|DEFINE AND POPULATE THE LM-SCHEDULE"
 def i_LM(c1, c2, c3, Ms, P, Y):
     i_LM = (c1 - Ms/P)/c3 + c2/c3*Y
     return i_LM
 
-for j in range(0, Y_size):
-    i[j] = i_LM(c1, c2, c3, Ms, P, j)
+i = i_LM(c1, c2, c3, Ms, P, Y)
     
 "4|PLOT THE IS-SCHEDULE"
 y_max = np.max(i)
@@ -111,8 +107,6 @@ import matplotlib.pyplot as plt  # Matplotlib is a 2D plotting library
 # Model domain
 Y_size = 100
 Y   = np.arange(Y_size)     # Array values of Y
-iIS = np.zeros(Y_size)      # Empty array for the IS
-iLM = np.zeros(Y_size)      # Empty array for the LM
 # IS Parameters
 a = 100                     # Autonomous consumption
 b = 0.2                     # Marginal propensity to consume
@@ -139,9 +133,8 @@ def i_LM(c1, c2, c3, Ms, P, Y):
     i_LM = (c1 - Ms/P)/c3 + c2/c3*Y
     return i_LM
 
-for j in range(0, Y_size):
-    iIS[j] = i_IS(a, alpha, b, beta, T, I, G, X, d, j)
-    iLM[j] = i_LM(c1, c2, c3, Ms, P, j)
+iIS = i_IS(a, alpha, b, beta, T, I, G, X, d, Y)
+iLM = i_LM(c1, c2, c3, Ms, P, Y)
 
 "4|CALCULATE EQUILIBRUM VALUES"
 Y_star1 = ((a-alpha) - (b-beta)*T + I + G + X)/d
@@ -179,7 +172,6 @@ plt.axis(v)                                   # Use 'v' as the axes range
 plt.show()
 
 
-
 "|***************************************************************************|"
 "|CELL #3|*******************************************************************|"
 "|***************************************************************************|"
@@ -191,8 +183,6 @@ import matplotlib.pyplot as plt  # Matplotlib is a 2D plotting library
 # Model domain
 Y_size = 100
 Y   = np.arange(Y_size)     # Array values of Y
-iIS = np.zeros(Y_size)      # Empty array for the IS
-iLM = np.zeros(Y_size)      # Empty array for the LM
 # IS Parameters
 a = 100                     # Autonomous consumption
 b = 0.2                     # Marginal propensity to consume
@@ -219,9 +209,8 @@ def i_LM(c1, c2, c3, Ms, P, Y):
     i_LM = (c1 - Ms/P)/c3 + c2/c3*Y
     return i_LM
 
-for j in range(0, Y_size):
-    iIS[j] = i_IS(a, alpha, b, beta, T, I, G, X, d, j)
-    iLM[j] = i_LM(c1, c2, c3, Ms, P, j)
+iIS = i_IS(a, alpha, b, beta, T, I, G, X, d, Y)
+iLM = i_LM(c1, c2, c3, Ms, P, Y)
 
 "4|CALCULATE EQUILIBRUM VALUES"
 Y_star1 = ((a-alpha) - (b-beta)*T + I + G + X)/d
@@ -240,8 +229,7 @@ def Y_IS(a, alpha, b, beta, T, I, G, X, d, i):
     return Y_IS
 
 " |STARTING POINT A"
-YA = 10
-iA = 50
+YA, iA = 10, 50   # Initial values
 
 A_i_LM = np.zeros(iterations)
 A_Y_IS = np.zeros(iterations)
@@ -254,8 +242,7 @@ for j in range(1, iterations):
     A_i_LM[j] = i_LM(c1, c2, c3, Ms, P, A_Y_IS[j-1])
     
 " |STARTING POINT B"
-YB = 80
-iB = 55
+YB, iB = 80, 55   # Initial values
 
 B_i_LM = np.zeros(iterations)
 B_Y_IS = np.zeros(iterations)
@@ -268,8 +255,7 @@ for j in range(1, iterations):
     B_i_LM[j] = i_LM(c1, c2, c3, Ms, P, B_Y_IS[j-1])   
     
 " |STARTING POINT C"
-YC = 70
-iC = 20
+YC, iC = 70, 20   # Initial values
 
 C_i_LM = np.zeros(iterations)
 C_Y_IS = np.zeros(iterations)
@@ -282,8 +268,7 @@ for j in range(1, iterations):
     C_i_LM[j] = i_LM(c1, c2, c3, Ms, P, C_Y_IS[j-1])    
 
 " |STARTING POINT D"
-YD = 30
-iD = 25
+YD, iD = 30, 25   # Initial values
 
 D_i_LM = np.zeros(iterations)
 D_Y_IS = np.zeros(iterations)
