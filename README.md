@@ -23,3 +23,8 @@ Macroeconomics with Python is project in development. More material will be uplo
 3. The Solow Model
 
    [View in Jupyter NBViewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Solow%20Model.ipynb)
+   
+4. A Simple Ramsey Model
+
+   [View in Jupyter NBViewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Ramsey%20Model.ipynb)
+   
