@@ -6,25 +6,24 @@ These notes are not intended to be a full explanation of macroeconomic models or
 
 The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes are written in [Spyder](https://www.spyder-ide.org/) deployed through [Anaconda](https://anaconda.org/).
 
-*** Macroeconomics with Python is project in development. More material will be uploaded as it becomes available. ***
+---
+
+> Macroeconomics with Python is project in development. More material will be uploaded as it becomes available.
 
 ---
 
-## Python Notebooks
+## Python Jupyter Notebooks
 
-1. The Labor Market
+1. [The Labor Market][1]
+2. [The IS-LM Model][2]
+3. [The Solow Model][3]
+4. [A Simple Ramsey Model][4]
 
-   [View in Jupyter NBViewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Labor%20Market.ipynb)
+<!-- LINKS TO JUPYTER NOTEBOOKS -->
+[1]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Labor%20Market.ipynb>
 
-2. The IS-LM Model
+[2]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/IS-LM%20Model.ipynb>
 
-   [View in Jupyter NBVIewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/IS-LM%20Model.ipynb)
-   
-3. The Solow Model
+[3]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Solow%20Model.ipynb>
 
-   [View in Jupyter NBViewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Solow%20Model.ipynb)
-   
-4. A Simple Ramsey Model
-
-   [View in Jupyter NBViewer](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Ramsey%20Model.ipynb)
-   
+[4]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Ramsey%20Model.ipynb>
