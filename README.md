@@ -2,7 +2,7 @@
 
 This website offers [Python](https://www.python.org/) applications of typical topics of an intermediate and advanced course in macroeconomics. The intention of the samples below is to use a macroeconomic topics as a means to learn how to perform calculations and plots in Python. The notes assumes familiarity with macroeconomics and a beginner or introductory familiarity with Python.
 
-The notes below are not intended to be a full explanation of macroeconomic models or to be a sample of best coding practices. They are intended to "get us" started with how to use Python for macroeconomics rather than developing advanced skills. The website [QuantEcon](https://quantecon.org/) offers more advanced and detailed documentation.
+These notes are not intended to be a full explanation of macroeconomic models or to be a sample of best coding practices. They are intended to "get us" started with how to use Python for macroeconomics rather than developing advanced skills. The website [QuantEcon](https://quantecon.org/) offers more advanced and detailed documentation.
 
 The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes are written in [Spyder](https://www.spyder-ide.org/) deployed through [Anaconda](https://anaconda.org/).
 
