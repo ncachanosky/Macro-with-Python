@@ -21,12 +21,12 @@ The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes a
 4. [A Simple Ramsey Model][5]
 
 <!-- LINKS TO JUPYTER NOTEBOOKS -->
-[1]: <https://github.com/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Labor%20Market.ipynb>
+[1]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Labor%20Market.ipynb>
 
-[2]: <https://github.com/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/IS-LM%20Model.ipynb>
+[2]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/IS-LM%20Model.ipynb>
 
-[3]: <https://github.com/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/AD-AS%20Model.ipynb>
+[3]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/AD-AS%20Model.ipynb>
 
-[3]: <https://github.com/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Solow%20Model.ipynb>
+[4]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Solow%20Model.ipynb>
 
-[4]: <https://github.com/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Ramsey%20Model.ipynb>
+[5]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Ramsey%20Model.ipynb>
