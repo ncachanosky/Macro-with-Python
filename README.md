@@ -19,16 +19,19 @@ The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes a
 1. [The Labor Market][1]
 2. [The IS-LM Model][2]
 3. [The AD-AS Model][3]
-3. [The Solow Model][4]
-4. [A Simple Ramsey Model][5]
+4. [The Solow Model][4]
+5. [R&D Growth Model][5]
+6. [A Simple Ramsey Model][6]
 
 <!-- LINKS TO JUPYTER NOTEBOOKS -->
-[1]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Labor%20Market.ipynb>
+[1]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/labor_market.html>
 
-[2]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/IS-LM%20Model.ipynb>
+[2]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/is-lm_model.html>
 
-[3]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/AD-AS%20Model.ipynb>
+[3]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/ad-as_model.html>
 
-[4]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Solow%20Model.ipynb>
+[4]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/solow_model.html>
 
-[5]: <https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Jupyter%20Notebooks/Ramsey%20Model.ipynb>
+[5]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/r_d_growth_model.html>
+
+[6]: <https://www.ncachanosky.com/uploads/7/4/7/8/7478847/a_simple_ramsey_model.html>
