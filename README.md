@@ -1,16 +1,14 @@
 # Welcome
 
-This website offers [Python](https://www.python.org/) applications of typical topics of intermediate and advanced courses in macroeconomics. The intention of these applications is to use macroeconomic models as a examples of how to use Python for macroeconomics.
+**Macroeconomcis with [Python](https://www.python.org/)** serves as an intro and intermediate tutorial of how to apply Pyhton to typical topics covered in an Intermedite Macroeconomcis course. The notes included in this site assume familiarity with macroeconomic models and an introductory knowledge of Python.
 
-The notes assume familiarity with macroeconomics and a beginner or introductory familiarity with Python.
+These notes do not provide a full discussion of macroeconomc models nor intend to show the **best practices** of coding in Python. The intention of these notes is to get us started with **how** to use Python in macroeconomics. The website [QuantEcon](https://quantecon.org/) offers more advanced and detailed documentation.
 
-These notes are not intended to be a full explanation of macroeconomic models or to be a sample of best coding practices. They are intended to "get us" started with how to use Python for macroeconomics rather than developing advanced skills. The website [QuantEcon](https://quantecon.org/) offers more advanced and detailed documentation.
-
-The material is written as [JupyterLab](https://jupyter.org/) notebooks. Codes are written in [Spyder](https://www.spyder-ide.org/) deployed through [Anaconda](https://anaconda.org/).
+The material is written as [JupyterLab](https://jupyter.org/) notebooks and rendered in Jupyter's [nbviewer](https://nbviewer.jupyter.org/).
 
 ---
-
 > Macroeconomics with Python is project in development. More material will be uploaded as it becomes available.
+
 
 ---
 
