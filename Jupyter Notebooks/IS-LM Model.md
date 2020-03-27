@@ -1,3 +1,9 @@
+---
+layout: default
+title: The IS-LM model
+nav_order: 4
+---
+
 #### [**NICOLAS CACHANOSKY**](http://www.ncachanosky.com) | Department of Economics | Metropolitan State University of Denver | ncachano@msudenver.edu
 
 # IS-LM MODEL
