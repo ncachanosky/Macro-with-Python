@@ -1,4 +1,4 @@
-# WELCOME TO MACROECONOMICS WITH PYTHON
+# Welcome
 
 This website offers [Python](https://www.python.org/) applications of typical topics of intermediate and advanced courses in macroeconomics. The intention of these applications is to use macroeconomic models as a examples of how to use Python for macroeconomics.
 
