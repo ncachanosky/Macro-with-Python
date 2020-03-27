@@ -1,4 +1,4 @@
-title: "Website test"
+title: "Macro with Pythong"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 
@@ -13,4 +13,4 @@ aux_links:
 heading_anchors: true
 
 # Footer content
-footer_content: "Copyright @copy Nicolas Cachanosky"
+footer_content: "Nicolas Cachanosky | Metropolitan State University of Denver"
