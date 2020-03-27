@@ -4,7 +4,7 @@ title: Macro notebooks
 nav_order: 1
 ---
 
-# Macro Notebooks
+# Macro notebooks
 
 ## What is Jupyter Notebook
 [JupyterLab](https://jupyter.org/) notebook is a web-based interactive development environment for code, and data. [JupyterLab](https://jupyter.org/) is a convenient tool to share and collaborate in scientific projects. A useufl feature of [JupyterLab](https://jupyter.org/) notebooks is that it allows to creat documents that contain live code, equations, visualization along a narrative text (in [Markdown](https://daringfireball.net/projects/markdown/)).
