@@ -6,7 +6,7 @@
 widget = "blank"  # See https://wowchemy.com/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
 title = "Useful links"
 subtitle = ""
@@ -50,15 +50,13 @@ subtitle = ""
  css_class = ""
 +++
 
-## Useful links
-
-### Where to get Python?
+# Where to get Python?
 
 Probably the most user-friendly way to get Python is through [Anaconda](https://anaconda.org/), an environment that allows to easily download and update Python packages and extensions.
 
 In addition to its applications, [Anaconda](https://anaconda.org/) also includes instructional videos and documents.
 
-### Where to write Python code?
+## Where to write Python code?
 
 [Anaconda](https://anaconda.org/) comes with [Spyder](https://www.spyder-ide.org/) and other options to code. Another popular tool is [JupyterLab notebooks](https://jupyter.org/). If you are familiar with R, Anaconda also comes with [RStudio](https://rstudio.com/).
 
