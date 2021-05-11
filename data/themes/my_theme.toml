@@ -10,7 +10,7 @@ primary = "#800000"
 # Menu
 menu_primary = "#800000" # 500
 menu_text = "#fff"
-menu_text_active = "#006478" # A100
+menu_text_active = "#dcdcdc" # A100
 menu_title = "#fff"
 
 # Home sections
