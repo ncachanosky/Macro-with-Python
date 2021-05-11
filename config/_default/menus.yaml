@@ -1,0 +1,20 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: La Economía Argentina en Gráficos
+    url: 'graficos/'
+    weight: 10
+  - name: Fuentes Oficiales
+    url: 'fuentes_oficiales/'
+    weight: 20
+  - name: Fuentes Privadas
+    url: 'fuentes_privadas/'
+    weight: 30
+  - name: Fuentes Internacionales
+    url: 'fuentes_internacionales/'
+    weight: 40
+
+

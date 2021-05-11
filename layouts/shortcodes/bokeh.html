@@ -1,0 +1,18 @@
+{{- with .Get 0 -}}
+  {{- $path := . -}}
+  {{- $id :=  anchorize . -}}
+  {{- with $.Page.Resources.GetMatch $path -}}
+    {{- $json := .Content | safeJS -}}
+    <div id="{{ $id }}">
+      <script>
+        var item = JSON.parse({{ $json }});
+        Bokeh.embed.embed_item(item, {{ $id }});
+      </script>
+    </div>
+  {{- else -}}
+    {{- errorf "The %s shortcode was unable to find %s. See %s" $.Name $path $.Position -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "The %s shortcode requires a single positional parameter. See %s" $.Name $.Position -}}
+{{- end -}}
+
