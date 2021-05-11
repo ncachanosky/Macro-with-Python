@@ -15,7 +15,7 @@ i_am_a_sponsor: true
 
 site_type: Person
 local_business_type: ''
-org_name: 'El Hub Economico'
+org_name: 'Macro with Python'
 description: ''
 #twitter: ''
 
@@ -146,7 +146,7 @@ map:
   api_key: ''
   zoom: 15
 marketing:
-  google_analytics: 'G-S3E2G9TQE5'
+  google_analytics: ''
   google_tag_manager: ''
   google_site_verification: ''
   baidu_site_verification: ''

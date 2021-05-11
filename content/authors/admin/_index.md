@@ -1,16 +1,16 @@
 ---
 # Display name
-title: ""
+title: Nicolás Cachanosky
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: ""
+role: Associate Professor of Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: ""
+- name: Metropolitan State University of Denver
   url: ""
 
 # Short bio (displayed in user profile at end of posts)

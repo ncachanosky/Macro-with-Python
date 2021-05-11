@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 baseurl: '' # Website URL
-title: El Hub Económico # Website name
+title: Macro with Pyhon # Website name
 copyright: 'Copyright @ {year} Nicolás Cachanosky' # Footer text, e.g. '© {year} Me'
 
 ############################
