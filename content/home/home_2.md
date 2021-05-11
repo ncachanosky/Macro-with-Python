@@ -50,7 +50,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# Where to get Python?
+## Where to get Python?
 
 Probably the most user-friendly way to get Python is through [Anaconda](https://anaconda.org/), an environment that allows to easily download and update Python packages and extensions.
 

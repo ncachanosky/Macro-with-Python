@@ -5,7 +5,7 @@
 
 widget = "blank"  # See https://wowchemy.com/docs/page-builder/
 headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
+active = false  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "Macro with Python"
@@ -69,13 +69,4 @@ For an example on symbolic mathematics and LaTeX format, see **The Solow Model**
 
 For examples of how to find the roots ([SciPy](https://www.scipy.org/)) of a system of equations, see **The Labor Market** (section 3) and **The AD-AS Model** (sections 5 and 6). 
 
-For a shooting algorithm, see **A Simple Ramsey Model** (section 5). 
-
-### List of Models and Applications
-
-1. [The Labor Market][01]
-2. [The IS-LM Model][02]
-3. [The AD-AS Model][03]
-4. [The Solow Model][04]
-5. [The R&D Growth Model][05]
-6. [A Simple Ramsey Model][06]
+For a shooting algorithm, see **A Simple Ramsey Model** (section 5).
