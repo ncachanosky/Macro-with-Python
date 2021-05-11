@@ -1,16 +1,16 @@
 ---
 # Display name
-title: Nicolás Cachanosky
+title: ""
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Associate Professor of Economics
+role: ""
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Metropolitan State University of Denver
+- name: ""
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
@@ -96,13 +96,4 @@ For examples of how to find the roots ([SciPy](https://www.scipy.org/)) of a sys
 
 For a shooting algorithm, see **A Simple Ramsey Model** (section 5).
 
----
 
-## Información de contacto
-
-[**Nicolás Cachanosky**](https://www.ncachanosky.com) | ncachano@msudenver.edu  
-Associate Professor of Economics  
-Metropolitan State University of Denver
-
-Sound Money Project | Senior Fellow  
-[American Institute for Economic Research](https://www.aier.org/)
