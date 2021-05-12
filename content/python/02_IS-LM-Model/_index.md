@@ -21,13 +21,13 @@ This model treats the price level as exogenous (given and fixed). In this sense,
 
 ## The IS schedule (Investment-Saving)
 
-The IS schedule is derived from the equilbrium condition where output $(Y)$ equals spending:
+The IS schedule is derived from the equilibrium condition where output $(Y)$ equals spending:
 
 \begin{equation}
 Y = C + I + G + (X - Z)
 \end{equation}
 
-where $C$ is household consumption, $I$ is private investment, $G$ is the level of government spending, $X$ is exports, and $Z$ is imports. We can treat variables $G = \bar{G}$ and $X = \bar{X}$ as exogenous. The former is defined by policy makers, the latter is given by economic conditions in the rest of the world. A more detailed exposition, such as the Mundell-Fleming model, would also take into consideration the exchange rate, and exprots will also be dependent (to some extent) of domestic economic policy.
+where $C$ is household consumption, $I$ is private investment, $G$ is the level of government spending, $X$ is exports, and $Z$ is imports. We can treat variables $G = \bar{G}$ and $X = \bar{X}$ as exogenous. The former is defined by policy makers, the latter is given by economic conditions in the rest of the world. A more detailed exposition, such as the Mundell-Fleming model, would also take into consideration the exchange rate, and exports will also be dependent (to some extent) of domestic economic policy.
 
 Household's consumption follow a keynesian consumption function:
 
@@ -63,7 +63,7 @@ To derive the IS schedule we need to use the consumption, investment, and import
 
 $$
 \begin{align}
-    Y &= C + I + G + (X - Z) \\\\[15pt]
+    Y &= C + I + G + (X - Z) \\\\[20pt]
     Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}\_{I} + \bar{G} + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
     i_IS &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
 \end{align}
@@ -194,8 +194,8 @@ And the interest rate of equilibrium would be:
 
 $$
 \begin{align}
-    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot Y^*  \\\\
-    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot \left(\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right)^{-1} \\\\[10pt]
+    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} Y^*  \\\\
+    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \left(\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right)^{-1} \cdot \\\\[10pt]
          & \left[\frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} + \frac{1}{c_3} \left(c_1-\frac{M^S_0}{P} \right) \right]
 \end{align}
 $$
@@ -274,8 +274,8 @@ Horizontal changes $(Y)$ is calculated with the IS function. Vertical changes $(
 
 $$
 \begin{align}
-    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + \bar{I} + \bar{G} + X}{1-b+\beta} - \frac{d}{1-b+\beta} \cdot i_{t-1} \\\\[10pt]
-    i_{t} &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot Y_{t-1}
+    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + \bar{I} + \bar{G} + X}{1-b+\beta} - \frac{d}{1-b+\beta} i_{t-1} \\\\[10pt]
+    i_{t} &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} Y_{t-1}
 \end{align}
 $$
 
