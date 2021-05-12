@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
-linktitle: "THE AD-AS MODEL"
+linktitle: "The AD-AS Model"
 weight: 1
 
 # Page metadata.
-title: THE AD-AS MODEL
+title: The AD-AS Model
 date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 
@@ -45,13 +45,14 @@ The $AD$ is the equilibrium level of output $(Y^*)$ from the IS-LM model, which 
 $$
 \begin{align}
    Y^* &= \frac{\left[(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G}+X\right]/d + (1/c_3) \left(M^S_0/P - c_1 \right)}{(1-b+\beta)/d - (c_2/c_3)} \\\\[10pt]
-   Y^* &= \underbrace{\left[\frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G} + X}{d} - \frac{c_1}{c_3} \right] \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}}_\text{vertical level} + \underbrace{\frac{M^S_0}{c_3} \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}}_\text{shape} \cdot \frac{1}{P}
+   Y^* &= \underbrace{\left[\frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G} + X}{d} - \frac{c_1}{c_3} \right] \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}}_\text{vertical level} + \\\\[10pt]
+   & \underbrace{\frac{M^S_0}{c_3} \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}}_\text{shape} \cdot \frac{1}{P}
 \end{align}
 $$
 
 Even though the function looks complicated, note that the relationship between $Y$ and $P$ is hiperbolic. Note that an increaes in $M^S_0$ increases the level of Y but also changes the *shape* of $AD$.
 
-### 2.1 MONEY SUPPLY AND VELOCITY
+### 2.1 Money supply and velocity
 
 The AD-AS model has a real variable $(Y)$ and a nominal variable $(P)$. Because $PY = NGDP$ the model can be framed in terms of the equation of exchange.
 
@@ -79,9 +80,9 @@ If money demand $M^D$ is a $k$ proportion of nominal income $(P_YY)$, then, assu
 
 $$
 \begin{align}
-    M^S_0V_Y &= P_YY                       \\[10pt]
-    M^D      &= k \cdot \left(P_YY \right) \\[10pt]
-    M^S_0    &= M^D                        \\[10pt]
+    M^S_0V_Y &= P_YY                       \\\\[10pt]
+    M^D      &= k \cdot \left(P_YY \right) \\\\[10pt]
+    M^S_0    &= M^D                        \\\\[10pt]
     V_Y      &= \frac{1}{k}
 \end{align}
 $$
