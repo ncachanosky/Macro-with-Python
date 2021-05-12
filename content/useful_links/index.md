@@ -23,6 +23,7 @@ In addition to its applications, [Anaconda](https://anaconda.org/) also includes
 * [Anaconda](https://anaconda.org/)
 * [JupyterLab](https://jupyter.org/)
 * [Markdown](https://daringfireball.net/projects/markdown/)
+* [NumPy](https://numpy.org/)
 * [Python](https://www.python.org/)
 * [QuantEcon](https://quantecon.org/)
 * [Spyder](https://www.spyder-ide.org/)
