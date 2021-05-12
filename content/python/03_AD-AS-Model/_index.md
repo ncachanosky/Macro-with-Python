@@ -423,3 +423,7 @@ plt.show()
 ```
 
 ![Fig_03](Fig_03.png)
+
+---
+
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/The AD-AS model.py" %}}Download Python file.{{% /staticref %}}
