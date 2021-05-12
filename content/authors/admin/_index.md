@@ -85,3 +85,9 @@ The **GitHub** repository of this project is located [here](https://github.com/n
 **Macro with Python** is an ongoing project. More examples will be added as they become available.  
 [Submission](https://github.com/ncachanosky/Macro-with-Python/issues) of issues and recommendations are welcome.
 {{% /callout %}}
+
+---
+
+[**Nicolás Cachanosky**](https://www.ncachanosky.com/macro_python/) | {{< icon name="envelope" >}} ncachano@msudenver.edu
+Metropolitan State University of Denver | Associate Professor of Economics
+American Institute for Economic Research | Senior Fellow
