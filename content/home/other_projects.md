@@ -23,7 +23,7 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: ""
   date_end: ""
   date_start: ""
   description: ""
@@ -38,6 +38,6 @@ item:
   organization: Repository of Argentine economic data and visualization gallery.
   organization_url: ""
   title: El Hub Económico
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+  url: https://www.elhubeconomico.com/
 
 ---
