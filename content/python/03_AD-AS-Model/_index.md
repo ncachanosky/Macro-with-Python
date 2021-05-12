@@ -11,8 +11,6 @@ type: book  # Do not modify.
 
 ---
 
-## The AD-AS Model
-
 The AD-AS model shows the relationship between output $(Y)$ and the price level $(P)$. Different to the IS-LM model, in this case $P$ is endogenous and varies with different levels of $Y$. The AD-AS model has three components:
 
 1. AD: Aggregate demand
@@ -20,6 +18,8 @@ The AD-AS model shows the relationship between output $(Y)$ and the price level 
 3. SRAR: Short-run aggregate supply
 
 The AD-AS model is more *general* than the IS-LM model in the sense that it allows for the price level to change. Therea are two differences between these models. The first one is taht while the AD-AS model allows for the interest rate $(i)$ to change, it does not show up explicitly in the model as it does in the IS-LM framework. The second one, is that both, monetary and fiscal policy affect the same line (the $AD$), while in the IS-LM framework monetary and fiscal policy shift *different* lines.
+
+---
 
 ## Aggregate Demand (AD)
 
@@ -198,6 +198,8 @@ plt.show()
 
 ![Fig_01](Fig_01.png)
 
+---
+
 ## Long-run aggregate supply (LRAS)
 
 Prices are flexible in the long-run, therefore money is neutral and the $LRAS$ is a vertical line (a given value of $Y$ rather than a function). The valor of $Y$ in the long-run can be derived from the Solow model's steady-state. From the [Solow model notes](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Solow%20Model.ipynb) (section 2) we know that there is an equilibrium level of capital $K^*$. Therefore, assuming a typical Cobb-Douglass production function with constant returns to scale, for any period of time $t$, output in the long run $(Y_{LR})$ equals:
@@ -211,6 +213,8 @@ $$
 
 Where $A$ is technology or total factor productivity (TFP), $N$ is labor, and $\theta$ is the output elasticity of capital. In the long-run, the leve of output will grow at the rate of growth of population $(n)$ and technology $(\gamma)$. This is shown as a right-ward movement in the common pictorial depiction of the AD-AS model. Also note that since th $LRAS$ is a value (a vertical line), it can only shift **left** or **right**, but not up or down.
 
+---
+
 ## Short-run aggregate supply (SRAS)
 
 As long as wages are sticky, then changes in $P$ do have short-run effects on the level of $Y$ through changes in the real wage $(W/P)$. In the long-run $N$ is at full employment and the representative firm can change the size of $K$. But in the short-run, the firm can change $N$ but $K$ is fixed. Therefore, to construct the $SRAS$ we need the behavior of labor supply in the short-run. For simplicity, this note takes a simple approach. It assumes a closed economy (you can try to add a foreign sector yourself) and lets the level of employment be defined by the following function with respect to the price level (you can try to  replace with a labor market as discussed in the [labor market notes](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Labor%20Market.ipynb)):
@@ -222,6 +226,8 @@ $$
 $$
 
 The function is (implicitly) assuming constant expectations by labor. Therefore, an increase in the price level reduces the real wage paid by the firms, but labor does not realize that the real wage has decreased.
+
+---
 
 ## Putting it all together
 
@@ -314,9 +320,11 @@ plt.show()
 
 ![Fig_01](Fig_02.png)
 
+---
+
 ## Shocks
 
-We now add a real and a nominal positive shocks. In the case of the real shock, technology increases by 10-percent. In the case of the nominal shock, base money increases by 10-percent. Even though the output is not shown, the code inclides the inflation rate and the percent change in output calculations for each one of the two shocks. Note that the $SRAS$ shifts horizontally with shocks to the $LRAS$.
+We now add a real and a nominal positive shocks. In the case of the real shock, technology increases by 10-percent. In the case of the nominal shock, base money increases by 10-percent. Even though the output is not shown, the code includes the inflation rate and the percent change in output calculations for each one of the two shocks. Note that the $SRAS$ shifts horizontally with shocks to the $LRAS$.
 
 ```python
 "9|FUNCTIONS"
