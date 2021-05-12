@@ -21,14 +21,22 @@ feature:
   icon: python
   icon_pack: fab
   name: Python
+- icon: matplotlib
+  icon_pack: custom
+  name: Matplotlib
+  description: ""
 - icon: numpy
   icon_pack: custom
   name: Numpy
   description: ""
-#- description: 10%
-#  icon: camera-retro
-#  icon_pack: fas
-#  name: Photography
+- icon: SciPy
+  icon_pack: custom
+  name: SciPy
+  description: ""
+icon: SimPy
+  icon_pack: custom
+  name: SimPy
+  description: ""
 
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
