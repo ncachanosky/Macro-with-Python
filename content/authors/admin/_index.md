@@ -91,3 +91,7 @@ The **GitHub** repository of this project is located [here](https://github.com/n
 [**Nicolás Cachanosky**](https://www.ncachanosky.com) | {{< icon name="envelope" >}} ncachano@msudenver.edu  
 Metropolitan State University of Denver | Associate Professor of Economics  
 American Institute for Economic Research | Senior Fellow
+
+---
+
+<a class="github-button" href="https://github.com/ncachanosky" data-size="large" data-show-count="true" aria-label="Follow @ncachanosky on GitHub">Follow @ncachanosky</a>
