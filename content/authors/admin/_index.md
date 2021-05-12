@@ -88,6 +88,6 @@ The **GitHub** repository of this project is located [here](https://github.com/n
 
 ---
 
-[**Nicolás Cachanosky**](https://www.ncachanosky.com/macro_python/) | {{< icon name="envelope" >}} ncachano@msudenver.edu
-Metropolitan State University of Denver | Associate Professor of Economics
+[**Nicolás Cachanosky**](https://www.ncachanosky.com/macro_python/) | {{< icon name="envelope" >}} ncachano@msudenver.edu  
+Metropolitan State University of Denver | Associate Professor of Economics  
 American Institute for Economic Research | Senior Fellow

@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
-title = "Contact information"
+title = "Contents"
 subtitle = ""
 
 [design]
@@ -50,11 +50,13 @@ subtitle = ""
  css_class = ""
 +++
 
-## Información de contacto
+## Content
 
-[**Nicolás Cachanosky**](https://www.ncachanosky.com) | ncachano@msudenver.edu  
-Associate Professor of Economics  
-Metropolitan State University of Denver
+1. The labor market
+2. The IS-LM model
+3. The AD-AS model
+4. The Solos model
+5. The R&D growth model
+6. A simple Ramsey model
 
-Senior Fellow  
-[American Institute for Economic Research](https://www.aier.org/)
+{{< cta cta_text="Get started" cta_link="https://blissful-sinoussi-c74b27.netlify.app/python/" cta_new_tab="false" >}}
