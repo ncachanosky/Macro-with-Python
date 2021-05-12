@@ -13,7 +13,7 @@ subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -50,7 +50,7 @@ subtitle = ""
  css_class = ""
 +++
 
-## Content
+## Examples included
 
 1. The labor market
 2. The IS-LM model
