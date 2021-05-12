@@ -6,9 +6,9 @@
 widget = "blank"  # See https://wowchemy.com/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
-title = "Contents"
+title = "Other projects"
 subtitle = ""
 
 [design]
@@ -22,7 +22,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "lavender"
+   color = "white"
   
   # Background gradient.
   # gradient_start = "DarkGreen"
@@ -50,11 +50,10 @@ subtitle = ""
  css_class = ""
 +++
 
-## Examples included
+**ECON LECTURE NOTES**  
+*In development*
+Lecture notes on intermediate and advanced economic courses
 
-1. [x] The labor market
-2. [x] The IS-LM model
-3. [x] The AD-AS model
-4. [x] The Solow model
-5. [x] The R&D growth model
-6. [x] A simple Ramsey model
+ {{< figure src="hub_econ.png" >}}
+[**EL HUB ECONÓMICO**](https://www.elhubeconomico.com/)
+Repository of Argentine economic data and visualization library.
