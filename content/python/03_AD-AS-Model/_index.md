@@ -11,6 +11,10 @@ type: book  # Do not modify.
 
 ---
 
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/The AD-AS model.py" %}}Download Python file.{{% /staticref %}}
+
+---
+
 The AD-AS model shows the relationship between output $(Y)$ and the price level $(P)$. Different to the IS-LM model, in this case $P$ is endogenous and varies with different levels of $Y$. The AD-AS model has three components:
 
 1. AD: Aggregate demand
