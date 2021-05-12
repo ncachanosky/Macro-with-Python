@@ -1,5 +1,5 @@
 ---
-title: "LA ECONOMÍA ARGENTINA EN GRÁFICOS"
+title: "AD-AS MODEL"
 type: book  # Do not modify.
 ---
 
