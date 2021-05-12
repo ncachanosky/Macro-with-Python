@@ -1,5 +1,5 @@
 ---
-title: "AD-AS MODEL"
+title: "Examples"
 type: book  # Do not modify.
 ---
 
