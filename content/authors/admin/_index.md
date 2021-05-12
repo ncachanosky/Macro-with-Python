@@ -82,6 +82,6 @@ The examples are intended to learn to use Python in the context of macroeconomic
 The **GitHub** repository of this project is located [here](https://github.com/ncachanosky/Macro-with-Python).
 
 {{% callout note %}}
-**Macro with Python** is an ongoing project. More examples will be added as they become available.
+**Macro with Python** is an ongoing project. More examples will be added as they become available.  
 [Submission](https://github.com/ncachanosky/Macro-with-Python/issues) of issues and recommendations are welcome.
 {{% /callout %}}
