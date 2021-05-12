@@ -69,14 +69,6 @@ $$
 \end{align}
 $$
 
-$$
-\begin{align}
-    Y &= C + I + G + (X - Z) \\\\
-    Y &= \underbrace{\left[ a + b(Y-T) \right] }\_{C} + \underbrace{\left[ \bar{I} - d \cdot i \right] }\_{I} + \bar{G} + \left[X - \underbrace{\left( \alpha + \beta(Y-T) \right) }\_{Z} \right] \\
-    i\_{IS} &= \underbrace{\frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d} }_\text{slope} \cdot Y
-\end{align}
-$$
-
 Note that the larger $\alpha$ and $\beta$, the lower the intercept. This means that at the same level of $i$ income will be lower. Note also that the intercept and the slope of the IS schedule is sensitive to the value of $d$. The more (less) sensitive investment is to $d$, the more (less) horizontal the IS schedule looks. Finally, note that the IS schedule is a straight line.
 
 The following code plots the IS schedule using the above information. The first part of the code imports the required Python packages. The second part of the code defines the parameters and arrays. The third part of the code defines and populates the IS schedule. The fourth part of the code plots the IS schedule.
@@ -132,7 +124,7 @@ To build the LM schedule we need money supply $(M^S)$ and money demand $(M^D)$. 
 
 $$
 \begin{align}
-    \frac{M^S}{P} &= \frac{M^S_0}{P} \\
+    \frac{M^S}{P} &= \frac{M^S_0}{P} \\\\[10pt]
     \frac{M^D}{P} &= c_1 + c_2 Y - c_3 i
 \end{align}
 $$
@@ -143,8 +135,8 @@ Since in equilibrium $M^S = M^D$, the LM schedule can be expressed in the follow
 
 $$
 \begin{align}
-    \frac{M^S_0}{P} &= \frac{M^D}{P}                                                     \\
-    \frac{M^S_0}{P} &= c_1 + c_2 Y - c_3 i                                               \\
+    \frac{M^S_0}{P} &= \frac{M^D}{P}  \\\\[10pt]
+    \frac{M^S_0}{P} &= c_1 + c_2 Y - c_3 i  \\[10pt]
     i_{LM} &= \underbrace{\frac{1}{c_3} \cdot \left(c_1 - \frac{M^S_0}{P} \right)}_\text{intercept} + \underbrace{\frac{c_2}{c_3}}_\text{slope} \cdot Y
 \end{align}
 $$
@@ -192,8 +184,8 @@ There is a pair $(Y^*, i^*)$ that produces the "general" equilibrium (contingent
 
 $$
 \begin{align}
-    i_{LM} &= i_{IS} \\\\
-    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} \cdot Y &= \frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} - \frac{1-b+\beta}{d} \cdot Y \\\\
+    i_{LM} &= i_{IS} \\\\[10pt]
+    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} \cdot Y &= \frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} - \frac{1-b+\beta}{d} \cdot Y \\\\[10pt]
     Y^* &= \left[ \frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G}+X}{d} + \frac{1}{c_3} \left(\frac{M^S_0}{P} - c_1 \right) \right] \cdot \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}
 \end{align}
 $$
@@ -281,7 +273,7 @@ Horizontal changes $(Y)$ is calculated with the IS function. Vertical changes $(
 
 $$
 \begin{align}
-    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + \bar{I} + \bar{G} + X}{1-b+\beta} - \frac{d}{1-b+\beta} \cdot i_{t-1}   \\
+    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + \bar{I} + \bar{G} + X}{1-b+\beta} - \frac{d}{1-b+\beta} \cdot i_{t-1} \\\\[10pt]
     i_{t} &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot Y_{t-1}
 \end{align}
 $$
