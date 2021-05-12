@@ -25,7 +25,7 @@ date_format: Jan 2006
 item:
 - certificate_url: ""
   date_end: ""
-  date_start: ""
+  date_start: 
   description: ""
   organization: "Lecture notes on economic courses."
   organization_url: ""
@@ -33,7 +33,7 @@ item:
   url: ""
 - certificate_url: ""
   date_end: ""
-  date_start: ""
+  date_start: 
   description: ""
   organization: Repository of Argentine economic data and visualization gallery.
   organization_url: ""
