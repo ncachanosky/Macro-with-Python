@@ -81,19 +81,7 @@ The examples are intended to learn to use Python in the context of macroeconomic
 
 The **GitHub** repository of this project is located [here](https://github.com/ncachanosky/Macro-with-Python).
 
-
-> **Macro with Python** is an ongoing project. More examples will be added as they become available.
-> [Submission](https://github.com/ncachanosky/Macro-with-Python/issues) of issues and recommendations are welcome.
-
-
-## Macro with Python: Notebooks
-
-All notebooks make use of [NumPy](https://numpy.org/) and [Matplotlib](https://matplotlib.org/).
-
-For an example on symbolic mathematics and LaTeX format, see **The Solow Model** (section 1). 
-
-For examples of how to find the roots ([SciPy](https://www.scipy.org/)) of a system of equations, see **The Labor Market** (section 3) and **The AD-AS Model** (sections 5 and 6). 
-
-For a shooting algorithm, see **A Simple Ramsey Model** (section 5).
-
-
+{{% callout note %}}
+**Macro with Python** is an ongoing project. More examples will be added as they become available.
+[Submission](https://github.com/ncachanosky/Macro-with-Python/issues) of issues and recommendations are welcome.
+{{% /callout %}}
