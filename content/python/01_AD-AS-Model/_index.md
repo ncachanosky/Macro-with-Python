@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
-linktitle: "AD-AS MODEL"
+linktitle: "THE AD-AS MODEL"
 weight: 1
 
 # Page metadata.
-title: AD-AS MODEL
+title: THE AD-AS MODEL
 date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
