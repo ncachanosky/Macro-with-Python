@@ -52,11 +52,9 @@ subtitle = ""
 
 ## Examples included
 
-1. The labor market
-2. The IS-LM model
-3. The AD-AS model
-4. The Solos model
-5. The R&D growth model
-6. A simple Ramsey model
-
-{{< cta cta_text="Get started" cta_link="https://blissful-sinoussi-c74b27.netlify.app/python/" cta_new_tab="false" >}}
+1. [x] The labor market
+2. [x] The IS-LM model
+3. [x] The AD-AS model
+4. [x] The Solow model
+5. [x] The R&D growth model
+6. [x] A simple Ramsey model
