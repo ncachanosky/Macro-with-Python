@@ -65,7 +65,7 @@ $$
 \begin{align}
     Y &= C + I + G + (X - Z) \\\\[10pt]
     Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}\_{I} + \bar{G} + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
-    i_IS &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \frac{1 - b + \beta}{d} Y
+    i_IS &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
 \end{align}
 $$
 
