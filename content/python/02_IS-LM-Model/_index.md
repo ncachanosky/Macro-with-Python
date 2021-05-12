@@ -63,7 +63,7 @@ To derive the IS schedule we need to use the consumption, investment, and import
 
 $$
 \begin{align}
-    Y &= C + I + G + (X - Z) \\\\[10pt]
+    Y &= C + I + G + (X - Z) \\\\[15pt]
     Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}\_{I} + \bar{G} + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
     i_IS &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
 \end{align}
@@ -136,7 +136,7 @@ Since in equilibrium $M^S = M^D$, the LM schedule can be expressed in the follow
 $$
 \begin{align}
     \frac{M^S_0}{P} &= \frac{M^D}{P}  \\\\[10pt]
-    \frac{M^S_0}{P} &= c_1 + c_2 Y - c_3 i  \\[10pt]
+    \frac{M^S_0}{P} &= c_1 + c_2 Y - c_3 i  \\\\[10pt]
     i_{LM} &= \underbrace{\frac{1}{c_3} \cdot \left(c_1 - \frac{M^S_0}{P} \right)}_\text{intercept} + \underbrace{\frac{c_2}{c_3}}_\text{slope} \cdot Y
 \end{align}
 $$
@@ -184,9 +184,9 @@ There is a pair $(Y^*, i^*)$ that produces the "general" equilibrium (contingent
 
 $$
 \begin{align}
-    i_{LM} &= i_{IS} \\\\[10pt]
-    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} \cdot Y &= \frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} - \frac{1-b+\beta}{d} \cdot Y \\\\[10pt]
-    Y^* &= \left[ \frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G}+X}{d} + \frac{1}{c_3} \left(\frac{M^S_0}{P} - c_1 \right) \right] \cdot \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}
+    i_{LM} =& i_{IS} \\\\[10pt]
+    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} Y =& \frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} - \frac{1-b+\beta}{d} Y \\\\[10pt]
+    Y^* =& \left[ \frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G}+X}{d} + \frac{1}{c_3} \left(\frac{M^S_0}{P} - c_1 \right) \right] \cdot \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}
 \end{align}
 $$
 
@@ -194,8 +194,9 @@ And the interest rate of equilibrium would be:
 
 $$
 \begin{align}
-    i^* &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot Y^*  \\\\
-    i^* &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot \left(\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right)^{-1} \cdot \left[\frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} + \frac{1}{c_3} \left(c_1-\frac{M^S_0}{P} \right) \right]
+    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot Y^*  \\\\
+    i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \cdot \left(\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right)^{-1} \\\\[10pt]
+         & \left[\frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} + \frac{1}{c_3} \left(c_1-\frac{M^S_0}{P} \right) \right]
 \end{align}
 $$
 
