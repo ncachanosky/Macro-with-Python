@@ -64,7 +64,7 @@ To derive the IS schedule we need to use the consumption, investment, and import
 $$
 \begin{align}
     Y &= C + I + G + (X - Z) \\\\[10pt]
-    Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}_{I} + \bar{G} + [X - \underbrace{(\alpha + \beta(Y-T))}_{Z} ] \\\\[10pt]
+    Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}_{I} + \bar{G} + \left[ X - \underbrace{(\alpha + \beta(Y-T))}_{Z} \right] \\\\[10pt]
     i_IS &= \frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d} - \frac{1 - b + \beta}{d} Y
 \end{align}
 $$
