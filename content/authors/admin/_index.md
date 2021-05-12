@@ -95,3 +95,7 @@ The **GitHub** repository of this project is located [here](https://github.com/n
 ---
 
 <script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" href="https://github.com/ncachanosky" data-size="large" data-show-count="true" aria-label="Follow @ncachanosky on GitHub">Follow @ncachanosky</a> <a class="github-button" href="https://github.com/ncachanosky/macro-with-python/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch ncachanosky/macro-with-python on GitHub">Watch</a> <a class="github-button" href="https://github.com/ncachanosky/macro-with-python" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ncachanosky/macro-with-python on GitHub">Star</a> <a class="github-button" href="https://github.com/sponsors/ncachanosky" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @ncachanosky on GitHub">Sponsor</a>
+
+---
+
+{{< cta cta_text="Get started" cta_link="https://blissful-sinoussi-c74b27.netlify.app/python/" cta_new_tab="false" >}}
