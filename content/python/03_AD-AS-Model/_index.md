@@ -50,7 +50,7 @@ $$
 
 Even though the function looks complicated, note that the relationship between $Y$ and $P$ is hiperbolic. Note that an increaes in $M^S_0$ increases the level of Y but also changes the *shape* of $AD$.
 
-### 2.1 Money supply and velocity
+### Money supply and velocity
 
 The AD-AS model has a real variable $(Y)$ and a nominal variable $(P)$. Because $PY = NGDP$ the model can be framed in terms of the equation of exchange.
 
@@ -94,7 +94,6 @@ The code follows the following structure. The first section imports the required
 The `class` is build the following way. The first element, `__init__` collects the model (or `class`) parameters. Note that the values of these parameters are defined **inside** the `class` (this does not need to be the case) and that these parameters exist **inside** the class (they are not global values). After the parameters are defined, the `class` continues to build the three components. Note that the first two (money multiplier and money supply) can be defined with the parameters already included in the `class`. The third component, the value of $AD$, requires an exogenous value, $P$.
 
 ```python
-#%%
 "1|IMPORT PACKAGES"
 import numpy             as np       # Package for scientific computing
 import matplotlib.pyplot as plt      # Matplotlib is a 2D plotting library
@@ -229,7 +228,6 @@ The function is (implicitly) assuming constant expectations by labor. Therefore,
 We can now put all the pieces together. In this case, instead of using a `class` the sample code uses `functions`. The model assumes a given stock of capital $K = \bar{K}$ (you can try to add a *steady-state* level of capital as discussed in the [Solow Model notes](https://nbviewer.jupyter.org/github/ncachanosky/Macroeconomics-with-Python/blob/master/Solow%20Model.ipynb). The code uses the `root` function to find the price level of equilibrium (section 4).
 
 ```python
-#%%
 "5|DEFINE PARAMETERS"
 # PRODUCTION FUNCTION
 A      =   1     # Total Factor Productivity
@@ -255,7 +253,7 @@ c1     = 200     # Money demand: Precuationary
 c2     =   0.6   # Money demand: Transactions
 c3     =  10     # Money demand: Speculation
 
-"3|FUNCTIONS"
+"6|FUNCTIONS"
 # LABOR SUPPLY
 def N(P):
     N = w_s * P
@@ -278,7 +276,7 @@ def AD(P):
     AD = AD_level1 * AD_level2 + AD_shape/P
     return AD
 
-"4|EQUILIBRIUM: PRICE LEVEL"
+"7|EQUILIBRIUM: PRICE LEVEL"
 def equation(P):
     Eq1 = AD(P) - output(N(P))
     equation = Eq1
@@ -297,7 +295,7 @@ LRAS = output(N(Pstar))
 SRAS = output(N(P_vector))
 AD_vector = AD(P_vector)
 
-"5|PLOT AD-AS MODEL"
+"8|PLOT AD-AS MODEL"
 v = [0, 80, 0, size]                            # Axis range
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="AD-AS MODEL", ylabel=r'$P$', xlabel="Output")
@@ -321,7 +319,8 @@ plt.show()
 We now add a real and a nominal positive shocks. In the case of the real shock, technology increases by 10-percent. In the case of the nominal shock, base money increases by 10-percent. Even though the output is not shown, the code inclides the inflation rate and the percent change in output calculations for each one of the two shocks. Note that the $SRAS$ shifts horizontally with shocks to the $LRAS$.
 
 ```python
-# #Define domain of the model
+"9|FUNCTIONS"
+# Define domain of the model
 size = np.round(Pstar, 0)*2
 P_vector = np.linspace(1, size, 500)    # 500 dots between 1 and size
 
@@ -330,7 +329,7 @@ LRAS = output(N(Pstar))
 SRAS = output(N(P_vector))
 AD_vector = AD(P_vector)
 
-"5|CALCULATE SHOCK EFFECTS"
+"10|CALCULATE SHOCK EFFECTS"
 real_shock    = 1.10
 nominal_shock = 1.10
 
@@ -377,7 +376,7 @@ AD_vector3 = AD3(P_vector)
 gP3 = Pstar3/Pstar - 1                          # Percent change in P
 gY3 = output(Pstar3)/output(Pstar) - 1          # Percent change in Y 
 
-"6|PLOT AD-AS MODEL WITH SHOCKS"
+"11|PLOT AD-AS MODEL WITH SHOCKS"
 P3_stop = output(N(Pstar3))
 
 v = [0, 80, 0, size]                            # Axis range
@@ -414,4 +413,5 @@ ax[1].xaxis.set_major_locator(plt.NullLocator())   # Hide ticks
 ax[1].axis(v)
 plt.show()
 ```
+
 ![Fig_03](Fig_03.png)
