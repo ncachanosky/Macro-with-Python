@@ -21,10 +21,10 @@ feature:
   icon: python
   icon_pack: fab
   name: Python
-#- description: 100%
-#  icon: chart-line
-#  icon_pack: fas
-#  name: Statistics
+- icon: numpy
+  icon_pack: custom
+  name: Numpy
+  description: ""
 #- description: 10%
 #  icon: camera-retro
 #  icon_pack: fas
