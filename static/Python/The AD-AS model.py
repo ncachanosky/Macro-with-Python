@@ -1,6 +1,6 @@
 #|============================================================================|
 #|============================================================================|
-#|MACROECONOMICS WITH PYTHON: AD-AS MODEL                                     |
+#|MACROECONOMICS WITH PYTHON: THE AD-AS MODEL                                 |
 #|Nicolas Cachanosky                                                          |
 #|Metropolitan State University of Denver                                     |
 #|ncachano@msudenver.edu                                                      |
