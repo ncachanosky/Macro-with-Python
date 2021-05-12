@@ -33,7 +33,7 @@ feature:
   icon_pack: custom
   name: SciPy
   description: ""
--icon: SimPy
+- icon: SimPy
   icon_pack: custom
   name: SimPy
   description: ""
