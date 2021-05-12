@@ -51,9 +51,8 @@ subtitle = ""
 +++
 
 **ECON LECTURE NOTES**  
-*In development*
+*In development*  
 Lecture notes on intermediate and advanced economic courses
 
- {{< figure src="hub_econ.png" >}}
-[**EL HUB ECONÓMICO**](https://www.elhubeconomico.com/)
+[**EL HUB ECONÓMICO**](https://www.elhubeconomico.com/)  
 Repository of Argentine economic data and visualization library.
