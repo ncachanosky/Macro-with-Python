@@ -94,4 +94,4 @@ American Institute for Economic Research | Senior Fellow
 
 ---
 
-<a class="github-button" href="https://github.com/ncachanosky" data-size="large" data-show-count="true" aria-label="Follow @ncachanosky on GitHub">Follow @ncachanosky</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" href="https://github.com/ncachanosky" data-size="large" data-show-count="true" aria-label="Follow @ncachanosky on GitHub">Follow @ncachanosky</a>
