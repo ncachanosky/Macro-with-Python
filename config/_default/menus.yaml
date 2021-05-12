@@ -7,9 +7,9 @@ main:
   - name: Python examples
     url: 'python/'
     weight: 10
-#  - name: Fuentes Oficiales
-#    url: 'fuentes_oficiales/'
-#    weight: 20
+  - name: Useful links
+    url: 'useful_links/'
+    weight: 20
 #  - name: Fuentes Privadas
 #    url: 'fuentes_privadas/'
 #    weight: 30
