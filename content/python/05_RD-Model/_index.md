@@ -39,7 +39,7 @@ Similar to Solow model, the accumulation of new capital is an exogenous fixed sa
 
 $$
 \begin{equation}
-    \dot{K(t)} = sY(t)
+    \dot{K}(t) = sY(t)
 \end{equation}
 $$
 
@@ -49,7 +49,7 @@ The production of new ideas follows a Cobb-Douglas function that may or may not 
 
 $$
 \begin{equation}
-    \dot{A(t)} = B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} A(t)^{\theta}; \quad B>0, \beta\geq 0, \gamma\geq 0
+    \dot{A}(t) = B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} A(t)^{\theta}; \quad B>0, \beta\geq 0, \gamma\geq 0
 \end{equation}
 $$
 
@@ -67,11 +67,11 @@ Let $g_K(t)$ and $g_A(t)$ denote the **growth rates** of capital and technology.
 
 We can proceed in three steps to find the *steady-state* of capital. First, input the production function (of goods) into the motion function of capital. Second, calculate the growth rate of capital. Third, set the change in the growth equal to zero and "solve for" growth of capital in terms of growth of technology. The last step will be useful to plot the dynamics of the model.
 
-The growth rates of capital and technology are $g_K(t) \equiv \frac{\dot{K(t)}}{K(t)}$ and $g_A(t) \equiv \frac{\dot{A(t)}}{A(t)}$.
+The growth rates of capital and technology are $g_K(t) \equiv \frac{\dot{K}(t)}{K(t)}$ and $g_A(t) \equiv \frac{\dot{A}(t)}{A(t)}$.
 
 $$
 \begin{align}
-    \dot{K(t)}                  &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \cdot K(t)^{\alpha} A(t)^{1-\alpha} L(t)^{1-\alpha} \\\\[10 pt]
+    \dot{K}(t)                  &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \cdot K(t)^{\alpha} A(t)^{1-\alpha} L(t)^{1-\alpha} \\\\[10 pt]
     g_K(t)                      &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \left[\frac{A(t)L(t)}{K(t)}  \right] \\\\[10 pt]
     \frac{\dot{g}_K(t)}{g_K(t)} &= (1-\alpha) \left[g_A(t) + n - g_K(t) \right]
 \end{align}
@@ -93,8 +93,8 @@ We can proceed in a similar way than we did with capital to find the *steady-sta
 
 $$
 \begin{align}
-    \dot{A(t)}                  &= B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} \cdot A(t)^{\theta} \\\\[10 pt]
-    g_A(t)                      &= B \left[a_K K(t) \right]^{\beta} \left[a_L L(t) \right]^{\gamma} \cdot A(t)^{\theta - 1} \\\\[10pt]
+    \dot{A}(t)                  &= B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} A(t)^{\theta} \\\\[10 pt]
+    g_A(t)                      &= B \left[a_K K(t) \right]^{\beta} \left[a_L L(t) \right]^{\gamma} A(t)^{\theta - 1} \\\\[10pt]
     \frac{\dot{g}_A(t)}{g_A(t)} &= \beta g_K(t) + \gamma n + (\theta - 1) g_A(t)
 \end{align}
 $$
@@ -206,13 +206,13 @@ plt.show()
 
 ## Model stability
 
-This is a stable model. Any starting point outside the *steady-state* will return to equilibrium = $\left(g_A(t)^*. g_K(t)^* \right)$. Form sections 3.1 and 3.2, we can follow the model dynamics for $A$ and $K$ the following way:
+This is a stable model. Any starting point outside the *steady-state* will return to equilibrium = $\left(g_A(t)^\*. g_K(t)^\* \right)$. Form sections 3.1 and 3.2, we can follow the model dynamics for $A$ and $K$ the following way:
 
 $$
 \begin{align}
-    g_A(t+1) &= g_K(t) + \dot{g_K(t)} \\[5pt]
-    g_K(t+1) &= g_A(t) + \dot{g_A(t)}\\[15pt]
-    g_A(t+1) &= g_K(t) + (1-\alpha) \left[g_A(t) + n - g_K(t) \right] \\[5pt]
+    g_A(t+1) &= g_K(t) + \dot{g|_K(t) \\\\[10pt]
+    g_K(t+1) &= g_A(t) + \dot{g|_A(t) \\\\[10pt]
+    g_A(t+1) &= g_K(t) + (1-\alpha) \left[g_A(t) + n - g_K(t) \right] \\\\[10pt]
     g_K(t+1) &= g_A(t) + \beta g_K(t) + \gamma n + (\theta - 1)g_A(t)
 \end{align}
 $$
