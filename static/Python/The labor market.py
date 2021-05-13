@@ -20,9 +20,9 @@ from   scipy.optimize    import root # Package to find the roots of a function
 size  = 50    # Real wage domain
 K     = 20    # Capital stock
 A     = 20    # Technology
-alpha =  0.6  # Output elasticity of capital
+alpha =  0.7  # Output elasticity of capital
 # Arrays
-rW = np.linspace(1, size, size*4)  # Real wage
+rW = np.linspace(1, size, size*2)  # Real wage
 
 "3|LABOR DEMAND FUNCTION"
 def Ndemand(A, K, rW, alpha):
@@ -65,38 +65,38 @@ plt.show()
 "6|DEFINE PARAMETERS AND ARRAYS"
 # Parameters
 T    = 24    # Available hours to work
-beta =  0.6  # Utility elasticity of consumption
+beta =  0.7  # Utility elasticity of consumption
 I    = 50    # Non-labor income
-rW   = 25    # Real wage
+rW2  = 25    # Real wage
 # Arrays
-L = np.linspace(1, T, T*2)  # Array of labor hours from 0 to T
+L = np.linspace(1, T, T*4)  # Array of labor hours from 0 to T
 
 "7|CALCULATE OPTIMAL VALUES AND DEFINE FUNCTIONS"
-Ustar = (beta*(I+24*rW))**beta * ((1-beta)*(I+24*rW)/rW)**(1-beta)
-Lstar = (1-beta)*((I+24*rW)/rW)
-Cstar = beta*(I+24*rW)
+Ustar = (beta*(I + T*rW2))**beta * ((1 - beta)*(I + T*rW2)/rW2)**(1 - beta)
+Lstar = (1 - beta)*((I + T*rW2)/rW2)
+Cstar = beta*(I + T*rW2)
 
 def C_indiff(U, L, beta):        # Create consumption function
-    C_indiff = (U/L**(1-beta))**(1/beta)
+    C_indiff = (U/L**(1 - beta))**(1/beta)
     return C_indiff
 
-def Budget(I, rW, L):            # Create budget constraint
-    Budget = (I + T*rW) - rW*L
+def Budget(I, rW2, L):            # Create budget constraint
+    Budget = (I + T*rW2) - rW2*L
     return Budget
 
-B = Budget(I, rW, L)             # Budget constraint
+B = Budget(I, rW2, L)             # Budget constraint
 C = C_indiff(Ustar, L, beta)     # Indifference curve
 
 "8|PLOT THE INDIFFERENCE CURVE AND THE BUDDGET CONSTRAINT"
-y_max = 2*Budget(I, rW, 0)
+y_max = 2*Budget(I, rW2, 0)
 
-v = [0, T, 0, y_max]                               # Set the axes range
+v = [0, T+1, 0, y_max]                               # Set the axes range
 fig, ax = plt.subplots(figsize=(10, 8), dpi=300)
 ax.set(title="INDIFFERENCE CURVE", xlabel="Leisure", ylabel="Real income")
 ax.grid()
 ax.plot(L, C, "g-", label="Indifference curve")
 ax.plot(L, B, "k-", label="Budget constraint")
-plt.axvline(x=T-1  , ymin=0, ymax=I/y_max, color='k') # Add non-labor income
+plt.axvline(x=T    , ymin=0, ymax=I/y_max, color='k') # Add non-labor income
 plt.axvline(x=Lstar, ymin=0, ymax = Cstar/y_max, ls=':', color='k') # Lstar
 plt.axhline(y=Cstar, xmin=0, xmax = Lstar/T    , ls=':', color='k') # Cstar
 plt.plot(Lstar, Cstar, 'bo')                                        # Point
@@ -107,11 +107,7 @@ plt.axis(v)                                         # Use 'v' as the axes range
 plt.show()
 
 #%%
-"9|DEFINE PARAMETERS AND ARRAYS"
-# Arrays
-rW = np.linspace(1, size, size*2)  # Vector of real wages
-
-"10|LABOR SUPPLY"
+"9|LABOR SUPPLY"
 def Nsupply(rW, beta, I):
     Lsupply = T - (1-beta)*((T*rW + I)/rW)
     return Lsupply
@@ -123,7 +119,7 @@ Ns   = Nsupply(rW, beta    , I)
 Ns_b = Nsupply(rW, beta+D_b, I)
 Ns_I = Nsupply(rW, beta    , I+D_I)
     
-"11|PLOT LABOR SUPPLY"
+"10|PLOT LABOR SUPPLY"
 y_max = np.max(Ns)
 v = [0, T, 0, y_max]                               # Set the axes range
 
@@ -140,35 +136,33 @@ plt.axis(v)                                        # Use 'v' as the axes range
 plt.show()
 
 #%%
-"12|OPTIMIZATION PROBLEM: FIND EQUILIBRIUM VALUES"
-def Ldemand(A, K, rW, alpha):
-    Nd = K * ((1-alpha)*A/rW)**(1/alpha)
-    return Nd
-
+"11|OPTIMIZATION PROBLEM: FIND EQUILIBRIUM VALUES"
 def Eq_Wage(rW):
     Eq_Wage = Ndemand(A, K, rW, alpha) - Nsupply(rW, beta, I)
     return Eq_Wage
 
-rW_0    = 10                           # Initial value (guess)
-rW_star = root(Eq_Wage, rW_0)          # Equilibrium: Wage
-N_star  = Nsupply(rW_star.x, beta, I)  # Equilibrium: Labor
+rW_0 = 10                            # Initial value (guess)
+rW_star = root(Eq_Wage, rW_0)        # Equilibrium: Wage
+N_star = Nsupply(rW_star.x, beta, I) # Equilibrium: Labor
 
-"13|PLOT LABOR MARKET EQUILIBRIUM"
+"12|PLOT LABOR MARKET EQUILIBRIUM"
+Nd = Ndemand(A, K, rW, alpha)
+Ns = Nsupply(rW, beta, I)
+
 y_max = rW_star.x*2
-v = [0, T, 0, y_max]  # Set the axes range
+v = [0, T, 0, 12] # Set the axes range
 
-fig, ax = plt.subplots(figsize=(10, 8), dpi=300)
+fig, ax = plt.subplots(figsize=(10, 8))
 ax.set(title="LABOR SUPPLY", xlabel="Work Hs.", ylabel=r'(w/P)')
 ax.plot(Ns[1:T], rW[1:T], "k", label="Labor supply")
 ax.plot(Nd[1:T], rW[1:T], "k", label="Labor demand")
 plt.plot(N_star, rW_star.x, 'bo') 
-plt.axvline(x=N_star   , ymin=0, ymax=rW_star.x/y_max, ls=':', color='k')
-plt.axhline(y=rW_star.x, xmin=0, xmax=N_star/T       , ls=':', color='k')
-plt.text(5 , 20, "Labor demand")
-plt.text(19,  9, "Labor supply")
+plt.axvline(x=N_star   , ymin=0, ymax=rW_star.x/12, ls=':', color='k')
+plt.axhline(y=rW_star.x, xmin=0, xmax=N_star/T    , ls=':', color='k')
+plt.text( 4.5, 11, "Labor demand")
+plt.text(20  ,  5, "Labor supply")
 plt.text(0.2       , rW_star.x+0.5, np.round(rW_star.x, 1))
 plt.text(N_star+0.3, 0.3          , np.round(N_star, 1))
-#plt.axis(v)  # Use 'v' as the axes range
+plt.axis(v) 
 plt.show()
 
-Nd
