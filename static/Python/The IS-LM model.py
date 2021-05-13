@@ -54,14 +54,13 @@ plt.axis(v)                                     # Use 'v' as the axes range
 plt.show()
 
 #%%
-"5|DEFINE PARAMETERS AND ARRAYS"
+"5|DEFINE PARAMETERS"
 # LM Parameters
 c1 = 1000              # Precautionary money demand
 c2 = 10                # Transaction money demand
 c3 = 10                # Speculation money demand
 Ms = 20000             # Nominal money supply
 P  = 20                # Price level
-# Arrays
 
 "6|DEFINE AND POPULATE THE LM-SCHEDULE"
 def i_LM(c1, c2, c3, Ms, P, Y):
@@ -83,7 +82,7 @@ plt.axis(v)                                     # Use 'v' as the axes range
 plt.show()
 
 #%% 
-"8|DEFINE NEW PARAMETERS"
+"6|DEFINE NEW PARAMETERS"
 # IS Parameters
 a = 100                     # Autonomous consumption
 b = 0.2                     # Marginal propensity to consume
@@ -101,7 +100,7 @@ c3 = 5                      # Speculation money demand
 Ms = 23500                  # Nominal money supply
 P  = 10                     # Price level
 
-"9|CALCULATE EQUILIBRUM VALUES"
+"7|CALCULATE EQUILIBRUM VALUES"
 
 iIS = i_IS(a, alpha, b, beta, T, I, G, X, d, Y)
 iLM = i_LM(c1, c2, c3, Ms, P, Y)
@@ -115,9 +114,9 @@ i_star1 = (1/c3)*(c1 - Ms/P)
 i_star2 = (c2/c3)*Y_star
 i_star  = i_star1 + i_star2
 
-"10|PLOT THE IS-LM model"
+"8|PLOT THE IS-LM model"
 y_max = np.max(iIS)
-v = [0, Y_size, 0, y_max*1.2]                      # Set the axes range
+v = [0, Y_size, 0, y_max]                      # Set the axes range
 
 fig, ax = plt.subplots(figsize=(10, 8), dpi=300)
 ax.set(title="IS-LM MODEL", xlabel=r'Y', ylabel=r'r')
@@ -142,7 +141,7 @@ plt.axis(v)                                   # Use 'v' as the axes range
 plt.show()
 
 #%%
-"11|CALCULATE THE DYNAMICS FOR DISEQUILIBRIUM POINTS"
+"9|CALCULATE THE DYNAMICS FOR DISEQUILIBRIUM POINTS"
 iterations= 10
 def Y_IS(a, alpha, b, beta, T, I, G, X, d, i):
     Y_IS = ((a-alpha)-(b-beta)*T+I+G+X)/(1-b+beta) - d/(1-b+beta)*i
@@ -202,9 +201,9 @@ for j in range(1, iterations):
 
 "12|PLOT THE IS-LM model"
 y_max = np.max(iIS)
-v = [0, Y_size, 0, y_max*1.1]                       # Set the axes range
+v = [0, Y_size, 0, y_max]                       # Set the axes range
 
-fig, ax = plt.subplots(figsize=(10, 8))
+fig, ax = plt.subplots(figsize=(10, 8), dpi=300)
 ax.set(title="IS-LM MODEL", xlabel=r'Y', ylabel=r'r')
 ax.plot(Y, iIS, "k-")
 ax.plot(Y, iLM, "k-")

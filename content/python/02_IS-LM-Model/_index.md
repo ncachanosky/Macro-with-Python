@@ -9,6 +9,8 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/The IS-LM model.py" %}}Download Python file.{{% /staticref %}}
+
 ---
 
 The IS-LM, or Hicks-Hansen, model shows the combinations of interest rate (vertical axis) and income (horizontal axis) for which the goods market (IS) and the loan market (LM) are in equilibrium. There is one particular combination of interest rate and income that is consistent with equilibrium in both markets simultaneosuly. 
