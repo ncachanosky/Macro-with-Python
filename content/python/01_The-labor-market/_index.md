@@ -144,7 +144,7 @@ $$
 From the first two FOCs we get the known relationship $\frac{U_{L}}{U_{C}} = \frac{w/P}{1}$
 
 Solving for $C$ in terms of $L$ yields $C = \frac{\beta}{1-\beta} \left(\frac{w}{P}\right)L$.
-Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right]$. With $L^*$ we can now get $C^* = \beta \left[I + 24 (w/P) \right]$. Next we plug-in $C^\*$ and $L^\*$ into the utility function.
+Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right]$. With $L^*$ we can now get $C^\* = \beta \left[I + 24 (w/P) \right]$. Next we plug-in $C^\*$ and $L^\*$ into the utility function.
 
 $$
 \begin{align}
@@ -263,6 +263,13 @@ plt.show()
 ## Equilibrium
 
 We can now calculate the equilibrium condition, the value of $(w/P)_0$ which makes $N^D\left(\left(\frac{w}{P}\right)_0\right) = N^S\left(\left(\frac{w}{P}\right)_0\right)$. Then, we can define a function $\Theta$ equal to zero at $\left(\frac{w}{P}\right)_0$:
+
+$$
+\begin{align}
+    \Theta \left[ \left(\frac{w}{P}\right)_0 \right] &= 0 = N^D \left[\left(\frac{w}{P} \right)_0 \right] - N^S \left[\left(\frac{w}{P}\right)_0 \right] \\\\[10pt]
+    \Theta \left[ \left(\frac{w}{P}\right)_0 \right] &= 0 = \left[ K \cdot \left[\frac{(1-\alpha)A}{(w/P)}\right]^{1/\alpha} \right] - \left[ 24  (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right] \right]
+\end{align}
+$$
 
 $$
 \begin{align}
