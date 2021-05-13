@@ -148,8 +148,8 @@ Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta)
 
 $$
 \begin{align}
-    U(C^{*}, L^{*})^* &= \left(C^*\right)^{\beta} \left(L^*\right)^{1-\beta}  \\\\[10pt]
-    U(C^{*}, L^{*})^* &= \left[\beta(I + 24 (w/P)\right]^{\beta} \left[(1-\beta) \frac{I+24(w/P)}{(w/P)} \right]^{1-\beta}
+    U(C^\*, L^\*)^* &= \left(C^\* \right)^{\beta} \left(L^\* \right)^{1-\beta}  \\\\[10pt]
+    U(C^\*, L^\*)^* &= \left[\beta(I + 24 (w/P)\right]^{\beta} \left[(1-\beta) \frac{I+24(w/P)}{(w/P)} \right]^{1-\beta}
 \end{align}
 $$
 
@@ -268,13 +268,6 @@ $$
 \begin{align}
     \Theta \left[ \left(\frac{w}{P}\right)_0 \right] &= 0 = N^D \left[\left(\frac{w}{P} \right)_0 \right] - N^S \left[\left(\frac{w}{P}\right)_0 \right] \\\\[10pt]
     \Theta \left[ \left(\frac{w}{P}\right)_0 \right] &= 0 = \left[ K \cdot \left[\frac{(1-\alpha)A}{(w/P)}\right]^{1/\alpha} \right] - \left[ 24  (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right] \right]
-\end{align}
-$$
-
-$$
-\begin{align}
-    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = N^D \left[\left(\frac{w}{P} \right)_0\right] - N^S \left[\left(\frac{w}{P}\right)_0\right] \\\\[10pt]
-    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = \underbrace{\left[ K \cdot \left[\frac{(1-\alpha)A}{(w/P)}\right]^{1/\alpha} \right]}\_{N^D} - \underbrace{\left[ 24  (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right] \right]}_{N^S}
 \end{align}
 $$
 
