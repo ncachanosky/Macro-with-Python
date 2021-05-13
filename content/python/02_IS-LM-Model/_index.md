@@ -374,7 +374,3 @@ plt.show()
 ```
 
 ![Fig_04](Fig_04.png)
-
----
-
-{{< icon name="python" pack="fab" >}} {{% staticref "Python/The IS-LM model.py" %}}Download Python file.{{% /staticref %}}
