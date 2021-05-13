@@ -124,8 +124,8 @@ Solving this system of equation yields the (constant) growth rates in the *stead
 
 $$
 \begin{align}
-    g_K(t)^* &= n \cdot \frac{\beta + \gamma}{1-(\theta + \gamma)} + n \\\\[5 pt]
-    g_A(t)^* &= n \cdot \frac{\beta + \gamma}{1-(\theta + \gamma)}
+    g_K(t)^* &= n \frac{\beta + \gamma}{1-(\theta + \gamma)} + n \\\\[5 pt]
+    g_A(t)^* &= n \frac{\beta + \gamma}{1-(\theta + \gamma)}
 \end{align}
 $$
 
@@ -210,8 +210,8 @@ This is a stable model. Any starting point outside the *steady-state* will retur
 
 $$
 \begin{align}
-    g_A(t+1) &= g_K(t) + \dot{g|_K(t) \\\\[10pt]
-    g_K(t+1) &= g_A(t) + \dot{g|_A(t) \\\\[10pt]
+    g_A(t+1) &= g_K(t) + \dot{g}_K(t) \\\\[10pt]
+    g_K(t+1) &= g_A(t) + \dot{g}_A(t) \\\\[10pt]
     g_A(t+1) &= g_K(t) + (1-\alpha) \left[g_A(t) + n - g_K(t) \right] \\\\[10pt]
     g_K(t+1) &= g_A(t) + \beta g_K(t) + \gamma n + (\theta - 1)g_A(t)
 \end{align}
