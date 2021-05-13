@@ -1,17 +1,15 @@
 ---
 # Title, summary, and page position.
-linktitle: "The IS-LM Model"
+linktitle: "The Labor Market"
 weight: 2
 
 # Page metadata.
-title: The IS-LM Model
+title: The Labor Market
 date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
 {{< icon name="python" pack="fab" >}} {{% staticref "Python/The labor market.py" %}}Download Python file.{{% /staticref %}}
-
----
 
 ---
 
@@ -106,12 +104,12 @@ $$
 \end{equation}
 $$
 
-The individual faces the folllowing budget constraint:
+The individual faces the following budget constraint:
 
 $$
 \begin{align}
     C &= \left(\frac{w}{P} \right) (24 - L) + I  \\\\[10pt]
-    C &= \underbrace{\left[I + 24 \left(\frac{w}{P} \right) \right]}_\text{intercept} - \underbrace{\left( \frac{w}{P} \right)}_\text{slope}L
+    C &= \underbrace{\left[I + 24 \left(\frac{w}{P} \right) \right]}_{\text{intercept}} - \underbrace{\left( \frac{w}{P} \right)}_{\text{slope}}L
 \end{align}
 $$
 
@@ -155,7 +153,7 @@ $$
 \end{align}
 $$
 
-Note that if $I=0$ then $L^*$ and $C^*$ are fixed quantities that depend on the value of $\beta$.
+Note that if $I=0$ then $L^\*$ and $C^\*$ are fixed quantities that depend on the value of $\beta$.
 
 Using the lagrangian method also allows to find the "optimal" value of $\lambda$ or the "shadow price":
 
@@ -167,7 +165,7 @@ $$
 \end{align}
 $$
 
-Now we can use this information to plot the indifference curve with `matplotlib`. Note that the code calculates $U^*$, $L^*$, and $C^*$ and uses these values in the graph. The first part of the code imports the required packages. The second part of the code defines needed parameters and vectors. The third part of the code calculates $U^*$, $L^*$, $C^*$, and builds the functions for the indifference curve and the budget constraint. The fourth part of the code builds the plot.
+Now we can use this information to plot the indifference curve with `matplotlib`. Note that the code calculates $U^\*$, $L^\*$, and $C^\*$ and uses these values in the graph. The first part of the code imports the required packages. The second part of the code defines needed parameters and vectors. The third part of the code calculates $U^\*$, $L^\*$, $C^\*$, and builds the functions for the indifference curve and the budget constraint. The fourth part of the code builds the plot.
 
 ```python
 "6|DEFINE PARAMETERS AND ARRAYS"
