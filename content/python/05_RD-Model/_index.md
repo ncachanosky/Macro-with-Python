@@ -1,7 +1,7 @@
 ---
 # Title, summary, and page position.
 linktitle: "Endogenous Growth with R&D"
-weight: 3
+weight: 5
 
 # Page metadata.
 title: Endogenous Growth with R&D
@@ -27,7 +27,7 @@ Assume a Cobb-Douglas function with constant returns to scale and labor-augmenti
 
 $$
 \begin{equation}
-Y(t) = \left[(1-a_K)K \right]^{\alpha} \left[A(t) (1-a_L) L(t) \right]^{1-\alpha}; \;   \alpha \in (0, 1)
+Y(t) = \left[(1-a_K)K \right]^{\alpha} \left[A(t) (1-a_L) L(t) \right]^{1-\alpha}; \quad   \alpha \in (0, 1)
 \end{equation}
 $$
 
@@ -39,7 +39,7 @@ Similar to Solow model, the accumulation of new capital is an exogenous fixed sa
 
 $$
 \begin{equation}
-    \dot{K(t)} = s\cdot Y(t)
+    \dot{K(t)} = sY(t)
 \end{equation}
 $$
 
@@ -49,7 +49,7 @@ The production of new ideas follows a Cobb-Douglas function that may or may not 
 
 $$
 \begin{equation}
-    \dot{A(t)} = B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} \cdot A(t)^{\theta}; \; B>0, \beta\geq 0, \gamma\geq 0
+    \dot{A(t)} = B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} A(t)^{\theta}; \quad B>0, \beta\geq 0, \gamma\geq 0
 \end{equation}
 $$
 
@@ -71,8 +71,8 @@ The growth rates of capital and technology are $g_K(t) \equiv \frac{\dot{K(t)}}{
 
 $$
 \begin{align}
-    \dot{K(t)}                  &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \cdot K(t)^{\alpha} A(t)^{1-\alpha} L(t)^{1-\alpha} \\[5 pt]
-    g_K(t)                      &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \left[\frac{A(t)L(t)}{K(t)}  \right] \\[5 pt]
+    \dot{K(t)}                  &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \cdot K(t)^{\alpha} A(t)^{1-\alpha} L(t)^{1-\alpha} \\\\[10 pt]
+    g_K(t)                      &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \left[\frac{A(t)L(t)}{K(t)}  \right] \\\\[10 pt]
     \frac{\dot{g_K(t)}}{g_K(t)} &= (1-\alpha) \left[g_A(t) + n - g_K(t) \right]
 \end{align}
 $$
@@ -93,8 +93,8 @@ We can proceed in a similar way than we did with capital to find the *steady-sta
 
 $$
 \begin{align}
-    \dot{A(t)}                  &= B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} \cdot A(t)^{\theta} \\[5 pt]
-    g_A(t)                      &= B \left[a_K K(t) \right]^{\beta} \left[a_L L(t) \right]^{\gamma} \cdot A(t)^{\theta - 1} \\[5pt]
+    \dot{A(t)}                  &= B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} \cdot A(t)^{\theta} \\\\[10 pt]
+    g_A(t)                      &= B \left[a_K K(t) \right]^{\beta} \left[a_L L(t) \right]^{\gamma} \cdot A(t)^{\theta - 1} \\\\[10pt]
     \frac{\dot{g_A(t)}}{g_A(t)} &= \beta g_K(t) + \gamma n + (\theta - 1) g_A(t)
 \end{align}
 $$
@@ -115,7 +115,7 @@ Section 3 produces two equations with two unknowns.
 
 $$
 \begin{align}
-    g_K(t) &= n + g_A(t) \\[5pt]
+    g_K(t) &= n + g_A(t) \\\\[10pt]
     g_K(t) &= -\frac{\gamma n}{\beta} + \frac{(1-\theta)}{\beta} g_A(t)
 \end{align}
 $$
@@ -124,7 +124,7 @@ Solving this system of equation yields the (constant) growth rates in the *stead
 
 $$
 \begin{align}
-    g_K(t)^* &= n \cdot \frac{\beta + \gamma}{1-(\theta + \gamma)} + n \\[5 pt]
+    g_K(t)^* &= n \cdot \frac{\beta + \gamma}{1-(\theta + \gamma)} + n \\\\[5 pt]
     g_A(t)^* &= n \cdot \frac{\beta + \gamma}{1-(\theta + \gamma)}
 \end{align}
 $$
@@ -204,3 +204,128 @@ plt.show()
 
 ![Fig_01](Fig_01.png)
 
+## Model stability
+
+This is a stable model. Any starting point outside the *steady-state* will return to equilibrium = $\left(g_A(t)^*. g_K(t)^* \right)$. Form sections 3.1 and 3.2, we can follow the model dynamics for $A$ and $K$ the following way:
+
+$$
+\begin{align}
+    g_A(t+1) &= g_K(t) + \dot{g_K(t)} \\[5pt]
+    g_K(t+1) &= g_A(t) + \dot{g_A(t)}\\[15pt]
+    g_A(t+1) &= g_K(t) + (1-\alpha) \left[g_A(t) + n - g_K(t) \right] \\[5pt]
+    g_K(t+1) &= g_A(t) + \beta g_K(t) + \gamma n + (\theta - 1)g_A(t)
+\end{align}
+$$
+
+Now set four arbitrary starting points: A (blue), B (green), C (red), D (cyan). These starting points will be located in the four quadrants of the model dynamics plot. From these four stating points, the code performs 75 iterations. The plot shows that the dynamics of starting points A and C remain between the two saddle paths, while starting points B and D cross over a saddle path to then approach the *steady-state*.
+
+```python
+"2|DEFINE PARAMETERS AND ARRAYS"
+# Parameters
+alpha = 0.60  # Exponent of capital in the production of goods
+
+"5|STABILITY DYNAMICS"
+iterations = 75
+
+" | Starting Poin A (blue)"
+# Create arrays to store model dynamics
+A_gA = np.zeros(iterations)
+A_gK = np.zeros(iterations)
+# Set arbitrary initial values
+A_gA[0] = 0.015                                  
+A_gK[0] = 0.020                                  
+
+for j in range(1, iterations):
+    A_gA[j] = A_gA[j-1] + beta*A_gK[j-1] + gamma*n + (theta-1)*A_gA[j-1]
+    A_gK[j] = A_gK[j-1] + (1-alpha)*(A_gA[j-1] + n - A_gK[j-1])
+
+" | Starting Poin B (green)"
+# Create arrays to store model dynamics
+B_gA = np.zeros(iterations)
+B_gK = np.zeros(iterations)
+# Set arbitrary initial values
+B_gA[0] = 0.015
+B_gK[0] = 0.180
+
+for j in range(1, iterations):
+    B_gA[j] = B_gA[j-1] + beta*B_gK[j-1] + gamma*n + (theta-1)*B_gA[j-1]
+    B_gK[j] = B_gK[j-1] + (1-alpha)*(B_gA[j-1] + n - B_gK[j-1])
+
+" | Starting Poin C (red)"
+# Create arrays to store model dynamics
+C_gA = np.zeros(iterations)
+C_gK = np.zeros(iterations)
+# Set arbitrary initial values
+C_gA[0] = 0.150
+C_gK[0] = 0.180
+
+for j in range(1, iterations):
+    C_gA[j] = C_gA[j-1] + beta*C_gK[j-1] + gamma*n + (theta-1)*C_gA[j-1]
+    C_gK[j] = C_gK[j-1] + (1-alpha)*(C_gA[j-1] + n - C_gK[j-1])
+
+" | Starting Poin D (cyan)"
+# Create arrays to store model dynamics
+D_gA = np.zeros(iterations)
+D_gK = np.zeros(iterations)
+# Set arbitrary initial values
+D_gA[0] = 0.150
+D_gK[0] = 0.020
+
+for j in range(1, iterations):
+    D_gA[j] = D_gA[j-1] + beta*D_gK[j-1] + gamma*n + (theta-1)*D_gA[j-1]
+    D_gK[j] = D_gK[j-1] + (1-alpha)*(D_gA[j-1] + n - D_gK[j-1])
+
+
+"5|PLOT THE SADDLE-PATH"
+v = [0, gA.max()*0.2, -0.05, gK.max()*0.2]       # Axis range
+
+# Build figure
+plt.figure(figsize=(10, 7), dpi=300)
+plt.title("MODEL STABILITY")
+plt.text(-0.01    , v[3]-0.01, r'$g_K(t)$')      # Manually add x-axis label
+plt.text(v[1]-0.01, -0.01    , r'$g_A(t)$')      # Manually add y-axis label
+plt.axis(v)
+plt.box(False)
+plt.xticks([], [])                               # Hide x-axis ticks
+plt.yticks([], [])                               # Hide y-axis ticks
+plt.axvline(0, color="k")                        # Add vertical axis
+plt.axhline(0, color="k")                        # Add horizontal axis
+# Add both lines
+plt.plot(gA, ss_A, "k-", label=r'$g_A(t)$')
+plt.plot(gA, ss_K, "k-", label=r'$g_K(t)$')
+# Add equilibrium mark
+plt.axvline(A_star, -v[2]/(0.25), (0.05+K_star)/0.25, color="k", ls=":")
+plt.axhline(K_star, 0.0         , A_star/v[1]       , color="k", ls=":")
+# Add reference values
+plt.text(A_star, -0.01 , r'$g_A(t)^*$', horizontalalignment="center")
+plt.text(-0.001, K_star, r'$g_K(t)^*$', horizontalalignment="right")
+# Add function labels
+plt.text(v[1]-0.03, v[3]-0.02, r'$\dot{g_A(t)^*}=0$')
+plt.text(v[1]-0.09, v[3]-0.02, r'$\dot{g_K(t)^*}=0$')
+# Model dynamics
+plt.plot(A_gA[0], A_gK[0], "bo")
+plt.plot(A_gA   , A_gK   , "b:")
+plt.plot(B_gA[0], B_gK[0], "go")
+plt.plot(B_gA   , B_gK   , "g:")
+plt.plot(C_gA[0], C_gK[0], "ro")
+plt.plot(C_gA   , C_gK   , "r:")
+plt.plot(D_gA[0], D_gK[0], "co")
+plt.plot(D_gA   , D_gK   , "c:")
+plt.text(A_gA[0]-0.005, A_gK[0]      , "A", color="b")
+plt.text(B_gA[0]-0.005, B_gK[0]      , "B", color="g")
+plt.text(C_gA[0]      , C_gK[0]+0.005, "C", color="r")
+plt.text(D_gA[0]+0.005, D_gK[0]      , "D", color="c")
+# Arrows
+plt.arrow(A_gA[0], A_gK[0],  0.005, 0    , color="b")
+plt.arrow(A_gA[0], A_gK[0],  0    , 0.005, color="b")
+plt.arrow(B_gA[0], B_gK[0],  0.005, 0    , color="g")
+plt.arrow(B_gA[0], B_gK[0],  0    ,-0.005, color="g")
+plt.arrow(C_gA[0], C_gK[0], -0.005, 0    , color="r")
+plt.arrow(C_gA[0], C_gK[0],  0    ,-0.005, color="r")
+plt.arrow(D_gA[0], D_gK[0], -0.005, 0    , color="c")
+plt.arrow(D_gA[0], D_gK[0],  0    , 0.005, color="c")
+# Build plot
+plt.show()
+```
+
+![Fig_02](Fig_02.png)
