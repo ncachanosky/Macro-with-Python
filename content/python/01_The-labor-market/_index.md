@@ -1,7 +1,7 @@
 ---
 # Title, summary, and page position.
 linktitle: "The Labor Market"
-weight: 2
+weight: 1
 
 # Page metadata.
 title: The Labor Market
@@ -104,12 +104,12 @@ $$
 \end{equation}
 $$
 
-The individual faces the following budget constraint:
+The consumer faces the following budget constraint:
 
 $$
 \begin{align}
     C &= \left(\frac{w}{P} \right) (24 - L) + I  \\\\[10pt]
-    C &= \underbrace{\left[I + 24 \left(\frac{w}{P} \right) \right]}_{\text{intercept}} - \underbrace{\left( \frac{w}{P} \right)}_{\text{slope}}L
+    C &= \underbrace{\left[I + 24 \left(\frac{w}{P} \right) \right]}\_{\text{intercept}} - \underbrace{\left( \frac{w}{P} \right)}\_{\text{slope}}L
 \end{align}
 $$
 
@@ -144,7 +144,7 @@ $$
 From the first two FOCs we get the known relationship $\frac{U_{L}}{U_{C}} = \frac{w/P}{1}$
 
 Solving for $C$ in terms of $L$ yields $C = \frac{\beta}{1-\beta} \left(\frac{w}{P}\right)L$.
-Plugin this result in the third FOC and solving for $L$ yields $L^{*} = (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right]$. With $L^*$ we can now get $C^* = \beta \left[I + 24 (w/P) \right]$. Next we plug-in $C^*$ and $L^*$ into the utility function.
+Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right]$. With $L^*$ we can now get $C^* = \beta \left[I + 24 (w/P) \right]$. Next we plug-in $C^\*$ and $L^\*$ into the utility function.
 
 $$
 \begin{align}
@@ -264,10 +264,12 @@ plt.show()
 
 We can now calculate the equilibrium condition, the value of $(w/P)_0$ which makes $N^D\left(\left(\frac{w}{P}\right)_0\right) = N^S\left(\left(\frac{w}{P}\right)_0\right)$. Then, we can define a function $\Theta$ equal to zero at $\left(\frac{w}{P}\right)_0$:
 
+$$
 \begin{align}
-    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = N^D \left[\left(\frac{w}{P} \right)_0\right] - N^S \left[\left(\frac{w}{P}\right)_0\right] \\
-    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = \underbrace{\left[ K \cdot \left[\frac{(1-\alpha)A}{(w/P)}\right]^{1/\alpha} \right]}_{N^D} - \underbrace{\left[ 24  (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right] \right]}_{N^S}
+    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = N^D \left[\left(\frac{w}{P} \right)_0\right] - N^S \left[\left(\frac{w}{P}\right)_0\right] \\\\[10pt]
+    \Theta \left[ \left(\frac{w}{P}\right)_0\right] &= 0 = \underbrace{\left[ K \cdot \left[\frac{(1-\alpha)A}{(w/P)}\right]^{1/\alpha} \right]}\_{N^D} - \underbrace{\left[ 24  (1-\beta) \left[\frac{I + 24 (w/P)}{(w/P)} \right] \right]}_{N^S}
 \end{align}
+$$
 
 We can ask Python to calculate the value (root) of $\left( \frac{w}{P} \right)$ that makes $\Theta = 0$. For this we need the "root" function from the `SciPy` library. The cade has four sections. Section 1 imports the required packages. Section 2 defines the parameters and arrays. Section 3 find the equilibrium values. And section 4 plots the results.
 
