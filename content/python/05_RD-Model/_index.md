@@ -61,7 +61,7 @@ If the more knowledge already discovered makes it more difficulty to discover ne
 
 Solving the model implies finding how the growth rates look in the *steady-state*. Are growth rates constant? Or do they change with time?
 
-Let $g_K(t)$ and $g_A(t)$ denote the **growth rates** of capital and technology. Then, we want to study the conditions in which $\dot{g_K(t)}=\dot{g_A(t)}=0$. To do this, we need to calculate the growth rates, and then set them constant (set the change in the growth rate equal to zero).
+Let $g_K(t)$ and $g_A(t)$ denote the **growth rates** of capital and technology. Then, we want to study the conditions in which $\dot{g}_K(t)=\dot{g}_A(t)=0$. To do this, we need to calculate the growth rates, and then set them constant (set the change in the growth rate equal to zero).
 
 ### The steady-state of capital
 
@@ -73,7 +73,7 @@ $$
 \begin{align}
     \dot{K(t)}                  &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \cdot K(t)^{\alpha} A(t)^{1-\alpha} L(t)^{1-\alpha} \\\\[10 pt]
     g_K(t)                      &= s (1-a_K)^{\alpha} (1-a_L)^{1-\alpha} \left[\frac{A(t)L(t)}{K(t)}  \right] \\\\[10 pt]
-    \frac{\dot{g_K(t)}}{g_K(t)} &= (1-\alpha) \left[g_A(t) + n - g_K(t) \right]
+    \frac{\dot{g}_K(t)}{g_K(t)} &= (1-\alpha) \left[g_A(t) + n - g_K(t) \right]
 \end{align}
 $$
 
@@ -95,7 +95,7 @@ $$
 \begin{align}
     \dot{A(t)}                  &= B \left[a_K K(t) \right]^{\beta} \left[a_l L(t) \right]^{\gamma} \cdot A(t)^{\theta} \\\\[10 pt]
     g_A(t)                      &= B \left[a_K K(t) \right]^{\beta} \left[a_L L(t) \right]^{\gamma} \cdot A(t)^{\theta - 1} \\\\[10pt]
-    \frac{\dot{g_A(t)}}{g_A(t)} &= \beta g_K(t) + \gamma n + (\theta - 1) g_A(t)
+    \frac{\dot{g}_A(t)}{g_A(t)} &= \beta g_K(t) + \gamma n + (\theta - 1) g_A(t)
 \end{align}
 $$
 
@@ -139,7 +139,7 @@ To be more precise, this model can be considered a *semi-endogenous* growth mode
 
 ## The Python code
 
-We can now plot both saddle-paths $(\dot{g_A(t)}=0, \dot{g_K(t)}=0)$ using Python. These are two linear equations.
+We can now plot both saddle-paths $(\dot{g}_A(t)=0, \dot{g}_K(t)=0)$ using Python. These are two linear equations.
 
 ```python
 "1|IMPORT PACKAGES"
