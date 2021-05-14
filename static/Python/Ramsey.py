@@ -125,12 +125,12 @@ y_gold = y(k_gold)
 s_gold = (y_gold - c_gold)/y_gold
 
 
-"5|CALCULATE LOCI FUNCTIONS"
+"9|CALCULATE LOCI FUNCTIONS"
 k_loci = k_star
 c_loci = consumption(k_array)
 
 
-"6|CALCULATE SAMPLE PATHS"
+"10|CALCULATE SAMPLE PATHS"
 k00, k01, k02 = k_star*0.25, k_star*0.50, k_star*2.2
 c0 = [consumption(k00)*0.25, consumption(k00), c_star*1.25,
       consumption(k01)*0.40, consumption(k01)*1.50]
@@ -155,7 +155,7 @@ path4 = sample_path(k02, c0[3], 30)
 path5 = sample_path(k02, c0[4], 30)
 
 
-"9|PLOT RAMSEY MODEL WITH SAMPLE PATHS"
+"11|PLOT RAMSEY MODEL WITH SAMPLE PATHS"
 # Value of k such that c = 0
 k_zero = (1/(n + g + delta))**(1/(1-alpha))
 # Axis range
@@ -204,7 +204,7 @@ plt.box(False)  # Hide axis
 plt.show()
 
 
-"10|STABLE-PATH: FORWARD AND BACKWARD SHOOTING"
+"12|STABLE-PATH: FORWARD AND BACKWARD SHOOTING"
 def forward_shoot(k0, step):
     # Set conditions for initial shoot
     tol   = 1.0e-10
@@ -303,8 +303,8 @@ x_max = k_zero*1.2
 v = [0, x_max, -0.1, y_max]                        
 
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7))
-ax.plot(k_array, c_loci, color="K", alpha = 0.8)
+fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+ax.plot(k_array, c_loci, color="k", alpha = 0.8)
 ax.axvline(k_loci, color="k", alpha = 0.8)
 ### STABLE PATH
 ax.plot(stable_L[:,0], stable_L[:,1], "b--", alpha = 0.7)
