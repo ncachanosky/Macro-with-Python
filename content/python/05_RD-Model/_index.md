@@ -9,7 +9,7 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{< icon name="python" pack="fab" >}} {{% staticref "Python/The AD-AS model.py" %}}Download Python file.{{% /staticref %}}
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/R&D model.py" %}}Download Python file.{{% /staticref %}}
 
 ---
 
@@ -206,7 +206,7 @@ plt.show()
 
 ## Model stability
 
-This is a stable model. Any starting point outside the *steady-state* will return to equilibrium = $\left(g_A(t)^\*. g_K(t)^\* \right)$. Form sections 3.1 and 3.2, we can follow the model dynamics for $A$ and $K$ the following way:
+This is a stable model. Any starting point outside the *steady-state* will return to equilibrium $\left(g_A(t)^\*. g_K(t)^\* \right)$. Form sections 3.1 and 3.2, we can follow the model dynamics for $A$ and $K$ the following way:
 
 $$
 \begin{align}
