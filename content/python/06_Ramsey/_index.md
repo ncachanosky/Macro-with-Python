@@ -116,8 +116,8 @@ Now we proceed to use the first equation to get $\dot{\mu}(t)$.
 
 $$
 \begin{align}
-    \mu(t)       &= e^{-(\rho - n)t} u'_{c} \\\\[10pt]
-    \dot{\mu}(t) &= -(\rho - n) e^{-(\rho - n)t} u'_{c} + e^{-(\rho - n)t} u^{''}_{c} \dot{c}
+    \mu(t)       &= e^{-(\rho - n)t} u^{'}\_{c} \\\\[10pt]
+    \dot{\mu}(t) &= -(\rho - n) e^{-(\rho - n)t} u^{'}\_{c} + e^{-(\rho - n)t} u^{''}\_{c} \dot{c}
 \end{align}
 $$
 
