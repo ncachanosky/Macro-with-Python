@@ -33,13 +33,13 @@ $$
 The first and second derivatives with respect to capital and labor are:
 
 $$
-\begin{equation}
-    \frac{\partial Y_{t}}{\partial K} = \alpha A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} = \alpha \frac{Y_{t}}{K_{t}} > 0 \\\\[10pt]
-    \frac{\partial^2 Y_{t}}{\partial K^2} = -\alpha (1-\alpha) A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} < 0 \\\\[10pt]
-    \text{and} \\\\[10pt]
-    \frac{\partial Y_{t}}{\partial N} = (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} = (1-\alpha) \frac{Y_{t}}{N_{t}} > 0 \\\\[10pt]
-    \frac{\partial^2 Y_{t}}{\partial N^2} = -\alpha (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{1-\alpha} < 0
-\end{equation}
+\begin{align}
+    \frac{\partial Y_{t}}{\partial K} &= \alpha A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} = \alpha \frac{Y_{t}}{K_{t}} > 0 \\\\[10pt]
+    \frac{\partial^2 Y_{t}}{\partial K^2} &= -\alpha (1-\alpha) A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} < 0 \\\\[10pt]
+    & \text{and} \\\\[10pt]
+    \frac{\partial Y_{t}}{\partial N} &= (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} = (1-\alpha) \frac{Y_{t}}{N_{t}} > 0 \\\\[10pt]
+    \frac{\partial^2 Y_{t}}{\partial N^2} &= -\alpha (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{1-\alpha} < 0
+\end{align}
 $$
 
 Python can calculate the derivatives and present them in LaTeX format. For this, Python needs the `sympy` package. The example below calculates the first partial derivative of the output function with respect to capital and prints the output in Python and LaTeX formats.
@@ -249,7 +249,7 @@ For each case, assume that starting in $t=0$ the model is in is steady-state and
 
 ### Savings rate
 
-Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: $\underbrace{\left{k, y, i, d, c \right}}_{t \to \infty} \to \left{k^\*, y^\*, i^\*, d^\*, c^\* \right}$.
+Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: $\left{ k, y, i, d, c \right} \limits_{\to \infty} \to \left{k^\*, y^\*, i^\*, d^\*, c^\* \right}$.
 
 The code below plots the Solow model and the effects of a one-time and a permanent shock to the savings rate.
 
