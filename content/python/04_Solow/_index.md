@@ -9,7 +9,7 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{< icon name="python" pack="fab" >}} {{% staticref "Python/R&D model.py" %}}Download Python file.{{% /staticref %}}
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/Solow model.py" %}}Download Python file.{{% /staticref %}}
 
 ---
 
@@ -34,12 +34,10 @@ The first and second derivatives with respect to capital and labor are:
 
 $$
 \begin{equation}
-    \frac{\partial   Y_{t}}{\partial K}   = \alpha \cdot A\left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} 
-  = \alpha \cdot \frac{Y_{t}}{K_{t}} > 0 \; \text{and} \;
-    \frac{\partial^2 Y_{t}}{\partial K^2} = -\alpha (1-\alpha) \cdot A\left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} < 0\\    \\
-    \frac{\partial   Y_{t}}{\partial N}   = (1-\alpha) \cdot A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} 
-  = (1-\alpha) \cdot \frac{Y_{t}}{N_{t}} > 0 \; \text{and} \;
-    \frac{\partial^2 Y_{t}}{\partial N^2} = -\alpha (1-\alpha) \cdot A\left(\frac{K_{t}}{N_{t}}\right)^{1-\alpha} < 0
+    \frac{\partial Y_{t}}{\partial K} = \alpha A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} = \alpha \frac{Y_{t}}{K_{t}} > 0 \quad \text{and} \quad
+    \frac{\partial^2 Y_{t}}{\partial K^2} = -\alpha (1-\alpha) A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} < 0 \\\\[10pt]
+    \frac{\partial Y_{t}}{\partial N} = (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} = (1-\alpha) \frac{Y_{t}}{N_{t}} > 0 \quad \text{and} \quad
+    \frac{\partial^2 Y_{t}}{\partial N^2} = -\alpha (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{1-\alpha} < 0
 \end{equation}
 $$
 
@@ -70,15 +68,15 @@ Write the production function in *per capita* terms:
 
 $$
 \begin{align}
-    Y_{t} &= A_{t} \cdot \left(K_{t}^{\alpha}N_{t}^{1-\alpha} \right) \\
-    \frac{Y_{t}}{N_{t}} &= A_{t} \cdot \left[ \left(\frac{K_{t}}{N_{t}} \right)^{\alpha} \left(\frac{N_{t}}{N_{t}} \right)^{1-\alpha} \right] \\
-    y_{t} &= f\left(k_{t}\right) = A_{t} \cdot k_{t}^{\alpha}
+    Y_{t} &= A_{t} \cdot \left(K_{t}^{\alpha}N_{t}^{1-\alpha} \right) \\\\[10pt]
+    \frac{Y_{t}}{N_{t}} &= A_{t} \cdot \left[ \left(\frac{K_{t}}{N_{t}} \right)^{\alpha} \left(\frac{N_{t}}{N_{t}} \right)^{1-\alpha} \right] \\\\[10pt]
+    y_{t} &= f\left(k_{t}\right) = A_{t} k_{t}^{\alpha}
 \end{align}
 $$
 
-The following code plots the level of output for changes in $K$ at different levels of $A$. The first part of the code imports the required packages. The second part of the code sets the parameter values and defines a user-defined production function. The third part of the code builds the graph. To be able to plot, Python needs the 'matplotlib' package.
+The following code plots the level of output for changes in $K$ at different levels of $A$. The first part of the code imports the required packages. The second part of the code sets the parameter values and defines a user-defined production function. The third part of the code builds the graph. To be able to plot, Python needs the `matplotlib` package.
 
-Remember that Python numbers the first element of a vector 'V' with a zero: If the first element is 'a', then $V[0] = a$. The code sets the plot line to be a solid blue line ("b-") with some transparency set by the value of 'alpha'.
+Remember that Python numbers the first element of a vector `V` with a zero: If the first element is `a`, then $V[0] = a$. The code sets the plot line to be a solid blue line ("b-") with some transparency set by the value of `alpha`.
 
 ```python
 "4|DEFINE PARAMETERS AND ARRAYS"
@@ -131,7 +129,7 @@ Investment $(I)$ equals a fixed and exogenous savings rate $\left(s \in (0, 1) \
 
 $$
 \begin{equation}
-   i_{t} = s \cdot \left(A \cdot k_{t}^{\alpha}\right) = s \cdot y_{t}
+   i_{t} = s \cdot \left(A \cdot k_{t}^{\alpha}\right) = s y_{t}
 \end{equation}
 $$
 
@@ -162,13 +160,13 @@ $$
  \frac{\partial k}{\partial t} &= \frac{sY - \delta K}{L} - \frac{K}{L} \cdot \frac{\partial L}{\partial t} \frac{1}{L}   \\\\[10pt]
  \frac{\partial k}{\partial t} &= sy - \delta k - k n                                                                     \\\\[10pt]
  \frac{\partial k}{\partial t} &= sy - \left(\delta + n \right)k                                                          \\\\[10pt]
- \frac{\partial k}{\partial t} &= s \cdot Ak^{\alpha} - \left(\delta + n \right)k
+ \frac{\partial k}{\partial t} &= s Ak^{\alpha} - \left(\delta + n \right)k
 \end{align}
 $$
 
 The steady-state is the value $k^*$ that maintains the capital stock per capita constant $\left(\partial k/\partial t =0 \right)$. Since $K = kL$ and $L$ grows at rate $n$, $K$ is also growing at rate $n$. Since the Cobb-Douglas production function has constant returns to scale, $Y$ is also growint at rate $n$.
 
-Now let the growth rate of technology be $\gamma$. Since at the steady-state $k$ does not change, output per capita growths at the growth rate of technology: $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} + A \cdot \frac{\partial f(k^*)}{\partial t} \frac{1}{y}$. Because $\frac{\partial f(k^*)}{\partial t} = 0$, then $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} = \frac{\partial A}{\partial t} \frac{1}{A} = \gamma$
+Now let the growth rate of technology be $\gamma$. Since at the steady-state $k$ does not change, output per capita growths at the growth rate of technology: $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} + A \cdot \frac{\partial f(k^\*)}{\partial t} \frac{1}{y}$. Because $\frac{\partial f(k^\*)}{\partial t} = 0$, then $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} = \frac{\partial A}{\partial t} \frac{1}{A} = \gamma$
 
 Furthermore, since investment is a fixed proportion of $y$, investment also grows at rate $\gamma$ in the steady-state. And since consumption per capita is the difference between output and investment per capita, consumption also grows at rate $\gamma$.
 
@@ -176,9 +174,9 @@ Solve for $k^*$ from the equilibrium condition:
 
 $$
 \begin{align}
-  (\delta + n)k &= s \cdot Ak^{\alpha}         \\\\[10pt]
-  k^{1-\alpha} &= A \cdot \frac{s}{\delta + n} \\\\[10pt]
-  k^* &= \left[ A \cdot \frac{s}{\delta + n} \right]^{\frac{1}{1-\alpha}}
+  (\delta + n)k &= s Ak^{\alpha}  \\\\[10pt]
+  k^{1-\alpha} &= A \frac{s}{\delta + n} \\\\[10pt]
+  k^* &= \left[ A \frac{s}{\delta + n} \right]^{\frac{1}{1-\alpha}}
 \end{align}
 $$
 
@@ -250,7 +248,7 @@ For each case, assume that starting in $t=0$ the model is in is steady-state and
 
 ### Savings rate
 
-Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: $\{k, y, i, d, c\}_{t \to \infty} \to \{k^*, y^*, i^*, d^*, c^*\}$.
+Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: ${k, y, i, d, c\}_{t \to \infty} \to {k^\*, y^\*, i^\*, d^\*, c^\*}$.
 
 The code below plots the Solow model and the effects of a one-time and a permanent shock to the savings rate.
 
@@ -585,7 +583,7 @@ plt.tick_params(axis='both', which='both', bottom=False, top=False,
                                                 # Hide tick marks
 ```
 
-![Fig_06](Fig_06.png
+![Fig_06](Fig_06.png)
 
 ![Fig_07](Fig_07.png)
 
@@ -742,14 +740,14 @@ plt.tick_params(axis='both', which='both', bottom=False, top=False,
 
 ## Phase diagram and convergence
 
-Note that this is a stable model with two steady states; $k_{1}^* = 0$ and $k_{2}^* = \left[ A \cdot \frac{s}{\delta + n} \right]^{\frac{1}{1-\alpha}}$. Once $k$ has any positive value, the model will converge to $k_{2}^*$.
+Note that this is a stable model with two steady states; $k_{1}^* = 0$ and $k_{2}^* = \left[ A \frac{s}{\delta + n} \right]^{\frac{1}{1-\alpha}}$. Once $k$ has any positive value, the model will converge to $k_{2}^*$.
 
 This behavior of $k$ can be shown with a phase diagram that relates changes in $k$ with values of k (same function than section 2.2:
 
 $$
 \begin{align}
     \Delta(k) &= h(k)  \\\\[10pt]
-    \Delta(k) &= s \cdot Ak^{\alpha} - (n + \delta)k
+    \Delta(k) &= s Ak^{\alpha} - (n + \delta)k
 \end{align}
 $$
 
@@ -870,7 +868,7 @@ Knowing $k^g$, we can now move to the second step and obtain $s^g$ from the equi
 
 $$
 \begin{align}
- sA \left(k^g \right)^{\alpha} &= (\delta + n)k^g                                                                         \\
+ sA \left(k^g \right)^{\alpha} &= (\delta + n)k^g  \\\\[10pt]
  s^g &= \frac{\left( \delta+n \right)k^g}{A \cdot \left(k^g \right)^{\alpha}} = \frac{\left( \delta+n \right)k^g}{y(k^g)}
 \end{align}
 $$
@@ -886,9 +884,9 @@ $$
 \end{align}
 $$
 
-### THE COBB-DOUGLAS CASE
+### The Cobb-Douglas case
 
-Note that in the stead-state the level of per capita consumption remains stable (assuming no growth of technology); $c = f(k^*) - (\delta +n)k^*$. Therefore: $\frac{\partial c}{\partial k} = \frac{\partial f(k^*)}{\partial k} - (\delta + n) = 0$; then $\frac{\partial f(k^*)}{\partial k} = (\delta + n)$.
+Note that in the stead-state the level of per capita consumption remains stable (assuming no growth of technology); $c = f(k^\*) - (\delta +n)k^\*$. Therefore: $\frac{\partial c}{\partial k} = \frac{\partial f(k^\*)}{\partial k} - (\delta + n) = 0$; then $\frac{\partial f(k^\*)}{\partial k} = (\delta + n)$.
 
 Knowing this, we can re-write the $s^g$ condition in the following way:
 
@@ -975,7 +973,7 @@ plt.show()
 
 ---
 
-## Grwoth accounting
+## Growth accounting
 
 Growth accounting allows to separate the drivers of growth of output and obtain the change in TFP as the residual between the observed frowth ouf output and the observed growth of inputs. This difference is the **Solow residual**.
 
@@ -994,4 +992,4 @@ $$
 
 The last line shows that growth of TFP can be calculated as the difference, or residual, of observed growth rates and input-output elasticity of factors of production.
 
-Note that: $\frac{\partial Y}{\partial A} \cdot \frac{A}{Y} = F(K; N) \cdot \frac{A}{Y} = 1$
+Note that: $\frac{\partial Y}{\partial A} \frac{A}{Y} = F(K; N) \frac{A}{Y} = 1$
