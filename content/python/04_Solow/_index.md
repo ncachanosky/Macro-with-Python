@@ -249,7 +249,7 @@ For each case, assume that starting in $t=0$ the model is in is steady-state and
 
 ### Savings rate
 
-Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: $(k, y, i, d, c) \limits\_{\to \infty} \to (k^\*, y^\*, i^\*, d^\*, c^\*)$.
+Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic.
 
 The code below plots the Solow model and the effects of a one-time and a permanent shock to the savings rate.
 
