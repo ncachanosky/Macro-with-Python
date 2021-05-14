@@ -9,7 +9,7 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{< icon name="python" pack="fab" >}} {{% staticref "Python/R&D model.py" %}}Download Python file.{{% /staticref %}}
+{{< icon name="python" pack="fab" >}} {{% staticref "Python/R&D growth model.py" %}}Download Python file.{{% /staticref %}}
 
 ---
 
