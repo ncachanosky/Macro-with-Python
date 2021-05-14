@@ -88,7 +88,7 @@ $$
     a(0) &= a_{0}                                                \\\\[10pt]
     \lim\limits_{t \to \infty}a(t) &\geq 0                       \\\\[10pt]
     \text{transversality condition:}                             \\\\[10pt]
-    \lim\limits_{t \to \infty} \mu(t) a(t) = 0
+    \lim\limits_{t \to \infty} \mu(t) a(t) &= 0
 \end{align}
 $$
 
@@ -117,7 +117,7 @@ Now we proceed to use the first equation to get $\dot{\mu}(t)$.
 $$
 \begin{align}
     \mu(t)       &= e^{-(\rho - n)t} u'_{c} \\\\[10pt]
-    \dot{\mu}(t) &= -(\rho - n) e^{-(\rho - n)t} u'_{c} + e^{-(\rho - n)t} u''_{c} \dot{c}
+    \dot{\mu}(t) &= -(\rho - n) e^{-(\rho - n)t} u'_{c} + e^{-(\rho - n)t} u^{''}_{c} \dot{c}
 \end{align}
 $$
 
