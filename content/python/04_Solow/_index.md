@@ -26,7 +26,7 @@ Assume a Cobb-Douglas production function in discrete time $(t)$ with Hicks-neut
 
 $$
 \begin{equation}
-    Y_{t}\left(K_{t}, N_{t}\right) = A_{t} \cdot F\left(K_{t}, N_{t}\right) =  A_{t} \cdot \left(K_{t} ^{\alpha} N_{t}^{1-\alpha}\right)
+    Y_{t}\left(K_{t}, N_{t}\right) = A_{t} \cdot F\left(K_{t}, N_{t}\right) = A_{t} \cdot \left(K_{t} ^{\alpha} N_{t}^{1-\alpha}\right)
 \end{equation}
 $$
 
@@ -34,9 +34,10 @@ The first and second derivatives with respect to capital and labor are:
 
 $$
 \begin{equation}
-    \frac{\partial Y_{t}}{\partial K} = \alpha A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} = \alpha \frac{Y_{t}}{K_{t}} > 0 \quad \text{and} \quad
+    \frac{\partial Y_{t}}{\partial K} = \alpha A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} = \alpha \frac{Y_{t}}{K_{t}} > 0 \\\\[10pt]
     \frac{\partial^2 Y_{t}}{\partial K^2} = -\alpha (1-\alpha) A \left(\frac{N_{t}}{K_{t}}\right)^{1-\alpha} < 0 \\\\[10pt]
-    \frac{\partial Y_{t}}{\partial N} = (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} = (1-\alpha) \frac{Y_{t}}{N_{t}} > 0 \quad \text{and} \quad
+    \text{and} \\\\[10pt]
+    \frac{\partial Y_{t}}{\partial N} = (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{\alpha} = (1-\alpha) \frac{Y_{t}}{N_{t}} > 0 \\\\[10pt]
     \frac{\partial^2 Y_{t}}{\partial N^2} = -\alpha (1-\alpha) A\left(\frac{K_{t}}{N_{t}}\right)^{1-\alpha} < 0
 \end{equation}
 $$
@@ -147,7 +148,7 @@ Also assume that the amount of depreciation $D$ equals a fixed rate $\left(\delt
 
 $$
 \begin{equation}
-   d_{t} = \delta \cdot k_{t}
+   d_{t} = \delta k_{t}
 \end{equation}
 $$
 
@@ -166,7 +167,7 @@ $$
 
 The steady-state is the value $k^*$ that maintains the capital stock per capita constant $\left(\partial k/\partial t =0 \right)$. Since $K = kL$ and $L$ grows at rate $n$, $K$ is also growing at rate $n$. Since the Cobb-Douglas production function has constant returns to scale, $Y$ is also growint at rate $n$.
 
-Now let the growth rate of technology be $\gamma$. Since at the steady-state $k$ does not change, output per capita growths at the growth rate of technology: $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} + A \cdot \frac{\partial f(k^\*)}{\partial t} \frac{1}{y}$. Because $\frac{\partial f(k^\*)}{\partial t} = 0$, then $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} \cdot k^{\alpha} \frac{1}{y} = \frac{\partial A}{\partial t} \frac{1}{A} = \gamma$
+Now let the growth rate of technology be $\gamma$. Since at the steady-state $k$ does not change, output per capita growths at the growth rate of technology: $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} k^{\alpha} \frac{1}{y} + A \frac{\partial f(k^\*)}{\partial t} \frac{1}{y}$. Because $\frac{\partial f(k^\*)}{\partial t} = 0$, then $\frac{\partial y}{\partial t}\frac{1}{y} = \frac{\partial A}{\partial t} k^{\alpha} \frac{1}{y} = \frac{\partial A}{\partial t} \frac{1}{A} = \gamma$
 
 Furthermore, since investment is a fixed proportion of $y$, investment also grows at rate $\gamma$ in the steady-state. And since consumption per capita is the difference between output and investment per capita, consumption also grows at rate $\gamma$.
 
@@ -248,7 +249,7 @@ For each case, assume that starting in $t=0$ the model is in is steady-state and
 
 ### Savings rate
 
-Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: ${k, y, i, d, c\}_{t \to \infty} \to {k^\*, y^\*, i^\*, d^\*, c^\*}$.
+Let the savings rate increase from $s_1$ to $s_2$. This produces an upward shift in the investment line, but produces no change on output or on the break-even line. Now investment is more than the break-even point producing an increase in the capital stock. If the shock is permanent, then $k^*$ moves outward initiating a new convergence movement to the **new** steady-state values. If the shock is for a one period only, then the model **returns** to its original steady-state. Note that the convergence to the steady-state (old or new) is asymptotic: $\underbrace{\left{k, y, i, d, c \right}}_{t \to \infty} \to \left{k^\*, y^\*, i^\*, d^\*, c^\* \right}$.
 
 The code below plots the Solow model and the effects of a one-time and a permanent shock to the savings rate.
 
@@ -595,7 +596,6 @@ In general terms, $(A)$ captures *total factor productivity* (TFP). If $fp_{j}, 
 
 $$A = \frac{Y}{F\left(fp_{1}, \cdots, fp_{J}\right)}$$
 
-
 Repeated increases in productivity produces the effect in output shown in section 2. Since output is increasing, so does investment. This produces a permanent outward shift of $k^*$. The savings rate is bounded between 0 and 1, but $A$ can grow indefinitely. Also note the exponential effect on output, investment, and consumption. Starting at the stead-state position, an increase in productivity means that investment is more than the break-even value and therefore modes starts to converge to a permanent moving steady-state position. This case of productivity gains can be described as *cutting-edge* growth. Different is the case of *catching-up growth*, which is the situation of the model approaching a fixed steady-state position (e.g. after a one-period shock).
 
 A one-time time shock to TFP moves the model out of equilibrium until it **returns** to its original position. But, a permanent increase in $\gamma$ can produce a **continuous** growth of the steady-state values. This implies that steady-state values grow at the growth rate to TFP, $\gamma$.
@@ -878,7 +878,7 @@ From this the golden-rule value for the other variables can be obtained as well:
 $$
 \begin{align}
  y^g &= A \cdot \left(k^g \right)^{\alpha} \\\\[10pt]
- i^g &= s^g \cdot y^g                      \\\\[10pt]
+ i^g &= s^g y^g                            \\\\[10pt]
  c^g &= y^g - i^g                          \\\\[10pt]
  d^g &= \delta k^g 
 \end{align}
