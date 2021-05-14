@@ -84,7 +84,7 @@ $$
 \begin{align}
     \max_{c(t)} U &= \int_{t=0}^{\infty} u[c(t)] e^{-(n-\rho)t}  \\\\[10pt]
     \text{subject to:}                                           \\\\[10pt]
-    \dot{a} &= (r(t) - n)a(t) + w(t) - c(t)                      \\\\[10pt]
+    \dot{a} &= [r(t) - n] a(t) + w(t) - c(t)                     \\\\[10pt]
     a(0) &= a_{0}                                                \\\\[10pt]
     \lim\limits_{t \to \infty}a(t) &\geq 0                       \\\\[10pt]
     \text{transversality condition:}                             \\\\[10pt]
@@ -96,7 +96,7 @@ The optimization problem is given an initial asset value of $a_0$ and a terminal
 
 $$
 \begin{equation}
-    \mathscr{H} = e^{-(\rho - n)t} u[c(t)] + \mu(t) \left[r(t) - n)a(t) + w(t) - c(t) \right] 
+    \mathscr{H} = e^{-(\rho - n)t} u[c(t)] + \mu(t) \left[(r(t) - n)a(t) + w(t) - c(t) \right] 
 \end{equation}
 $$
 
@@ -106,9 +106,9 @@ The first-order-conditions (FOC) of the hamiltonian are:
 
 $$
 \begin{align}
-    \frac{\partial \mathscr{H}}{\partial c} &= e^{-(\rho - n)t} u'_{c} - \mu(t) = 0     \\\\[10pt]
-    \frac{\partial \mathscr{H}}{\partial\mu} &= (r(t) - n)a(t) + w(t) - c(t) = \dot{a}  \\\\[10pt]
-    \frac{\partial \mathscr{H}}{\partial a} &= - (r(t) - n)\cdot \mu (t) = \dot{\mu}(t)
+    \frac{\partial \mathscr{H}}{\partial c}  &= e^{-(\rho - n)t} u'_{c} - \mu(t) = 0     \\\\[10pt]
+    \frac{\partial \mathscr{H}}{\partial\mu} &= [r(t) - n] a(t) + w(t) - c(t) = \dot{a}  \\\\[10pt]
+    \frac{\partial \mathscr{H}}{\partial a}  &= - (r(t) - n)\cdot \mu (t) = \dot{\mu}(t)
 \end{align}
 $$
 
