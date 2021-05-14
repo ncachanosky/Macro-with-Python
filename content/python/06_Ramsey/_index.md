@@ -29,7 +29,7 @@ The model is populated by a representative household that maximizes its utility 
 
 ## Representative household
 
-Assume a large number of identical infinitely-lived households. Because these households are identical, we can use  a **representative** household to populate the model. The assumptions that this households are infinitely lived captures a continuum of generations. The representative household has $L(t)$ individuals with a population growth rate of $n$. Therefore, $L(t) = L(0) \cdot e^{nt}$
+Assume a large number of identical infinitely-lived households. Because these households are identical, we can use  a **representative** household to populate the model. The assumptions that this households are infinitely lived captures a continuum of generations. The representative household has $L(t)$ individuals with a population growth rate of $n$. Therefore, $L(t) = L(0) e^{nt}$
 
 ## The household utility
 
@@ -37,7 +37,7 @@ The household utility $(U)$ is the present value of the utility (felicity functi
 
 $$
 \begin{equation}
-    U = \int_{0}^{\infty} u[c(t)] \cdot e^{nt} \cdot \underbrace{e^{-\rho t}}_{L(t)} \cdot dt = \int_{0}^{\infty} u[c(t)] \cdot e^{(n-\rho)t} \cdot dt
+    U = \int_{0}^{\infty} u[c(t)] e^{nt} \underbrace{e^{-\rho t}}_{L(t)} dt = \int_{0}^{\infty} u[c(t)] e^{(n-\rho)t} dt
 \end{equation}
 $$
 
@@ -51,7 +51,7 @@ The household budget constrained is composed of assets $(\Lambda)$ and wages $(w
 
 $$
 \begin{equation}
-    \frac{d\Lambda}{dt} = r(t) \cdot \Lambda(t) + w(t)L(t) - C(t)
+    \frac{d\Lambda}{dt} = r(t) \Lambda(t) + w(t)L(t) - C(t)
 \end{equation}
 $$
 
@@ -82,13 +82,13 @@ The household is  facing a dynamic optimization problem. It needs to set the pat
 
 $$
 \begin{align}
-    \max_{c(t)} U &= \int_{t=0}^{\infty} u[c(t)] \cdot e^{-(n-\rho)t}  \\\\[10pt]
-    \text{subject to:}                                                 \\\\[10pt]
-    \dot{a} &= (r(t) - n)a(t) + w(t) - c(t)                            \\\\[10pt]
-    a(0) &= a_{0}                                                      \\\\[10pt]
-    \lim\limits_{t \to \infty}a(t) &\geq 0                             \\\\[10pt]
-    \text{transversality condition:}                                   \\\\[10pt]
-    \lim\limits_{t \to \infty} \mu(t) \cdot a(t) = 0
+    \max_{c(t)} U &= \int_{t=0}^{\infty} u[c(t)] e^{-(n-\rho)t}  \\\\[10pt]
+    \text{subject to:}                                           \\\\[10pt]
+    \dot{a} &= (r(t) - n)a(t) + w(t) - c(t)                      \\\\[10pt]
+    a(0) &= a_{0}                                                \\\\[10pt]
+    \lim\limits_{t \to \infty}a(t) &\geq 0                       \\\\[10pt]
+    \text{transversality condition:}                             \\\\[10pt]
+    \lim\limits_{t \to \infty} \mu(t) a(t) = 0
 \end{align}
 $$
 
@@ -96,7 +96,7 @@ The optimization problem is given an initial asset value of $a_0$ and a terminal
 
 $$
 \begin{equation}
-    \mathscr{H} = e^{-(\rho - n)t} \cdot u[c(t)] + \mu(t) \cdot \left[r(t) - n)a(t) + w(t) - c(t) \right] 
+    \mathscr{H} = e^{-(\rho - n)t} u[c(t)] + \mu(t) \left[r(t) - n)a(t) + w(t) - c(t) \right] 
 \end{equation}
 $$
 
@@ -106,8 +106,8 @@ The first-order-conditions (FOC) of the hamiltonian are:
 
 $$
 \begin{align}
-    \frac{\partial \mathscr{H}}{\partial c} &= e^{-(\rho - n)t} \cdot u'_{c} - \mu(t) = 0  \\\\[10pt]
-    \frac{\partial\mathscr{H}}{\partial\mu} &= (r(t) - n)a(t) + w(t) - c(t) = \dot{a}      \\\\[10pt]
+    \frac{\partial \mathscr{H}}{\partial c} &= e^{-(\rho - n)t} u'_{c} - \mu(t) = 0     \\\\[10pt]
+    \frac{\partial \mathscr{H}}{\partial\mu} &= (r(t) - n)a(t) + w(t) - c(t) = \dot{a}  \\\\[10pt]
     \frac{\partial \mathscr{H}}{\partial a} &= - (r(t) - n)\cdot \mu (t) = \dot{\mu}(t)
 \end{align}
 $$
@@ -116,19 +116,19 @@ Now we proceed to use the first equation to get $\dot{\mu}(t)$.
 
 $$
 \begin{align}
-    \mu(t)       &= e^{-(\rho - n)t} \cdot u'_{c} \\\\[10pt]
-    \dot{\mu}(t) &= -(\rho - n) \cdot e^{-(\rho - n)t} \cdot  u'_{c} + e^{-(\rho - n)t} \cdot u''_c \cdot \dot{c}
-\end{align}    
+    \mu(t)       &= e^{-(\rho - n)t} u'_{c} \\\\[10pt]
+    \dot{\mu}(t) &= -(\rho - n) e^{-(\rho - n)t} u'_{c} + e^{-(\rho - n)t} u''_{c} \dot{c}
+\end{align}
 $$
 
 Make now two substitutions: (1) The first FOC in the third FOC, and (2) this last derivative in the third FOC as well.
 
 $$
 \begin{align}
-    -[r(t) -n] \cdot \mu(t) &= -(\rho - n) \cdot e^{-(\rho - n)t} \cdot u'(c) + e^{-(\rho - n)t} \cdot u''(c) \cdot \dot{c}        \\\\[10pt]
-    -[r(t) -n] \cdot e^{-(\rho - n)t} \cdot u'(c) &= e^{-(\rho - n)t} \left[-(\rho - n) \cdot u'(c) + u''(c) \cdot \dot{c} \right] \\\\[10pt]
-    -[r(t) -n] \cdot u'(c) &= -(\rho - n) \cdot u'(c) + u''(c) \cdot \dot{c}                                                       \\\\[10pt]
-    r(t) &= \rho - \frac{u''(c)\cdot c}{u'(c)} \cdot \frac{\dot{c}}{c}
+    -[r(t) -n] \mu(t) &= -(\rho - n) e^{-(\rho - n)t} u'(c) + e^{-(\rho - n)t} u''(c) \dot{c}               \\\\[10pt]
+    -[r(t) -n] e^{-(\rho - n)t} u'(c) &= e^{-(\rho - n)t} \left[-(\rho - n) u'(c) + u''(c) \dot{c} \right]  \\\\[10pt]
+    -[r(t) -n] u'(c) &= -(\rho - n) u'(c) + u''(c) \dot{c}                                                  \\\\[10pt]
+    r(t) &= \rho - \frac{u''(c) c}{u'(c)} \frac{\dot{c}}{c}
 \end{align}
 $$
 
@@ -156,7 +156,7 @@ $$
 \begin{align}
     u'(c)  &= c^{-\theta} > 0                      \\\\[10pt]
     u''(c) &= -\theta \cdot c^{-(\theta + 1)} < 0  \\\\[10pt]
-    \sigma &= \left[ \frac{u''(c) \cdot c}{u'(c)} \right]^{-1} = \left[\frac{\theta \cdot c^{-(\theta + 1)} \cdot c}{c^{-\theta}} \right]^{-1} = \frac{1}{\theta}
+    \sigma &= \left[ \frac{u''(c) c}{u'(c)} \right]^{-1} = \left[\frac{\theta c^{-(\theta + 1)} c}{c^{-\theta}} \right]^{-1} = \frac{1}{\theta}
 \end{align}
 $$
 
@@ -165,7 +165,7 @@ Then, the Euler equation from the household maximization problem becomes
 $$
 \begin{align}
     r(t) &= \rho - \frac{u''(c)\cdot c}{u'(c)} \cdot \frac{\dot{c}}{c} \\\\[10pt]
-    r(t) &= \rho - \theta \cdot \frac{\dot{c}}{c}                      \\\\[10pt]
+    r(t) &= \rho - \theta \frac{\dot{c}}{c}                      \\\\[10pt]
 \end{align}
 $$
 
@@ -173,7 +173,7 @@ We can rewrite the Euler equation to more conveniently depict the consumption pa
 
 $$
 \begin{equation}
-    \frac{\dot{c}}{c} = \frac{1}{\theta} \cdot \left(r(t) - \rho \right)
+    \frac{\dot{c}}{c} = \frac{1}{\theta} \left(r(t) - \rho \right)
 \end{equation}
 $$
 
@@ -246,7 +246,7 @@ plt.show()
 
 ## The representative firm
 
-The representative firm uses a labor-technology augmenting production function $(Y = F(K; AL)$ with constant returns to scale (CRS). The production function depicts the typical properties of diminishing marginal returns and the Inada conditions. Technology $(A)$ grows at rage $g$: $A(t) = A(0)\cdot e^{gt}$.
+The representative firm uses a labor-technology augmenting production function $(Y = F(K; AL)$ with constant returns to scale (CRS). The production function depicts the typical properties of diminishing marginal returns and the Inada conditions. Technology $(A)$ grows at rage $g$: $A(t) = A(0) e^{gt}$.
 
 In terms of effective labor $(AL)$, and  normalizing the price of the good to one $(p = 1)$, the profit of the firm becomes (where the $"\hat{}"$ symbol denotes the variable is in per effective labor units):
 
@@ -282,8 +282,8 @@ In equilibrium, the assets owned by the household coincide with the capital per 
 $$
 \begin{align}
     \dot{a}                      &= ra + w - c - na                          \\\\[10pt]
-    \dot{(Ak)}                   &= r \cdot Ak + Aw - Ac - n \cdot Ak        \\\\[10pt]
-    \dot{A}k + A \dot{k}         &= r \cdot Ak + Aw - Ac - n \cdot Ak        \\\\[10pt]
+    \dot{(Ak)}                   &= r Ak + Aw - Ac - n Ak                    \\\\[10pt]
+    \dot{A}k + A \dot{k}         &= r Ak + Aw - Ac - n Ak                    \\\\[10pt]
     \frac{\dot{A}}{A}k + \dot{k} &= rk + w - c - nk                          \\\\[10pt]
     gk + \dot{k}                 &= rk + w - c - n    k                      \\\\[10pt]
     \dot{k}                      &= rk + f(k) - (r + \delta)k - c - (n + g)k \\\\[10pt]
@@ -295,7 +295,7 @@ Knowing that $R = r + \delta$ and that $f'(k) = R + \delta$, then the two motion
 
 $$
 \begin{cases}
-    \frac{\dot{c}}{c} &= \frac{1}{\theta} \cdot (f'(k) - \delta - \rho) \\\\[10pt]
+    \frac{\dot{c}}{c} &= \frac{1}{\theta} (f'(k) - \delta - \rho) \\\\[10pt]
     \dot{k}           &= f(k) - c - (n + g + \delta)
 \end{cases}
 $$
@@ -313,8 +313,8 @@ From the second equation we can also derive the value of $\hat{k}$ that maximize
 
 $$
 \begin{align}
-    \hat{c}                                   &= \hat{k}^{\alpha} - (n + g + \delta) \cdot \hat{k}                   \\\\[10pt]
-    \frac{\partial \hat{c}}{\partial \hat{k}} &= \alpha \cdot \hat{k}^{-(1 - \alpha)} - (n + g + \delta) \hat{k} = 0 \\\\[10pt]
+    \hat{c}                                   &= \hat{k}^{\alpha} - (n + g + \delta) \hat{k}                       \\\\[10pt]
+    \frac{\partial \hat{c}}{\partial \hat{k}} &= \alpha \hat{k}^{-(1 - \alpha)} - (n + g + \delta) \hat{k} = 0     \\\\[10pt]
     \hat{k}^{*}_{g}                           &= \left(\frac{\alpha}{n + g + \delta} \right)^{\frac{1}{1-\alpha}}
 \end{align}
 $$
@@ -337,13 +337,13 @@ These type of iterations can be time consuming depending on how many shoots the 
 
 Since we know that is very unlikely that our "shoots" will exactly hit the steady state $(k^*, c(k^*)$, we need to define a success criteria. The success criteria is when the shoots hits close enough to the target. We need to define circle around the equilibrium that plays the role of the tolerance level. Once we find a "shoot" that hits inside this circle, the shoots is considered a success and an approximation good enough for the estimation purposes.
 
-The distance of a point to the steady-state is: $distance = \sqrt[2]{(\tilde{k} - k^*)^2 + (\tilde{c} - c^*)^2}$, where $\tilde{k}, \tilde{c}$ are the shoot estimations.
+The distance of a point to the steady-state is: $distance = \sqrt[2]{(\tilde{k} - k^\*)^2 + (\tilde{c} - c^\*)^2}$, where $\tilde{k}, \tilde{c}$ are the shoot estimations.
 
 The shooting functions have two inputs. The initial level of $k_0$ and a "step" size. The "step" size is how big the correction of the initial shoot will be after it misses the tolerance level (the target). Given $k_0$, the function estimates a level of $c(k_0)$ (the first shoot). If the shoot misses the target, then the algorithm performs a correction to the initial level of $c_0$ and shoots again. This sequence repeats until the shoot hits the target.
 
 ### The forward shot
 
-The first shoot of the forward shoot function is located one step below the _loci_ function. We know is very likely that this initial shoot is too high, and therefore the path will go above $c^*$. The loop has two break points to define a succesful shoot. The first one is if the path produces a point $(k, c)$ inside the tolerance distance from the steady-state (the above discussion). The second one is the path produces a value of $\tilde{k} > k_*$. This break point is in place because the step size (how far the new shoot starting point moves) is a fixed amount without a correction or feedback mechanism. It is possible, then, that after missing the target the next iteration starts at a value of $c$ that is too low. Such path may still be an estimation good enough even if it does not satisfy the tolerance level (for the purposes of this notebook, this is enough). 
+The first shoot of the forward shoot function is located one step below the _loci_ function. We know is very likely that this initial shoot is too high, and therefore the path will go above $c^*$. The loop has two break points to define a successful shoot. The first one is if the path produces a point $(k, c)$ inside the tolerance distance from the steady-state (the above discussion). The second one is the path produces a value of $\tilde{k} > k_*$. This break point is in place because the step size (how far the new shoot starting point moves) is a fixed amount without a correction or feedback mechanism. It is possible, then, that after missing the target the next iteration starts at a value of $c$ that is too low. Such path may still be an estimation good enough even if it does not satisfy the tolerance level (for the purposes of this notebook, this is enough). 
 
 There is a third break, which is a cap on the number of iterations the loop can perform. When building a code like this, this type of break can help avoid a mistake that sends the code into an infinite loop.
 
@@ -351,7 +351,7 @@ If the path produces a value of $\tilde{c} > c^*$, then the loop resets and star
 
 ### The backward shot
 
-The backward shoot function follow a similar structure than the forward shoot. Yet, because the starting point is different, the break points have to be modified. However, there is a difference in the starting point. Rather than starting at the _loci_ level given the initial on step above $c_0 = c(k_0)$, the code starts with $c_0 = c(k_0)\cdot 1.5$. This is an example of an easy way to save some computational power. Looking at the first figure (the unstable paths) we know that the level of consumption of the stable path will be several steps above $c(k_0)$. Therefore, we can save computation time by avoiding shoot attempts between $c(k_0)$ and $c(k_0)\cdot 1.5$. 
+The backward shoot function follow a similar structure than the forward shoot. Yet, because the starting point is different, the break points have to be modified. However, there is a difference in the starting point. Rather than starting at the _loci_ level given the initial on step above $c_0 = c(k_0)$, the code starts with $c_0 = 1.5 c(k_0)$. This is an example of an easy way to save some computational power. Looking at the first figure (the unstable paths) we know that the level of consumption of the stable path will be several steps above $c(k_0)$. Therefore, we can save computation time by avoiding shoot attempts between $c(k_0)$ and $1.5 c(k_0)$. 
 
 The forward shoot loop has two stop points of success. The first one is if the shoot produces a point inside the tolerance circle. The second one is if the path produces a value of $\tilde{k} < k^*$ (for similar reasons than the forward shoot break). There is also the third break built on the number of iterations the loop will perform. Since the starting point is farther away from the equilibrium point, this break has a larger limit of iterations than the forward shoot loop.
 
