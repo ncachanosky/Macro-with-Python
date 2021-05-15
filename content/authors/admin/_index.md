@@ -79,7 +79,7 @@ highlight_name: false
 
 The examples are intended to learn to use Python in the context of macroeconomic models. The examples are not intended to offer complete discussion of the models or coding techniques. The intention of **Macro with Python** is to get started with **how** to use Python in macroeconomics. [QuantEcon](https://quantecon.org/) offers more advanced an detailed documentation.
 
-{{< cta cta_text="Get started" cta_link="https://blissful-sinoussi-c74b27.netlify.app/python/" cta_new_tab="false" >}}
+{{< cta cta_text="Get started" cta_link="https://macro-with-python.netlify.app/python/" cta_new_tab="false" >}}
 
 {{% callout note %}}
 **Macro with Python** is an ongoing project. More examples will be added as they become available.  
