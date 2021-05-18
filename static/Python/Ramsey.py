@@ -8,21 +8,26 @@
 #|============================================================================|
 #|============================================================================|
 
-#%%
+#%% | *** FIRST CELL ***
+"============================================================================"
 "1|IMPORT PACKAGES"
 import numpy as np              # Package for scientific computing with Python
-import matplotlib.pyplot as plt # Matplotlib is a 2D plotting library
+import matplotlib.pyplot as plt # Matplotlib is a plotting library
 
-#%%
+
+"============================================================================"
 "2|DEFINE PARAMETERS AND ARRAYS"
 # PARAMETERS
+# Code parameters
 size  = 5         # Model domain
-steps = size*100  # Number of "dots" in the domain
+steps = size*100  # Number of dots in the domain
+dpi   = 300       # Figure quality
 
 # ARRAY
 c = np.linspace(0, size, steps)  # Create array of consumption
 
 
+"============================================================================"
 "3|DEFINE UTILITY FUNCTION"
 # Production function
 def u(x, CRRA):
@@ -33,6 +38,7 @@ def u(x, CRRA):
     return u
 
 
+"============================================================================"
 "4|CALCULATE UTILITY FUNCTIONS FOR DIFFERENT VALUES OF THETA"
 theta = [0.25, 0.75, 1, 1.5, 2]
 
@@ -44,36 +50,41 @@ u4 = u(c[1:], theta[3])
 u5 = u(c[1:], theta[4])
 
 
+"============================================================================"
 "5|PLOT UTILITY FUNCTIONS"
 ### AXIS RANGE
-v = [0, size, -10, 5]    
+axis_range = [0, size, -10, 5]
+
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7))
-ax.plot(c[1:], u1, alpha = 0.8, label = r'$\theta=%.2f$' %theta[0])
-ax.plot(c[1:], u2, alpha = 0.8, label = r'$\theta=%.2f$' %theta[1])
-ax.plot(c[1:], u3, alpha = 0.8, label = r'$\theta=%.2f$' %theta[2])
-ax.plot(c[1:], u4, alpha = 0.8, label = r'$\theta=%.2f$' %theta[3])
-ax.plot(c[1:], u5, alpha = 0.8, label = r'$\theta=%.2f$' %theta[4])
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
+ax.plot(c[1:], u1, alpha = 0.75, label = r'$\theta=%.2f$' %theta[0])
+ax.plot(c[1:], u2, alpha = 0.75, label = r'$\theta=%.2f$' %theta[1])
+ax.plot(c[1:], u3, alpha = 0.75, label = r'$\theta=%.2f$' %theta[2])
+ax.plot(c[1:], u4, alpha = 0.75, label = r'$\theta=%.2f$' %theta[3])
+ax.plot(c[1:], u5, alpha = 0.75, label = r'$\theta=%.2f$' %theta[4])
 ### AXIS
 ax.axhline(0, color = 'k') # Add horizontal axis
 ax.axvline(0, color = 'k') # Add vertical axis
 ax.yaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
-plt.text(size-0.10, -0.5, r'$c$', color = 'k') # x-axis label
-plt.text(    -0.25,  4.5, r'$u(c)$')           # y-axis label
+ax.text(size-0.10, -0.5, r'$c$', color = 'k')  # Manually add x-axis label
+ax.text(    -0.25,  4.5, r'$u(c)$')            # Manually add y-axis label
 # SETTINGS
 plt.box(False)                                 # Hide axis
 plt.legend(loc=0, frameon=False)
-plt.axis(v)
+plt.axis(axis_range)
 plt.show()
 
-#%%
 
+#%% *** SECOND CELL ***
+"============================================================================"
 "6|DEFINE PARAMETERS AND ARRAYS"
 # PARAMETERS
+# Code parameters
 k_size  =  150        # Model domain
 steps   =  k_size*100 # Number of "dots" in the domain
+# Ramsey model aprameters
 alpha   =  0.30       # Output elasticity of capital
 delta   =  0.35       # Depreciation rate
 rho     =  0.35       # Time preference
@@ -84,6 +95,7 @@ theta   =  0.8        # Coefficient or Relative Risk Aversion
 k_array = np.linspace(0, k_size, steps) # Create array of k
 
 
+"============================================================================"
 "7|DEFINE FUNCTIONS"
 # PRODUCTION FUNCTION
 def y(k):
@@ -111,6 +123,7 @@ def kdot(k, c):
     return kdot
     
 
+"============================================================================"
 "8|CALCULATE STEADY-STATE AND GOLD VALUES"
 # STEADY STATE VALUES
 k_star = (delta + rho)**(1/alpha)
@@ -125,11 +138,13 @@ y_gold = y(k_gold)
 s_gold = (y_gold - c_gold)/y_gold
 
 
+"============================================================================"
 "9|CALCULATE LOCI FUNCTIONS"
 k_loci = k_star
 c_loci = consumption(k_array)
 
 
+"============================================================================"
 "10|CALCULATE SAMPLE PATHS"
 k00, k01, k02 = k_star*0.25, k_star*0.50, k_star*2.2
 c0 = [consumption(k00)*0.25, consumption(k00), c_star*1.25,
@@ -155,16 +170,18 @@ path4 = sample_path(k02, c0[3], 30)
 path5 = sample_path(k02, c0[4], 30)
 
 
+"============================================================================"
 "11|PLOT RAMSEY MODEL WITH SAMPLE PATHS"
-# Value of k such that c = 0
+# VALUE OF k SUCH THAT c = 0
 k_zero = (1/(n + g + delta))**(1/(1-alpha))
-# Axis range
+
+# AXIS RANGE
 y_max = np.max(c_loci)*1.7
 x_max = k_zero*1.2
-v = [0, x_max, -0.1, y_max]                        
+axis_range = [0, x_max, -0.1, y_max]                        
 
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
 ax.plot(k_array, c_loci, color="k", alpha = 0.8)
 ax.axvline(k_loci, color="k", alpha = 0.8)
 ### SAMPLE PATHS
@@ -196,19 +213,20 @@ ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
 plt.text(x_max*0.98, -0.05      , r'$\hat{k}$'  , color = 'k') # x-axis label
 plt.text(-0.15 , y_max*0.95     , r'$\hat{c}$'  , color = 'k') # y-axis label
-plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k")
-plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k")
+plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k") # c loci label
+plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k") # k loci label
 # SETTINGS
-plt.axis(v)
-plt.box(False)  # Hide axis
+plt.box(False)                                                 # Hide axis
+plt.axis(axis_range)
 plt.show()
 
 
+"============================================================================"
 "12|STABLE-PATH: FORWARD AND BACKWARD SHOOTING"
 def forward_shoot(k0, step):
     # Set conditions for initial shoot
-    tol   = 1.0e-10
-    c0    = consumption(k0) - step
+    tol   = 1.0e-10                 # Tolerance level
+    c0    = consumption(k0) - step  # Initial consumption shoot value
     error = np.abs(((k0 - k_star)**2 + (c0 - c_star)**2)**0.5)
     path      = np.zeros(shape=(1, 2))
     path[0,0] = k0
@@ -231,8 +249,8 @@ def forward_shoot(k0, step):
         
         # Set up code break and reset the shoot
         if c2 > c_star:
-            path = np.zeros(shape=(1, 2))
-            c0 = c0 - step
+            path = np.zeros(shape=(1,2)) # Empty collected path data
+            c0 = c0 - step               # Move the initial shot by one step
             path[0,0] = k0
             path[0,1] = c0
             count = 0
@@ -250,8 +268,8 @@ def forward_shoot(k0, step):
 
 def backward_shoot(k0, step):
     # Set conditions for initial shoot
-    tol   = 1.0e-10
-    c0    = consumption(k_gold) * 1.5
+    tol   = 1.0e-10                    # Tolerance level
+    c0    = consumption(k_gold) * 1.5  # Initial consumptoin shoot value
     error = np.abs(((k0 - k_star)**2 + (c0 - c_star)**2)**0.5)
     path      = np.zeros(shape=(1, 2))
     path[0,0] = k0
@@ -290,30 +308,33 @@ def backward_shoot(k0, step):
        
     return path
 
-stable_L = forward_shoot(k00, 0.000001)
-stable_R = backward_shoot(k_star*2.00, 0.000001)
+stable_L = forward_shoot(k00, 0.000001)           # Execute shooting algorithm
+stable_R = backward_shoot(k_star*2.00, 0.000001)  # Execute shooting algorithm
+                                                  # Be patient ...
 
 
-"11|PLOT RAMSEY MODEL WITH STABLE PATH"
-# Value of k such that c = 0
+"============================================================================"
+"13|PLOT RAMSEY MODEL WITH STABLE PATH"
+# VALUE OF k SUCH THAT c = 0
 k_zero = (1/(n + g + delta))**(1/(1-alpha))
-# Axis range
+
+# AXIS RANGE
 y_max = np.max(c_loci)*1.7
 x_max = k_zero*1.2
-v = [0, x_max, -0.1, y_max]                        
+axis_range = [0, x_max, -0.1, y_max]                        
 
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
 ax.plot(k_array, c_loci, color="k", alpha = 0.8)
 ax.axvline(k_loci, color="k", alpha = 0.8)
 ### STABLE PATH
 ax.plot(stable_L[:,0], stable_L[:,1], "b--", alpha = 0.7)
 ax.plot(stable_R[:,0], stable_R[:,1], "b--", alpha = 0.7)
 ### AXIS
-ax.axvline(0, color="k")                                     # y-axis
-ax.axhline(0, color="k")                                     # x-axis
-ax.yaxis.set_major_locator(plt.NullLocator())                # Hide ticks
-ax.xaxis.set_major_locator(plt.NullLocator())                # Hide ticks
+ax.axvline(0, color="k")                       # y-axis
+ax.axhline(0, color="k")                       # x-axis
+ax.yaxis.set_major_locator(plt.NullLocator())  # Hide ticks
+ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
 plt.text(x_max*0.98, -0.05      , r'$\hat{k}$'  , color = 'k') # x-axis label
 plt.text(-0.15 , y_max*0.95     , r'$\hat{c}$'  , color = 'k') # y-axis label
@@ -321,8 +342,8 @@ plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k")
 plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k")
 plt.text(k_star*1.05, -0.05     , r'$k^*$'      , color = 'k')
 plt.text(-0.15, c_star          , r'$c^*$'      , color = 'k')
-ax.axhline(c_star, 0, k_star/v[1], linestyle=":", color = "grey")
+ax.axhline(c_star, 0, k_star/axis_range[1], linestyle=":", color = "grey")
 # SETTINGS
-plt.axis(v)
-plt.box(False)                                               # Hide axis
+plt.box(False)                                                 # Hide axis
+plt.axis(axis_range)
 plt.show()

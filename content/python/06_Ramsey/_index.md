@@ -21,29 +21,29 @@ Under revision
 
 ## Introduction
 
-A known issue with the Solow model is that the savings rate is exogenous (and constant). This means the ratio of consumption to income $Y/C$ is also constant. While the Solow model can be useful to highlight some features of long-run growth, this assumption also limits the applicability of this model. Yet, the Solow model can be interpreted as a special case of Ramsey model (or Ramsey-Kass-Koopmans model). Ramsey model can be considered as the building block of macro models with a household that optimizes its utility and, therefore, endogenously sets the savings rate.
+A known issue with the Solow model is that the savings rate is exogenous. This means the ratio of consumption-to-income $(C/Y)$ is also constant. While the Solow model can be useful in highlighting some features of long-run growth, the assumption of an exogenous savings rate also limits the applicability of this model. The Ramsey model can be considered as the building block of macro models with a household that optimizes its utility and, therefore, endogenously sets the savings rate.
 
-This note presents a "simple" Ramsey model (it offers a simplified discussion, does not discuss shocks, and does not add other features). For a more complete and detailed discussion see an advanced macroeconomics textbook. 
+This note presents a simple Ramsey model (it offers a simplified discussion, does not discuss shocks, and does not add other features). For a more complete and detailed discussion see an advanced macroeconomics textbook. 
 
-The model is populated by a representative household that maximizes its utility and by a representative firm that maximizes its profits. The model assumes a competitive market (no monopoly power, agents are price takers, etc.) The household provides labor services to the firm in exchange of a wage. The wage can be used to consume goods or save and accumulate assets. The model assumes a closed economy with no government. Finally, the model is presented in continuous (rather than discrete) time. A "dot" on top of a variable denotes its instantaneous time-change $(\dot x (t) = \frac{\partial x}{\partial t})$
+The model is populated by a representative household that maximizes its utility and by a representative firm that maximizes its profits. The model assumes a competitive market (no monopoly power, agents are price takers, etc.) The household provides labor services to the firm in exchange of a wage. The wage can be used to consume goods or become savings (accumulate assets). The model assumes a closed economy with no government. Finally, the model is presented in continuous (rather than discrete) time. A dot on top of a variable denotes its instantaneous time-change $\left(\dot x (t) = \frac{\partial x}{\partial t}right)$.
 
-## Representative household
+## The representative household
 
 Assume a large number of identical infinitely-lived households. Because these households are identical, we can use  a **representative** household to populate the model. The assumptions that this households are infinitely lived captures a continuum of generations. The representative household has $L(t)$ individuals with a population growth rate of $n$. Therefore, $L(t) = L(0) e^{nt}$
 
 ## The household utility
 
-The household utility $(U)$ is the present value of the utility (felicity function) of all household individuals $(u(c))$.
+The household utility $(U)$ is the present value of the utility (felicity function) of all household individuals $[u(c)]$. For simplicity assume $L(0) = 1$.
 
 $$
 \begin{equation}
-    U = \int_{0}^{\infty} u[c(t)] e^{nt} \underbrace{e^{-\rho t}}_{L(t)} dt = \int_{0}^{\infty} u[c(t)] e^{(n-\rho)t} dt
+    U = \int_{0}^{\infty} u[c(t)] e^{-\rho t} \underbrace{e^{nt}}_{L(t)} dt = \int_{0}^{\infty} u[c(t)] e^{(n-\rho)t} dt
 \end{equation}
 $$
 
-where $\rho > 0$ is the time preference of the household individual and where $n -\rho >0$. Also, $u(c)$ is concave $(u^{'}(c) > 0, u^{''}(c) < 0)$ and satisfies the Inada conditions $(u^{'}(c) \to \infty \text{ as } c \to 0 \text{, and } u^{'}(c) \to 0 \text{ as } c \to \infty$.
+where $\rho > 0$ is the time preference of the household individual and where $n -\rho >0$. Also, $u(c)$ is concave $(u^{'}(c) > 0, u^{''}(c) < 0)$ and satisfies the Inada conditions $[u^{'}(c) \to \infty \text{ as } c \to 0 \text{, and } u^{'}(c) \to 0 \text{ as } c \to \infty]$.
 
-The parameter $\rho$ can be interpreted as the time preference of the household or as capturing a discount of the future generation by the present generations. If $\rho = 1$, then present generation assigns equal "value" to the next generatio (i.e. parents with respect to their kids). If $\rho < 0$, then the present generation is altruistic and values the utility of the next generation more than their own.
+The parameter $\rho$ can be interpreted as the time preference of the household or as capturing a discount of the future generation by the present generations. If $\rho = 1$, then present generation assigns equal "value" to the next generation (i.e. parents with respect to their kids). If $\rho < 0$, then the present generation is altruistic and values the utility of the next generation more than their own.
 
 ## The household budget constraint
 
@@ -55,12 +55,12 @@ $$
 \end{equation}
 $$
 
-Dividing by $L(t)$ we get the change in assets per capita $(a)$ (and dropping the $t$ variable for notation simplicity):
+Dividing by $L(t)$ we get the change in assets per capita $(\lambda)$ (and dropping the $t$ variable for notation simplicity):
 
 $$
 \begin{align}
-    \dot{\left(\frac{A}{L} \right)} &= \frac{\dot{A}L - A \dot{L}}{L^2}  \\\\[10pt]
-    \dot{a} &= \frac{\dot{A}}{L} - \frac{A}{L}n  \\\\[10pt]
+    \left(\frac{dot{\Lambda}}{L} \right) &= \frac{\dot{\Lambda}L - \Lambda \dot{L}}{L^2}  \\\\[10pt]
+    \dot{a} &= \frac{\dot{\Lambda}}{L} - \frac{\Lambda}{L}n  \\\\[10pt]
     \dot{a} &= ra + w - c - na  \\\\[10pt]
     \dot{a} &= (r - n)a + w - c
 \end{align}
@@ -83,7 +83,7 @@ The household is  facing a dynamic optimization problem. It needs to set the pat
 $$
 \begin{align}
     \max_{c(t)} U &= \int_{t=0}^{\infty} u[c(t)] e^{-(n-\rho)t}  \\\\[10pt]
-    \text{subject to:}                                           \\\\[10pt]
+    \text{subject to:}&                                          \\\\[10pt]
     \dot{a} &= [r(t) - n] a(t) + w(t) - c(t)                     \\\\[10pt]
     a(0) &= a_{0}                                                \\\\[10pt]
     \lim\limits_{t \to \infty}a(t) &\geq 0                       \\\\[10pt]
@@ -100,7 +100,7 @@ $$
 \end{equation}
 $$
 
-where $\mu(t)$ is the present-value shadow price. Since the household faces an optimization problem at each moment $t$, the shadow price may vary over time as well. The "transversality condition" states that in the limit, either the shadow price or the assets have to be zero.
+where $\mu(t)$ is the present-value shadow price. Since the household faces an optimization problem at each moment $t$, the shadow price may vary over time as well. The transversality condition states that in the limit, either the shadow price or the assets have to be zero.
 
 The first-order-conditions (FOC) of the hamiltonian are:
 
@@ -121,7 +121,7 @@ $$
 \end{align}
 $$
 
-Make now two substitutions: (1) The first FOC in the third FOC, and (2) this last derivative in the third FOC as well.
+Next make now two substitutions: (1) The first FOC in the third FOC, and (2) this last derivative in the third FOC as well.
 
 $$
 \begin{align}
@@ -132,7 +132,7 @@ $$
 \end{align}
 $$
 
-The last equation is the **Euler equation**, which defines the path for $c$ given the rate of return $r(t)$. Recall that $u''(c)<0$ and therefore $\frac{u''(c)c}{u'(c)}>0$. The right-hand side of the equation can be interpreted as the "rate of return of consumption." Consumers would like to smooth consumption in time. Therefore, the rate of return $(r)$ has to be equal to the time preference $(\rho)$ minus the change of consumption over time. Or, put it differently, if $r = \rho$, then consumption will be flat. There is no opportunity to increase utility by moving consumption over time (extend a loan and postpone consumption or take a debt and advance consumption). Consumers will be willing to postpone consumption if $r$ is sufficiently above $\rho$. The required compensation to postpone consumption is the second term in the right-hand side of the equation.
+The last expression is the **Euler equation**, which defines the path for $c$ given the rate of return $r(t)$. Recall that $u''(c)<0$ and therefore $\frac{u''(c)c}{u'(c)}>0$. The right-hand side of the equation can be interpreted as the rate of return of consumption. Consumers would like to smooth consumption in time. Therefore, the rate of return $(r)$ has to be equal to the time preference $(\rho)$ minus the change of consumption over time. Or, put it differently, if $r = \rho$, then consumption will be flat. There is no opportunity to increase utility by moving consumption over time (extend a loan and postpone consumption or take a debt and advance consumption). Consumers will be willing to postpone consumption if $r$ is sufficiently above $\rho$. The required compensation to postpone consumption is the second term in the right-hand side of the equation.
 
 $$
 \begin{align}
@@ -150,7 +150,7 @@ $$
 \end{equation}
 $$
 
-where $\theta > 0$ is the coefficient of relative risk aversion. The $1 - \theta$ denominator assures the function will keep its desired properties of the function $(u'>0, u''<0)$ even if $\theta > 1$ (see below). The inclusion of the term $-1/(1-\theta)$ is for convenience; when $\theta \to 1$ then the CRRA function becomes $(u(c) = log(c))$. Consider now the first and second derivative of the CRRA function and the elasticity of substitution $(\sigma)$.
+where $\theta > 0$ is the coefficient of relative risk aversion (CRRA). The $1 - \theta$ denominator assures the function will keep its desired properties of the function $(u'>0, u''<0)$ even if $\theta > 1$ (see below). The inclusion of the term $-1/(1-\theta)$ is for convenience; when $\theta \to 1$ then the CRRA function becomes $u(c) = log(c)$. Consider now the first and second derivative of the CRRA function and the elasticity of substitution $(\sigma)$.
 
 $$
 \begin{align}
@@ -169,7 +169,7 @@ $$
 \end{align}
 $$
 
-We can rewrite the Euler equation to more conveniently depict the consumption path that maximizes the household utility.
+Conveniently, we can rewrite the Euler equation depict the consumption path that maximizes the household utility.
 
 $$
 \begin{equation}
@@ -182,20 +182,26 @@ This is one of the two equations that describes Ramsey model. The second equatio
 The following code plots the utility function for different levels of $\theta$. The function also allows for $\theta = 1$, in such case the utility function becomes the log of consumption.
 
 ```python
+#%% | *** FIRST CELL ***
+"============================================================================"
 "1|IMPORT PACKAGES"
 import numpy as np              # Package for scientific computing with Python
-import matplotlib.pyplot as plt # Matplotlib is a 2D plotting library
+import matplotlib.pyplot as plt # Matplotlib is a plotting library
 
-#%%
+
+"============================================================================"
 "2|DEFINE PARAMETERS AND ARRAYS"
 # PARAMETERS
+# Code parameters
 size  = 5         # Model domain
-steps = size*100  # Number of "dots" in the domain
+steps = size*100  # Number of dots in the domain
+dpi   = 300       # Figure quality
 
 # ARRAY
 c = np.linspace(0, size, steps)  # Create array of consumption
 
 
+"============================================================================"
 "3|DEFINE UTILITY FUNCTION"
 # Production function
 def u(x, CRRA):
@@ -206,6 +212,7 @@ def u(x, CRRA):
     return u
 
 
+"============================================================================"
 "4|CALCULATE UTILITY FUNCTIONS FOR DIFFERENT VALUES OF THETA"
 theta = [0.25, 0.75, 1, 1.5, 2]
 
@@ -217,38 +224,41 @@ u4 = u(c[1:], theta[3])
 u5 = u(c[1:], theta[4])
 
 
+"============================================================================"
 "5|PLOT UTILITY FUNCTIONS"
 ### AXIS RANGE
-v = [0, size, -10, 5]    
+axis_range = [0, size, -10, 5]
+
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7))
-ax.plot(c[1:], u1, alpha = 0.8, label = r'$\theta=%.2f$' %theta[0])
-ax.plot(c[1:], u2, alpha = 0.8, label = r'$\theta=%.2f$' %theta[1])
-ax.plot(c[1:], u3, alpha = 0.8, label = r'$\theta=%.2f$' %theta[2])
-ax.plot(c[1:], u4, alpha = 0.8, label = r'$\theta=%.2f$' %theta[3])
-ax.plot(c[1:], u5, alpha = 0.8, label = r'$\theta=%.2f$' %theta[4])
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
+ax.plot(c[1:], u1, alpha = 0.75, label = r'$\theta=%.2f$' %theta[0])
+ax.plot(c[1:], u2, alpha = 0.75, label = r'$\theta=%.2f$' %theta[1])
+ax.plot(c[1:], u3, alpha = 0.75, label = r'$\theta=%.2f$' %theta[2])
+ax.plot(c[1:], u4, alpha = 0.75, label = r'$\theta=%.2f$' %theta[3])
+ax.plot(c[1:], u5, alpha = 0.75, label = r'$\theta=%.2f$' %theta[4])
 ### AXIS
 ax.axhline(0, color = 'k') # Add horizontal axis
 ax.axvline(0, color = 'k') # Add vertical axis
 ax.yaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
-plt.text(size-0.10, -0.5, r'$c$', color = 'k') # x-axis label
-plt.text(    -0.25,  4.5, r'$u(c)$')           # y-axis label
+ax.text(size-0.10, -0.5, r'$c$', color = 'k')  # Manually add x-axis label
+ax.text(    -0.25,  4.5, r'$u(c)$')            # Manually add y-axis label
 # SETTINGS
 plt.box(False)                                 # Hide axis
 plt.legend(loc=0, frameon=False)
-plt.axis(v)
+plt.axis(axis_range)
 plt.show()
+
 ```
 
 ![Fig_01](Fig_01.png)
 
 ## The representative firm
 
-The representative firm uses a labor-technology augmenting production function $(Y = F(K; AL)$ with constant returns to scale (CRS). The production function depicts the typical properties of diminishing marginal returns and the Inada conditions. Technology $(A)$ grows at rage $g$: $A(t) = A(0) e^{gt}$.
+The representative firm uses a labor-augmenting technology production function $(Y = F(K; AL)$ with constant returns to scale (CRS). The production function depicts the typical properties of diminishing marginal returns and the Inada conditions. Technology $(A)$ grows at rage $g$: $A(t) = A(0) e^{gt}$.
 
-In terms of effective labor $(AL)$, and  normalizing the price of the good to one $(p = 1)$, the profit of the firm becomes (where the $"\hat{}"$ symbol denotes the variable is in per effective labor units):
+In terms of effective labor $(AL)$, and  normalizing the price of the good to one $(p = 1)$, the profit of the firm becomes (where the hat symbol denotes the variable is in per effective labor units):
 
 $$
 \begin{equation}
@@ -258,7 +268,7 @@ $$
 
 The rate of return on capital equals the gross rate of return $(R)$ minus the depreciation rate $(\delta)$: $r = R - \delta$. In this model there is no intertemporal optimization. The firm rents capital from the household one period at the time.
 
-The FOC for the firm with respect to capital per effective unit of labor utilization is:
+The FOC for the firm with respect to capital per effective unit of labor is:
 
 $$
 \begin{equation}
@@ -282,7 +292,7 @@ In equilibrium, the assets owned by the household coincide with the capital per 
 $$
 \begin{align}
     \dot{a}                      &= ra + w - c - na                          \\\\[10pt]
-    \dot{(Ak)}                   &= r Ak + Aw - Ac - n Ak                    \\\\[10pt]
+    (\dot{Ak})                   &= r Ak + Aw - Ac - n Ak                    \\\\[10pt]
     \dot{A}k + A \dot{k}         &= r Ak + Aw - Ac - n Ak                    \\\\[10pt]
     \frac{\dot{A}}{A}k + \dot{k} &= rk + w - c - nk                          \\\\[10pt]
     gk + \dot{k}                 &= rk + w - c - n    k                      \\\\[10pt]
@@ -291,7 +301,7 @@ $$
 \end{align}
 $$
 
-Knowing that $R = r + \delta$ and that $f'(k) = R + \delta$, then the two motion equations that model Ramsey model are:
+Knowing that $R = r + \delta$ and that $f'(k) = R + \delta$, then the two motion equations in Ramsey model are:
 
 $$
 \begin{cases}
@@ -300,7 +310,7 @@ $$
 \end{cases}
 $$
 
-In equilibrium, $\hat{c} = 0$ and $\hat{k} = 0$. Assuming the equilibrium conditions, we can rewrite the first of Ramsey model equations as an equilibrium **value** of $\hat{k}$, and the second equation can be represented as $\hat{c}$ in terms of $\hat{k}$. First, assume the production following, $Y = A \cdot \left[K^{\alpha} (AL)^{1 - \alpha} \right] (\alpha \in (0, 1))$. In terms of effective labor: $\hat{y} = \hat{k}^{\alpha}$.
+In equilibrium, $\hat{c} = 0$ and $\hat{k} = 0$. Assuming the equilibrium conditions, we can rewrite the first of Ramsey model equations as an equilibrium **value** of $\hat{k}$, and the second equation can be represented as $\hat{c}$ in terms of $\hat{k}$. First, assume a Cobb-Douglas production function, $Y = K^{\alpha} (AL)^{1 - \alpha}; (\alpha \in (0, 1))$. In terms of effective labor: $\f(\hat{k}) = \hat{k}^{\alpha}$.
 
 $$
 \begin{align}
@@ -323,27 +333,25 @@ The model has one stable saddle path that converges to equilibrium. This saddle-
 
 ## The code
 
-The Python code has the following structure. Following the above discussion, after importing the required packages and defining parameters and arrays, the equilibrium, gold values, and _loci_ lines are calculated. The code plots two graphs. 
-
-The first one shows the _loci_ lines with five sample paths (in red). Each one of these sample paths depicts the unstable dynamics of the model. The second graph plots the stable-path (in blue).
+The `Python` code starts by calculating and plotting the the equilibrium, gold values, and _loci_ lines. The code plots this in two graphs. The first one shows the _loci_ lines with five sample paths (in <span style="color:red">red</span>). Each one of these sample paths depicts the unstable dynamics of the model. The second graph plots the stable-path (in <span style="color:blue">blue</span>)).
 
 ### Estimating the stable-path
 
-A common way to estimate the stable-path is with a "shooting" methodology. This approach shoots a number of paths until it finds one that is close enough the actual stable path. Let $\tilde{k}$ and $\tilde{c}$ denote estimated values of the path produced by the "shooting" algorithm.
+A common way to estimate the stable-path is with a "shooting" algorithm. This approach shoots a number of paths until it finds one that is close enough the actual stable path. An arbitrarily chosen tolerance level defines what *close enough* means for the algorithm.
 
-This note uses a **simple** code and methodology to illustrate this type of numerical method. It is not intended to be the more efficient one. The stable path is estimated in two halves. One estimation for the stable path section to the left of the equilibrium point, and another estimation for the stable path to the right of the equilibrium point. These two estimations are coded as two different functions: (1) backward shoot and (2) forward shoot respectively. Alternatively, one simple "shoot" function could include both initial locations. 
+This note uses a **simple** code and methodology to illustrate this type of numerical method. It is not intended to be the more efficient one. The stable path is estimated in two halves. One estimation for the stable path section to the left of the equilibrium point, and another estimation for the stable path to the right of the equilibrium point. These two estimations are coded as two different functions: (1) backward shoot and (2) forward shoot respectively. Alternatively, one simple "shoot" function could include both initial locations. Let $\tilde{k}$ and $\tilde{c}$ denote estimated values of the path produced by the "shooting" algorithm.
 
-These type of iterations can be time consuming depending on how many shoots the code is going to perform (which depends on how big a correction is when a shoot misses the steady-state), what the tolerance level is, etc. A more sophisticated code could reduce the number of attempts and save computational time.
+These type of iterations can be time consuming depending on how many shoots the code is going to perform (which depends on how big a correction is when a shoot misses the steady-state, how small the tolerance error is, how far away from equilibrium the first shot is, and so on). A more sophisticated code could reduce the number of attempts and save computational time through different numerical methods and techniques (take an advanced math course).
 
-Since we know that is very unlikely that our "shoots" will exactly hit the steady state $(k^*, c(k^*)$, we need to define a success criteria. The success criteria is when the shoots hits close enough to the target. We need to define circle around the equilibrium that plays the role of the tolerance level. Once we find a "shoot" that hits inside this circle, the shoots is considered a success and an approximation good enough for the estimation purposes.
+Since we know that is very unlikely that our "shoots" will exactly hit the steady state $(k^*, c(k^*)$, we need to define a success criteria. The success criteria is when the shoots hits close enough to the target. We need to define a circle around the equilibrium that plays the role of being the tolerance level. Once we find a shoot that hits inside this circle, the shoots is considered a success and an approximation good enough for the estimation purposes.
 
 The distance of a point to the steady-state is: $distance = \sqrt[2]{(\tilde{k} - k^\*)^2 + (\tilde{c} - c^\*)^2}$, where $\tilde{k}, \tilde{c}$ are the shoot estimations.
 
-The shooting functions have two inputs. The initial level of $k_0$ and a "step" size. The "step" size is how big the correction of the initial shoot will be after it misses the tolerance level (the target). Given $k_0$, the function estimates a level of $c(k_0)$ (the first shoot). If the shoot misses the target, then the algorithm performs a correction to the initial level of $c_0$ and shoots again. This sequence repeats until the shoot hits the target.
+The shooting functions have two inputs. The initial level of $k_0$ and a step size. The step size is how big the correction of the initial shoot will be after it misses the tolerance level (the target). Given $k_0$, the function estimates a level of $c(k_0)$ (the first shoot). If the shoot misses the target, then the algorithm performs a correction to the initial level of $c_0$ and shoots again. This sequence repeats until the shoot hits the target.
 
 ### The forward shot
 
-The first shoot of the forward shoot function is located one step below the _loci_ function. We know is very likely that this initial shoot is too high, and therefore the path will go above $c^*$. The loop has two break points to define a successful shoot. The first one is if the path produces a point $(k, c)$ inside the tolerance distance from the steady-state (the above discussion). The second one is the path produces a value of $\tilde{k} > k_*$. This break point is in place because the step size (how far the new shoot starting point moves) is a fixed amount without a correction or feedback mechanism. It is possible, then, that after missing the target the next iteration starts at a value of $c$ that is too low. Such path may still be an estimation good enough even if it does not satisfy the tolerance level (for the purposes of this notebook, this is enough). 
+Let's start with the forward shoot function. The initial point is one step below the _loci_ function. We know from the first plot blow that is very likely that this initial shoot is too high, and therefore the path will go above $c^*$. The loop has two break points. The first one is if the path produces a point $(k, c)$ inside the tolerance distance from the steady-state (the above discussion). The second one is if the path produces a value of $\tilde{k} > k_*$. This break point is in place because the step size (how far the new shoot starting point moves) is a fixed amount without a correction or feedback mechanism. It is possible, then, that after missing the target the next iteration starts at a value of $c$ that is too low. Such path will be considered good enough even if it does not satisfy the tolerance level (for the purposes of this example, this is enough).
 
 There is a third break, which is a cap on the number of iterations the loop can perform. When building a code like this, this type of break can help avoid a mistake that sends the code into an infinite loop.
 
@@ -353,7 +361,7 @@ If the path produces a value of $\tilde{c} > c^*$, then the loop resets and star
 
 The backward shoot function follow a similar structure than the forward shoot. Yet, because the starting point is different, the break points have to be modified. However, there is a difference in the starting point. Rather than starting at the _loci_ level given the initial on step above $c_0 = c(k_0)$, the code starts with $c_0 = 1.5 c(k_0)$. This is an example of an easy way to save some computational power. Looking at the first figure (the unstable paths) we know that the level of consumption of the stable path will be several steps above $c(k_0)$. Therefore, we can save computation time by avoiding shoot attempts between $c(k_0)$ and $1.5 c(k_0)$. 
 
-The forward shoot loop has two stop points of success. The first one is if the shoot produces a point inside the tolerance circle. The second one is if the path produces a value of $\tilde{k} < k^*$ (for similar reasons than the forward shoot break). There is also the third break built on the number of iterations the loop will perform. Since the starting point is farther away from the equilibrium point, this break has a larger limit of iterations than the forward shoot loop.
+The forward shoot loop has two break points. The first one is if the shoot produces a point inside the tolerance circle. The second one is if the path produces a value of $\tilde{k} < k^*$ (for similar reasons than the forward shoot break). There is also the third break built on the number of iterations the loop will perform. Because the starting point is farther away from the equilibrium point, this break has a larger limit of iterations than the forward shoot loop.
 
 If the shoot produces a value of $\tilde{c} < c^*$, then the code resets and calculates a new shoot with a new $c_0$ one step above the previous shoot.
 
