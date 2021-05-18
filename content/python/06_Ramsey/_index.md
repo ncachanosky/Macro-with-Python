@@ -9,11 +9,6 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{% callout warning %}}
-Under revision
-{{% /callout %}}
-
----
 
 {{< icon name="python" pack="fab" >}} {{% staticref "Python/Ramsey.py" %}}Download Python file.{{% /staticref %}}
 
@@ -25,7 +20,7 @@ A known issue with the Solow model is that the savings rate is exogenous. This m
 
 This note presents a simple Ramsey model (it offers a simplified discussion, does not discuss shocks, and does not add other features). For a more complete and detailed discussion see an advanced macroeconomics textbook. 
 
-The model is populated by a representative household that maximizes its utility and by a representative firm that maximizes its profits. The model assumes a competitive market (no monopoly power, agents are price takers, etc.) The household provides labor services to the firm in exchange of a wage. The wage can be used to consume goods or become savings (accumulate assets). The model assumes a closed economy with no government. Finally, the model is presented in continuous (rather than discrete) time. A dot on top of a variable denotes its instantaneous time-change $\left(\dot x (t) = \frac{\partial x}{\partial t}right)$.
+The model is populated by a representative household that maximizes its utility and by a representative firm that maximizes its profits. The model assumes a competitive market (no monopoly power, agents are price takers, etc.) The household provides labor services to the firm in exchange of a wage. The wage can be used to consume goods or become savings (accumulate assets). The model assumes a closed economy with no government. Finally, the model is presented in continuous (rather than discrete) time. A dot on top of a variable denotes its instantaneous time-change $\left(\dot x (t) = \frac{\partial x}{\partial t}\right)$.
 
 ## The representative household
 
@@ -310,7 +305,7 @@ $$
 \end{cases}
 $$
 
-In equilibrium, $\hat{c} = 0$ and $\hat{k} = 0$. Assuming the equilibrium conditions, we can rewrite the first of Ramsey model equations as an equilibrium **value** of $\hat{k}$, and the second equation can be represented as $\hat{c}$ in terms of $\hat{k}$. First, assume a Cobb-Douglas production function, $Y = K^{\alpha} (AL)^{1 - \alpha}; (\alpha \in (0, 1))$. In terms of effective labor: $\f(\hat{k}) = \hat{k}^{\alpha}$.
+In equilibrium, $\hat{c} = 0$ and $\hat{k} = 0$. Assuming the equilibrium conditions, we can rewrite the first of Ramsey model equations as an equilibrium **value** of $\hat{k}$, and the second equation can be represented as $\hat{c}$ in terms of $\hat{k}$. First, assume a Cobb-Douglas production function, $Y = K^{\alpha} (AL)^{1 - \alpha}; (\alpha \in (0, 1))$. In terms of effective labor: $f(\hat{k}) = \hat{k}^{\alpha}$.
 
 $$
 \begin{align}
@@ -333,7 +328,7 @@ The model has one stable saddle path that converges to equilibrium. This saddle-
 
 ## The code
 
-The `Python` code starts by calculating and plotting the the equilibrium, gold values, and _loci_ lines. The code plots this in two graphs. The first one shows the _loci_ lines with five sample paths (in <span style="color:red">red</span>). Each one of these sample paths depicts the unstable dynamics of the model. The second graph plots the stable-path (in <span style="color:blue">blue</span>)).
+The `Python` code starts by calculating and plotting the the equilibrium, gold values, and _loci_ lines. The code plots this in two graphs. The first one shows the _loci_ lines with five sample paths (in <span style="color:red">red</span>). Each one of these sample paths depicts the unstable dynamics of the model. The second graph plots the stable-path (in <span style="color:blue">blue</span>).
 
 ### Estimating the stable-path
 
@@ -366,11 +361,14 @@ The forward shoot loop has two break points. The first one is if the shoot produ
 If the shoot produces a value of $\tilde{c} < c^*$, then the code resets and calculates a new shoot with a new $c_0$ one step above the previous shoot.
 
 ```python
-
+#%% *** SECOND CELL ***
+"============================================================================"
 "6|DEFINE PARAMETERS AND ARRAYS"
 # PARAMETERS
+# Code parameters
 k_size  =  150        # Model domain
 steps   =  k_size*100 # Number of "dots" in the domain
+# Ramsey model aprameters
 alpha   =  0.30       # Output elasticity of capital
 delta   =  0.35       # Depreciation rate
 rho     =  0.35       # Time preference
@@ -381,6 +379,7 @@ theta   =  0.8        # Coefficient or Relative Risk Aversion
 k_array = np.linspace(0, k_size, steps) # Create array of k
 
 
+"============================================================================"
 "7|DEFINE FUNCTIONS"
 # PRODUCTION FUNCTION
 def y(k):
@@ -408,6 +407,7 @@ def kdot(k, c):
     return kdot
     
 
+"============================================================================"
 "8|CALCULATE STEADY-STATE AND GOLD VALUES"
 # STEADY STATE VALUES
 k_star = (delta + rho)**(1/alpha)
@@ -422,11 +422,13 @@ y_gold = y(k_gold)
 s_gold = (y_gold - c_gold)/y_gold
 
 
+"============================================================================"
 "9|CALCULATE LOCI FUNCTIONS"
 k_loci = k_star
 c_loci = consumption(k_array)
 
 
+"============================================================================"
 "10|CALCULATE SAMPLE PATHS"
 k00, k01, k02 = k_star*0.25, k_star*0.50, k_star*2.2
 c0 = [consumption(k00)*0.25, consumption(k00), c_star*1.25,
@@ -452,16 +454,18 @@ path4 = sample_path(k02, c0[3], 30)
 path5 = sample_path(k02, c0[4], 30)
 
 
+"============================================================================"
 "11|PLOT RAMSEY MODEL WITH SAMPLE PATHS"
-# Value of k such that c = 0
+# VALUE OF k SUCH THAT c = 0
 k_zero = (1/(n + g + delta))**(1/(1-alpha))
-# Axis range
+
+# AXIS RANGE
 y_max = np.max(c_loci)*1.7
 x_max = k_zero*1.2
-v = [0, x_max, -0.1, y_max]                        
+axis_range = [0, x_max, -0.1, y_max]                        
 
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
 ax.plot(k_array, c_loci, color="k", alpha = 0.8)
 ax.axvline(k_loci, color="k", alpha = 0.8)
 ### SAMPLE PATHS
@@ -493,19 +497,20 @@ ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
 plt.text(x_max*0.98, -0.05      , r'$\hat{k}$'  , color = 'k') # x-axis label
 plt.text(-0.15 , y_max*0.95     , r'$\hat{c}$'  , color = 'k') # y-axis label
-plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k")
-plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k")
+plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k") # c loci label
+plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k") # k loci label
 # SETTINGS
-plt.axis(v)
-plt.box(False)  # Hide axis
+plt.box(False)                                                 # Hide axis
+plt.axis(axis_range)
 plt.show()
 
 
+"============================================================================"
 "12|STABLE-PATH: FORWARD AND BACKWARD SHOOTING"
 def forward_shoot(k0, step):
     # Set conditions for initial shoot
-    tol   = 1.0e-10
-    c0    = consumption(k0) - step
+    tol   = 1.0e-10                 # Tolerance level
+    c0    = consumption(k0) - step  # Initial consumption shoot value
     error = np.abs(((k0 - k_star)**2 + (c0 - c_star)**2)**0.5)
     path      = np.zeros(shape=(1, 2))
     path[0,0] = k0
@@ -528,8 +533,8 @@ def forward_shoot(k0, step):
         
         # Set up code break and reset the shoot
         if c2 > c_star:
-            path = np.zeros(shape=(1, 2))
-            c0 = c0 - step
+            path = np.zeros(shape=(1,2)) # Empty collected path data
+            c0 = c0 - step               # Move the initial shot by one step
             path[0,0] = k0
             path[0,1] = c0
             count = 0
@@ -547,8 +552,8 @@ def forward_shoot(k0, step):
 
 def backward_shoot(k0, step):
     # Set conditions for initial shoot
-    tol   = 1.0e-10
-    c0    = consumption(k_gold) * 1.5
+    tol   = 1.0e-10                    # Tolerance level
+    c0    = consumption(k_gold) * 1.5  # Initial consumptoin shoot value
     error = np.abs(((k0 - k_star)**2 + (c0 - c_star)**2)**0.5)
     path      = np.zeros(shape=(1, 2))
     path[0,0] = k0
@@ -587,30 +592,33 @@ def backward_shoot(k0, step):
        
     return path
 
-stable_L = forward_shoot(k00, 0.000001)
-stable_R = backward_shoot(k_star*2.00, 0.000001)
+stable_L = forward_shoot(k00, 0.000001)           # Execute shooting algorithm
+stable_R = backward_shoot(k_star*2.00, 0.000001)  # Execute shooting algorithm
+                                                  # Be patient ...
 
 
-"11|PLOT RAMSEY MODEL WITH STABLE PATH"
-# Value of k such that c = 0
+"============================================================================"
+"13|PLOT RAMSEY MODEL WITH STABLE PATH"
+# VALUE OF k SUCH THAT c = 0
 k_zero = (1/(n + g + delta))**(1/(1-alpha))
-# Axis range
+
+# AXIS RANGE
 y_max = np.max(c_loci)*1.7
 x_max = k_zero*1.2
-v = [0, x_max, -0.1, y_max]                        
+axis_range = [0, x_max, -0.1, y_max]                        
 
 ### BUILD PLOT AND POPULIATE WITH LOCI LINES
-fig, ax = plt.subplots(figsize=(10, 7))
+fig, ax = plt.subplots(figsize=(10, 7), dpi=dpi)
 ax.plot(k_array, c_loci, color="k", alpha = 0.8)
 ax.axvline(k_loci, color="k", alpha = 0.8)
 ### STABLE PATH
 ax.plot(stable_L[:,0], stable_L[:,1], "b--", alpha = 0.7)
 ax.plot(stable_R[:,0], stable_R[:,1], "b--", alpha = 0.7)
 ### AXIS
-ax.axvline(0, color="k")                                     # y-axis
-ax.axhline(0, color="k")                                     # x-axis
-ax.yaxis.set_major_locator(plt.NullLocator())                # Hide ticks
-ax.xaxis.set_major_locator(plt.NullLocator())                # Hide ticks
+ax.axvline(0, color="k")                       # y-axis
+ax.axhline(0, color="k")                       # x-axis
+ax.yaxis.set_major_locator(plt.NullLocator())  # Hide ticks
+ax.xaxis.set_major_locator(plt.NullLocator())  # Hide ticks
 ### TEXT 
 plt.text(x_max*0.98, -0.05      , r'$\hat{k}$'  , color = 'k') # x-axis label
 plt.text(-0.15 , y_max*0.95     , r'$\hat{c}$'  , color = 'k') # y-axis label
@@ -618,10 +626,10 @@ plt.text(k_star*1.05, y_max*0.95, r'$\hat{c}=0$', color = "k")
 plt.text(k_zero*0.95, 0.07      , r'$\hat{k}=0$', color = "k")
 plt.text(k_star*1.05, -0.05     , r'$k^*$'      , color = 'k')
 plt.text(-0.15, c_star          , r'$c^*$'      , color = 'k')
-ax.axhline(c_star, 0, k_star/v[1], linestyle=":", color = "grey")
+ax.axhline(c_star, 0, k_star/axis_range[1], linestyle=":", color = "grey")
 # SETTINGS
-plt.axis(v)
-plt.box(False)                                               # Hide axis
+plt.box(False)                                                 # Hide axis
+plt.axis(axis_range)
 plt.show()
 ```
 
