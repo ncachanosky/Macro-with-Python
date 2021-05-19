@@ -161,8 +161,8 @@ Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta)
 
 $$
 \begin{align}
-    U(C^\*, L^\*)^* &= \left(C^\* \right)^{\beta} \left(L^\* \right)^{1-\beta}  \\\\[10pt]
-    U(C^\*, L^\*)^* &= \left[\beta(I + T (w/P)\right]^{\beta} \left[(1 - \beta) \frac{I + T(w/P)}{(w/P)} \right]^{1-\beta}
+    U^*(C^\*, L^\*) &= \left(C^\* \right)^{\beta} \left(L^\* \right)^{1-\beta}  \\\\[10pt]
+    U^*(C^\*, L^\*) &= \left[\beta(I + T (w/P)\right]^{\beta} \left[(1 - \beta) \frac{I + T(w/P)}{(w/P)} \right]^{1-\beta}
 \end{align}
 $$
 
@@ -170,9 +170,9 @@ Using the lagrangian method also allows to find the "optimal" value of $\lambda$
 
 $$
 \begin{align}
-    \lambda^* &= (1-\beta) \cdot \left(\frac{C^*}{L^*} \right)^{\beta}  \\\\[10pt]
-    \lambda^* &= (1-\beta) \cdot \left[\frac{\beta \left(I+24(w/P)\right)w}{(1-\beta)(I+24(w/P)} \right]^{\beta}  \\\\[10pt]
-    \lambda^* &= (1-\beta) \cdot \left(\frac{\beta}{1-\beta} \frac{w}{P} \right)^{\beta}
+    \lambda^* &= (1-\beta) \left(\frac{C^*}{L^*} \right)^{\beta}  \\\\[10pt]
+    \lambda^* &= (1-\beta) \left[\frac{\beta \left(I+24(w/P)\right)w}{(1-\beta)(I+24(w/P)} \right]^{\beta}  \\\\[10pt]
+    \lambda^* &= (1-\beta) \left(\frac{\beta}{1-\beta} \frac{w}{P} \right)^{\beta}
 \end{align}
 $$
 
