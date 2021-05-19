@@ -161,8 +161,8 @@ Plugin this result in the third FOC and solving for $L$ yields $L^\* = (1-\beta)
 
 $$
 \begin{align}
-    U^*(C^\*, L^\*) &= \left(C^\* \right)^{\beta} \left(L^\* \right)^{1-\beta}  \\\\[10pt]
-    U^*(C^\*, L^\*) &= \left[\beta(I + T (w/P)\right]^{\beta} \left[(1 - \beta) \frac{I + T(w/P)}{(w/P)} \right]^{1-\beta}
+    U^\*(C^\*, L^\*) &= \left(C^\* \right)^{\beta} \left(L^\* \right)^{1-\beta}  \\\\[10pt]
+    U^\*(C^\*, L^\*) &= \left[\beta(I + T (w/P)\right]^{\beta} \left[(1 - \beta) \frac{I + T(w/P)}{(w/P)} \right]^{1-\beta}
 \end{align}
 $$
 
