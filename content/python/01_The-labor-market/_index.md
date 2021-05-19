@@ -9,10 +9,6 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{% callout warning %}}
-Under revision
-{{% /callout %}}
-
 ---
 
 {{< icon name="python" pack="fab" >}} {{% staticref "Python/The labor market.py" %}}Download Python file.{{% /staticref %}}
@@ -42,7 +38,7 @@ $$
 The following code plots labor demand and shifts produced by changes in $K$ (in <span style="color:blue">blue</span>), $A$ (in <span style="color:red">red</span>), and in $\alpha$ (in <span style="color:green">green</span>). The first part of the code imports the required packages. The second part defines the parameters and vectors to be used. The third part of the code builds the labor demand function. The fourth section calculates labor demand and the effects of shocks (1) to capital $(\Delta K = 20)$, (2) to productivity $(\Delta A = 20)$, and (3) to output elasticity of capital $(\Delta \alpha = 20)$. The fifth part of the code plots labor demand and the shock effects.
 
 ```python
-#%% | *** FIRST CELL ***
+#%% | *** CELL 1 ***
 "============================================================================"
 "1|IMPORT PACKAGES"
 import numpy             as np       # Package for scientific computing
@@ -183,7 +179,7 @@ $$
 Now we can use this information to plot the indifference curve with `matplotlib`. Note that at $T=24$ (zero hours of labor), income equals $I$ (non-labor income). This shows as a vertical line that connects with the budget constraint, which starts to grow as hours of labor are added.(moving to the left).
 
 ```python
-#%% *** SECOND CELL ***
+#%% *** CELL 2 ***
 "============================================================================"
 "6|DEFINE PARAMETERS AND ARRAYS"
 # Model parameters
@@ -254,12 +250,12 @@ $$
 \end{align}
 $$
 
-> If $I=0$, then labor supply simplifies to: $N^S = \beta T$.
+> If $I=0$, then labor supply does not depend on $w/P \to N^S = \beta T$.
 
 The following code shows labor supply (in black) and shocks to non-labor income $\Delta I = 25$ (in <span style="color:blue">blue</span>) and to consumption elasticity of utility $\Delta \beta = 0.10$ (in <span style="color:red">red</span>). Note that in this construction $N^S$ does not bend-backwards as is typically shows in economic textbooks.
 
 ```python
-#%% *** THIRD CELL ***
+#%% *** CELL 3 ***
 "============================================================================"
 "9|LABOR SUPPLY"
 def Nsupply(rW, beta, I):
@@ -342,9 +338,9 @@ plt.plot(N_star, rW_star.x, 'bo')
 plt.axvline(x=N_star   , ymin=0, ymax=rW_star.x/12, ls=':', color='k')
 plt.axhline(y=rW_star.x, xmin=0, xmax=N_star/T    , ls=':', color='k')
 # ADD LABELS
-plt.text( 4.5, 11, "Labor demand")
-plt.text(20  ,  5, "Labor supply")
-plt.text(0.2       , rW_star.x+0.5, np.round(rW_star.x, 1))
+plt.text( 4.5      , 11, "Labor demand")
+plt.text(20        ,  5, "Labor supply")
+plt.text(0.2       , rW_star.x+0.3, np.round(rW_star.x, 1))
 plt.text(N_star+0.3, 0.3          , np.round(N_star, 1))
 # SETTINGS
 plt.axis(axis_range) 
