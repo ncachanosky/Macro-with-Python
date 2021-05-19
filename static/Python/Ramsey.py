@@ -22,8 +22,7 @@ import matplotlib.pyplot as plt # Matplotlib is a plotting library
 size  = 5         # Model domain
 steps = size*100  # Number of dots in the domain
 dpi   = 300       # Figure quality
-
-# ARRAY
+# Array
 c = np.linspace(0, size, steps)  # Create array of consumption
 
 
