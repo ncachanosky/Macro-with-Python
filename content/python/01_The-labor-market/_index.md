@@ -105,6 +105,10 @@ plt.show()
 
 ---
 
+## Introduction
+
+This example builds a supply and demand for labor. The former is derived from a consumer utility maximization problem. The latter from a firm profit maximization problem. The example also calculates and plots the equilibrium of the labor market.
+
 ## Labor supply
 
 Labor supply is derived from the consumer maximizing a constrained utility function. The consumer receives utility from consumption $(C)$ and leisure time $(L)$. While the profit function of the firm has an internal maximum, the utility function is strictly increasing on $C$ and $L$. Put it differently, there is a point after which increasing output does not increase profits. But, utility always increases (even if by a very small amount) with more consumption. Therefore, the utility maximization problem includes (1) a binding constrain and (2) the right mix of $C$ and $L$ that will depend on their relative prices.
@@ -307,7 +311,7 @@ $$
 \end{align}
 $$
 
-`Python` to calculate the value (root) of $\left( \frac{w}{P} \right)$ that makes $\Theta = 0$. For this we need the "root" function from the `SciPy` library.
+Our model does not have linear equations that would allow for an easy algebraic solution. We can use `Python` to calculate the value (root) of $\left( \frac{w}{P} \right)$ that makes $\Theta = 0$. For this we need the "root" function from the `SciPy` library.
 
 ```python
 #%% *** CELL 4 ***
