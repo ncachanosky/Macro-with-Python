@@ -15,6 +15,10 @@ type: book  # Do not modify.
 
 ---
 
+## Introduction
+
+This example builds a demand and supply of labor. The former is derived from a firms profit maximization problem. The latter from a consumer utility maximization problem. The example also calculates and plots the equilibrium of the labor market.
+
 ## Labor demand
 
 Labor demand $\left(N^D\right)$ originates in a representative firm maximizing its profits $(\pi)$. Assume output $(Q)$ follows a Cobb-Douglas production function with Hicks-Neutral technology $(A)$, and that $P$ is the market price of the firm's output. Further, assume that $w$ and $r$ are the prices of labor $(N)$ and capital $(K)$ respectively. Then, firm's profit is (where $\alpha \in (0, 1)$):
@@ -104,10 +108,6 @@ plt.show()
 ![Fig_01](Fig_01.png)
 
 ---
-
-## Introduction
-
-This example builds a supply and demand for labor. The former is derived from a consumer utility maximization problem. The latter from a firm profit maximization problem. The example also calculates and plots the equilibrium of the labor market.
 
 ## Labor supply
 
