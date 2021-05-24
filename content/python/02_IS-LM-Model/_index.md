@@ -9,10 +9,6 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{% callout warning %}}
-Under revision
-{{% /callout %}}
-
 ---
 
 {{< icon name="python" pack="fab" >}} {{% staticref "Python/The IS-LM model.py" %}}Download Python file.{{% /staticref %}}
@@ -56,7 +52,7 @@ Assume now a simple linear relationship between investment and the interest rate
 
 $$
 \begin{equation}
-    I = \bar{I} - di
+    I = I_0 - di
 \end{equation}
 $$
 
@@ -78,7 +74,7 @@ $$
 \begin{align}
     Y &= C + I + G + (X - Z) \\\\[20pt]
     Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[I_0 - di]}\_{I} + G + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
-    i_{IS} &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + I_0 + G + X}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
+    i\_{IS} &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + I_0 + G + X}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
 \end{align}
 $$
 
