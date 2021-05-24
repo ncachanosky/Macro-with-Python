@@ -40,7 +40,7 @@ $$
 \end{align}
 $$
 
-Where $a>0$ and $b \in (0, 1)$ are the household level of autonomous consumption and the marginal propensity to consume respectively. $T$ representing the nominal value of taxes; $I_0$ is the level of investment when $i = 0$ and $d >0$ is the slope of investment with respect to $i$; $\alpha >0$ and $\beta \in (0, 1)$ are the autonomous level and the marginal propensity to import respectively; and $c_1>0, c_2>0, c_3>0$ capture the keynesian precautionary, transaction, and specualtion reasons to demand money.
+Where $a>0$ and $b \in (0, 1)$ are the household level of autonomous consumption and the marginal propensity to consume respectively. $T$ representing the nominal value of taxes; $I_0$ is the level of investment when $i = 0$ and $d >0$ is the slope of investment with respect to $i$; $\alpha >0$ and $\beta \in (0, 1)$ are the autonomous level and the marginal propensity to import respectively; and $c_1>0, c_2>0, c_3>0$ capture the keynesian precautionary, transaction, and speculation reasons to demand money.
 
 $AD$ is the equilibrium level of output $(Y^*)$ from the IS-LM model, which is a function of $(P)$. From the [IS-LM model note](https://macro-with-python.netlify.app/python/02_is-lm-model/):
 
