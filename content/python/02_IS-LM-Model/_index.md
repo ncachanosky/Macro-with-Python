@@ -40,13 +40,13 @@ Y &= C + I + G + (X - Z)
 \end{align}
 $$
 
-where $C$ is household consumption, $I$ is private investment, $G$ is the level of government spending, $X$ is exports, and $Z$ is imports. We can treat variables $G = \bar{G}$ and $X = \bar{X}$ as exogenous. The former is defined by policy makers, the latter is given by economic conditions in the rest of the world. A more detailed exposition, such as the Mundell-Fleming model, would also take into consideration the exchange rate, and exports will also be dependent (to some extent) of domestic economic policy.
+where $C$ is household consumption, $I$ is private investment, $G$ is the level of government spending, $X$ is exports, and $Z$ is imports. We can treat variables $G$ and $X$ as exogenous variables. The former is defined by policy makers, the latter is given by economic conditions in the rest of the world. A more detailed exposition, such as the Mundell-Fleming model, would also take into consideration the exchange rate, and exports will also be dependent (to some extent) of domestic economic policy.
 
 Assume that $C$ follows a keynesian consumption function:
 
 $$
 \begin{equation}
- C = a + b(Y - T)
+ C = a + b \cdot (Y - T)
 \end{equation}
 $$
 
@@ -60,13 +60,13 @@ $$
 \end{equation}
 $$
 
-where $\bar{I}$ represents the level of investment when $i = 0$ (the intercept) and $d$ is the rate at which $I$ falls when $i$ increases (the slope).
+where $I_0$ represents the level of investment when $i = 0$ (the intercept) and $d$ is the rate at which $I$ falls when $i$ increases (the slope).
 
 We can also assume that imports follow a similar functional form than household's domestic consumption:
 
 $$
 \begin{equation}
-    Z = \alpha + \beta (Y - T)
+    Z = \alpha + \beta \cdot (Y - T)
 \end{equation}
 $$
 
@@ -77,8 +77,8 @@ To derive the IS schedule we need to use the consumption, investment, and import
 $$
 \begin{align}
     Y &= C + I + G + (X - Z) \\\\[20pt]
-    Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[\bar{I} - di]}\_{I} + \bar{G} + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
-    i_IS &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + \bar{I} + \bar{G} + \bar{X}}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
+    Y &= \underbrace{[a + b(Y-T)]}_{C} + \underbrace{[I_0 - di]}\_{I} + G + [X - \underbrace{(\alpha + \beta (Y-T))}\_{Z}] \\\\[10pt]
+    i_{IS} &= \underbrace{\frac{(a - \alpha) - (b - \beta)T + I_0 + G + X}{d}}\_{\text{intercept}} - \underbrace{\frac{1 - b + \beta}{d}}\_{\text{slope}} Y
 \end{align}
 $$
 
@@ -232,8 +232,8 @@ There is a pair $(Y^*, i^*)$ that produces the "general" equilibrium (contingent
 $$
 \begin{align}
     i_{LM} =& i_{IS} \\\\[10pt]
-    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} Y =& \frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} - \frac{1-b+\beta}{d} Y \\\\[10pt]
-    Y^* =& \left[ \frac{(a-\alpha)-(b-\beta)T+\bar{I}+\bar{G}+X}{d} + \frac{1}{c_3} \left(\frac{M^S_0}{P} - c_1 \right) \right] \left[\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right]^{-1}
+    \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) - \frac{c_2}{c_3} Y =& \frac{(a-\alpha)-(b-\beta)T + I_0 + G + X}{d} - \frac{1-b+\beta}{d} Y \\\\[10pt]
+    Y^* =& \left[ \frac{(a-\alpha)-(b-\beta)T + I_0 +G+ X}{d} + \frac{1}{c_3} \left(\frac{M^S_0}{P} - c_1 \right) \right] \left[\frac{1 - b + \beta}{d} - \frac{c_2}{c_3} \right]^{-1}
 \end{align}
 $$
 
@@ -243,7 +243,7 @@ $$
 \begin{align}
     i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} Y^*  \\\\
     i^* =& \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} \left(\frac{1-b+\beta}{d} - \frac{c_2}{c_3} \right)^{-1} \cdot \\\\[10pt]
-         & \left[\frac{(a-\alpha)-(b-\beta)T + \bar{I} + \bar{G} + X}{d} + \frac{1}{c_3} \left(c_1-\frac{M^S_0}{P} \right) \right]
+         & \left[\frac{(a-\alpha)-(b-\beta)T + I_0 + G + X}{d} + \frac{1}{c_3} \left(c_1-\frac{M^S_0}{P} \right) \right]
 \end{align}
 $$
 
@@ -333,7 +333,7 @@ Horizontal changes $(Y)$ is calculated with the IS function. Vertical changes $(
 
 $$
 \begin{align}
-    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + \bar{I} + \bar{G} + X}{1-b+\beta} - \frac{d}{1-b+\beta} i_{t-1} \\\\[10pt]
+    Y_{t} &= \frac{(a-\alpha) - (b-\beta)T + I_0 + G + X}{1-b+\beta} - \frac{d}{1-b+\beta} i_{t-1} \\\\[10pt]
     i_{t} &= \frac{1}{c_3} \left(c_1 - \frac{M^S_0}{P} \right) + \frac{c_2}{c_3} Y_{t-1}
 \end{align}
 $$
