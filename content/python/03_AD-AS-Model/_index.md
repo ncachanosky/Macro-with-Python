@@ -9,10 +9,6 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{% callout warning %}}
-Under revision
-{{% /callout %}}
-
 ---
 
 {{< icon name="python" pack="fab" >}} {{% staticref "Python/The AD-AS model.py" %}}Download Python file.{{% /staticref %}}
@@ -92,8 +88,6 @@ $$
     V_Y      &= \frac{1}{k}
 \end{align}
 $$
-
----
 
 We can code $AD$ with a `class`. A `class` allows to build our own type of objects. In this case the code constructs a class called `AD` that has (1) the money multiplier, (2) the money supply, and (3) estimates $AD$ for a given $P$.
 
