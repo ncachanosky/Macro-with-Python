@@ -177,7 +177,7 @@ This is one of the two equations that describes Ramsey model. The second equatio
 The following code plots the utility function for different levels of $\theta$. The function also allows for $\theta = 1$, in such case the utility function becomes the log of consumption.
 
 ```python
-#%% | *** FIRST CELL ***
+#%% | *** CELL 1 ***
 "============================================================================"
 "1|IMPORT PACKAGES"
 import numpy as np              # Package for scientific computing with Python
@@ -360,7 +360,7 @@ The forward shoot loop has two break points. The first one is if the shoot produ
 If the shoot produces a value of $\tilde{c} < c^*$, then the code resets and calculates a new shoot with a new $c_0$ one step above the previous shoot.
 
 ```python
-#%% *** SECOND CELL ***
+#%% *** CELL 2 ***
 "============================================================================"
 "6|DEFINE PARAMETERS AND ARRAYS"
 # PARAMETERS
