@@ -16,7 +16,7 @@ type: book  # Do not modify.
 ---
 
 
-## Introductin
+## Introduction
 
 A well-known result of the Solow Model is that growth remains as an *exogenous* explanation. That is, it goes unexplained by the model. Growth (in the long-run) does not depend on the savings rate, but on the growth rate of *technology* ($A$). The growth rate of $A$ is an assumption *given to* the model. Yet, Solow Model is useful because it provides a number of important insights.
 
