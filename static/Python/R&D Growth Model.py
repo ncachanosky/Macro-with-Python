@@ -8,76 +8,88 @@
 #|============================================================================|
 #|============================================================================|
 
-#%%
-"|***************************************************************************|"
-"|CELL #1|*******************************************************************|"
+#%% *** CELL 1 ***
 "|***************************************************************************|"
 "1|IMPORT PACKAGES"
 import numpy as np               # Package for scientific computing with Python
 import matplotlib.pyplot as plt  # Matplotlib is a 2D plotting library
 
-#%%
+
+"|***************************************************************************|"
 "2|DEFINE PARAMETERS AND ARRAYS"
-# Parameters
+# Code parameters
+dpi = 300
+step  = 0.01
+# Model parameters
 n     = 0.02      # Growth rate of population
 beta  = 0.50      # Exponent of capital in the production of ideas
 gamma = 1 - beta  # Exponent of labor in the priduction of ideas
 theta = 0.25      # Exponent of technology in the production of ideas
 
 # Arrays
-gA = np.arange(0, 1, 0.01) # Build an array between 0 and 1 with step size=0.01
+gA = np.arange(0, 1, step) # Array between 0 and 1 with step size=0.01
 gK = n + gA
 
+
+"|***************************************************************************|"
 "3|DEFINE AND POPULATE THE SADDLE-PATH FUNCTIONS" 
-ss_K = n + gA                                    # Saddle path for K
-ss_A = -(gamma*n)/beta + (1 - theta)/beta*gA     # Saddle path for A
+# Saddle paths for K and A
+ss_K = n + gA
+ss_A = -(gamma*n)/beta + (1 - theta)/beta*gA
 
-ss_int = -(gamma*n)/beta                       # Intercept of K saddle-path
+# Intercept of K saddle-path
+ss_int = -(gamma*n)/beta
 
 
+"|***************************************************************************|"
 "4|EQUILIBRIUM VALUES"
 A_star = n*(beta + gamma)/(1 - (theta + gamma))
 K_star = n + A_star
 
 
+"|***************************************************************************|"
 "5|PLOT THE SADDLE-PATH"
-v = [0, gA.max()*0.2, -0.05, gK.max()*0.2]       # Axis range
+### AXIS RANGE
+axis_range = [0, gA.max()*0.2, -0.05, gK.max()*0.2]
 
-# Build figure
-plt.figure(figsize=(10, 7), dpi=300)
+### BUILD FIGURE
+plt.figure(figsize=(10, 7), dpi=dpi)
 plt.title("DYNAMICS OF GROWTH RATES OF CAPITAL AND TECHNOLOGY")
-plt.text(-0.01    , v[3]-0.01, r'$g_K(t)$')      # Manually add x-axis label
-plt.text(v[1]-0.01, -0.01    , r'$g_A(t)$')      # Manually add y-axis label
-plt.axis(v)
-plt.box(False)
-plt.xticks([], [])                               # Hide x-axis ticks
-plt.yticks([], [])                               # Hide y-axis ticks
-plt.axvline(0, color="k")                        # Add vertical axis
-plt.axhline(0, color="k")                        # Add horizontal axis
-# Add both lines
 plt.plot(gA, ss_A, "k-", label=r'$g_A(t)$')
 plt.plot(gA, ss_K, "k-", label=r'$g_K(t)$')
-# Add equilibrium mark
-plt.axvline(A_star, -v[2]/(0.25), (0.05+K_star)/0.25, color="k", ls=":")
-plt.axhline(K_star, 0.0         , A_star/v[1]       , color="k", ls=":")
-# Add reference values
+### EQUILIBRIUM MARKS
+plt.axvline(A_star, -axis_range[2]/(0.25), (0.05+K_star)/0.25  , ls=":")
+plt.axhline(K_star, 0.0                  , A_star/axis_range[1], ls=":")
+### AXIS
+plt.axvline(0, color="k")  # Add vertical axis
+plt.axhline(0, color="k")  # Add horizontal axis
+plt.xticks([], [])         # Hide x-axis ticks
+plt.yticks([], [])         # Hide y-axis ticks
+plt.text(-0.01             , axis_range[3]-0.01, r'$g_K(t)$')  # x-axis label
+plt.text(axis_range[1]-0.01, -0.01             , r'$g_A(t)$')  # y-axis label
+### VALUES AND LABELS
+plt.text(axis_range[1]-0.03, axis_range[3]-0.02, r'$\dot{g_A(t)^*}=0$')
+plt.text(axis_range[1]-0.09, axis_range[3]-0.02, r'$\dot{g_K(t)^*}=0$')
 plt.text(A_star, -0.01 , r'$g_A(t)^*$', horizontalalignment="center")
 plt.text(-0.001, K_star, r'$g_K(t)^*$', horizontalalignment="right")
 plt.text(-0.001, n     , r'$n$'       , horizontalalignment="right")
 plt.text(-0.001, ss_int, r'$-\frac{\gamma n}{\beta}$',
          horizontalalignment="right")
-# Add function labels
-plt.text(v[1]-0.03, v[3]-0.02, r'$\dot{g_A(t)^*}=0$')
-plt.text(v[1]-0.09, v[3]-0.02, r'$\dot{g_K(t)^*}=0$')
-# Build plot
+### SETINGS
+plt.box(False)
+plt.axis(axis_range)
 plt.show()
 
-#%%
-"2|DEFINE PARAMETERS AND ARRAYS"
+
+#%% *** CELL 2 ***
+"|***************************************************************************|"
+"6|DEFINE PARAMETERS AND ARRAYS"
 # Parameters
 alpha = 0.60  # Exponent of capital in the production of goods
 
-"5|STABILITY DYNAMICS"
+
+"|***************************************************************************|"
+"7|STABILITY DYNAMICS"
 iterations = 75
 
 " | Starting Poin A (blue)"
@@ -129,33 +141,32 @@ for j in range(1, iterations):
     D_gK[j] = D_gK[j-1] + (1-alpha)*(D_gA[j-1] + n - D_gK[j-1])
 
 
-"5|PLOT THE SADDLE-PATH"
-v = [0, gA.max()*0.2, -0.05, gK.max()*0.2]       # Axis range
+"|***************************************************************************|"
+"8|PLOT THE SADDLE-PATH"
+### AXIS RANGE
+axis_range = [0, gA.max()*0.2, -0.05, gK.max()*0.2]
 
-# Build figure
-plt.figure(figsize=(10, 7), dpi=300)
+# BUILD PLOT
+plt.figure(figsize=(10, 7), dpi=dpi)
 plt.title("MODEL STABILITY")
-plt.text(-0.01    , v[3]-0.01, r'$g_K(t)$')      # Manually add x-axis label
-plt.text(v[1]-0.01, -0.01    , r'$g_A(t)$')      # Manually add y-axis label
-plt.axis(v)
-plt.box(False)
-plt.xticks([], [])                               # Hide x-axis ticks
-plt.yticks([], [])                               # Hide y-axis ticks
-plt.axvline(0, color="k")                        # Add vertical axis
-plt.axhline(0, color="k")                        # Add horizontal axis
-# Add both lines
 plt.plot(gA, ss_A, "k-", label=r'$g_A(t)$')
 plt.plot(gA, ss_K, "k-", label=r'$g_K(t)$')
-# Add equilibrium mark
-plt.axvline(A_star, -v[2]/(0.25), (0.05+K_star)/0.25, color="k", ls=":")
-plt.axhline(K_star, 0.0         , A_star/v[1]       , color="k", ls=":")
-# Add reference values
+### EQUILIBRIUM MARKS
+plt.axvline(A_star, -axis_range[2]/(0.25), (0.05+K_star)/0.25  , ls=":")
+plt.axhline(K_star, 0.0                  , A_star/axis_range[1], ls=":")
+### AXIS
+plt.axvline(0, color="k")  # Add vertical axis
+plt.axhline(0, color="k")  # Add horizontal axis
+plt.xticks([], [])         # Hide x-axis ticks
+plt.yticks([], [])         # Hide y-axis ticks
+plt.text(-0.01              , axis_range[3]-0.01, r'$g_K(t)$')  # x-axis label
+plt.text(axis_range[1]-0.01, -0.01              , r'$g_A(t)$')  # y-axis label
+### VALUES AND LABELS
 plt.text(A_star, -0.01 , r'$g_A(t)^*$', horizontalalignment="center")
 plt.text(-0.001, K_star, r'$g_K(t)^*$', horizontalalignment="right")
-# Add function labels
-plt.text(v[1]-0.03, v[3]-0.02, r'$\dot{g_A(t)^*}=0$')
-plt.text(v[1]-0.09, v[3]-0.02, r'$\dot{g_K(t)^*}=0$')
-# Model dynamics
+plt.text(axis_range[1]-0.03, axis_range[3]-0.02, r'$\dot{g_A(t)^*}=0$')
+plt.text(axis_range[1]-0.09, axis_range[3]-0.02, r'$\dot{g_K(t)^*}=0$')
+### MODEL DYNAMICS
 plt.plot(A_gA[0], A_gK[0], "bo")
 plt.plot(A_gA   , A_gK   , "b:")
 plt.plot(B_gA[0], B_gK[0], "go")
@@ -168,7 +179,7 @@ plt.text(A_gA[0]-0.005, A_gK[0]      , "A", color="b")
 plt.text(B_gA[0]-0.005, B_gK[0]      , "B", color="g")
 plt.text(C_gA[0]      , C_gK[0]+0.005, "C", color="r")
 plt.text(D_gA[0]+0.005, D_gK[0]      , "D", color="c")
-# Arrows
+# ARROWS
 plt.arrow(A_gA[0], A_gK[0],  0.005, 0    , color="b")
 plt.arrow(A_gA[0], A_gK[0],  0    , 0.005, color="b")
 plt.arrow(B_gA[0], B_gK[0],  0.005, 0    , color="g")
@@ -177,5 +188,7 @@ plt.arrow(C_gA[0], C_gK[0], -0.005, 0    , color="r")
 plt.arrow(C_gA[0], C_gK[0],  0    ,-0.005, color="r")
 plt.arrow(D_gA[0], D_gK[0], -0.005, 0    , color="c")
 plt.arrow(D_gA[0], D_gK[0],  0    , 0.005, color="c")
-# Build plot
+### SETTINGS
+plt.box(False)
+plt.axis(axis_range)
 plt.show()
